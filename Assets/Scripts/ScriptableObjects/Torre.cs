@@ -11,4 +11,6 @@ public class Torre : ScriptableObject
     public int tempsAtac;
     public int vidaTorre;
 
+    public GameObject prefab;
+    public GameObject bala;
 }
