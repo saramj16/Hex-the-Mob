@@ -9,12 +9,11 @@ public class Moviment_personatge : MonoBehaviour
     public Camera cam;
 
     public float velocitat = 6f;
-    public float salt = 2f;
-    public float gravetat = 9f;
+    public float gravetat = 20f;
 
     public float temps_rotacio = 0.1f;
     public float vel_rotacio;
-    public float jump = 4f;
+    public float jump = 10f;
     public Vector3 moveDirection = Vector3.zero;
 
     private void Start()
@@ -25,70 +24,43 @@ public class Moviment_personatge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (controller.isGrounded)
+     
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(horizontal, 0f, vertical);
+        float vel_aux = moveDirection.y;
+        if (direction.magnitude >= 0.1f)
         {
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
-
             float targetAngle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref vel_rotacio, temps_rotacio);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
+            moveDirection = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized;
 
-            controller.Move(moveDirection.normalized * velocitat * Time.deltaTime);
-
-            if (Input.GetKeyUp(KeyCode.Space))
+            moveDirection *= velocitat;
+            if (!controller.isGrounded)
             {
-                moveDirection.y = jump; 
+                moveDirection.x *= 0.5f;
+                moveDirection.z *= 0.5f;
             }
-
-        }
-
-        moveDirection.y -= gravetat * Time.deltaTime;
-        controller.Move(moveDirection * Time.deltaTime);
-
-        /**
-        float inputRight = Input.GetAxisRaw("Horizontal");
-        float inputForward = Input.GetAxisRaw("Vertical");
-        Vector3 inputDirection = new Vector3(inputRight, 0f, inputForward).normalized;
-        /**
-        //Agafar forward i right de la cam, treure la Y i normalitzar.
-        Vector3 cameraForward = cam.transform.forward;
-        cameraForward.y = 0;
-        cameraForward.Normalize();
-        Vector3 cameraRight = cam.transform.right;
-        cameraRight.y = 0;
-        cameraRight.Normalize();
-        //per la rotacio del pj
-        //agafar la velocitat del rb
-
-        float y = controller.velocity.y;
-        
-        if(inputDirection.magnitude >= 0.1f)
+            moveDirection.y = vel_aux;
+        } else
         {
-            
-            float targetAngle = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref vel_rotacio, temps_rotacio);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-            Vector3 moveDir = Quaternion.Euler(0f, angle, 0f) * Vector3.forward;
-            //controller.velocity = moveDir * velocitat;
-            controller.Move(moveDir.normalized * velocitat * Time.deltaTime);
+            moveDirection.x = Mathf.Lerp(moveDirection.x, 0, 0.2f);
+            moveDirection.z = Mathf.Lerp(moveDirection.z, 0, 0.2f);
         }
-
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
         {
-            //controller.AddForce(new Vector3(0, salt, 0), ForceMode.Impulse);
+            moveDirection.y = jump;
         }
-
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+       
+       if (!controller.isGrounded)
         {
-            //controller.velocity *= velocitat;
+            moveDirection.y -= gravetat * Time.deltaTime;
         }
-    
-    **/
-    }
+       
+        controller.Move(moveDirection*Time.deltaTime);
+
+      }
 
 }
