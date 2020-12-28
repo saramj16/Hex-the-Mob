@@ -6,12 +6,11 @@ public class EnemyWaves : MonoBehaviour
 {
     public List<Enemic> enemic;
 
-
     public List<Enemic> ListEnemyWave(int wave)
     {
         int dificultat = dificultatRonda(wave);
 
-        List<Enemic> llistaEnemicsRonda = new List<Enemic>();
+         List<Enemic> llistaEnemicsRonda = new List<Enemic>();
 
         //Debug.LogError("Deixa buit el llistat " + llistaEnemicsRonda.Count);
         // Crear un gestor de waves q en funció de la wave q sigui esculli una dificultat
@@ -19,7 +18,7 @@ public class EnemyWaves : MonoBehaviour
         {
             int index = Random.Range(0, enemic.Count);
             
-            if (dificultat - enemic[index].dificultat < 0)
+            if (dificultat - enemic[index].dificultat< 0)
             {
                 int x = dificultat - enemic[index].dificultat;
                 //Debug.Log("dificultat menor de 0" + x.ToString());

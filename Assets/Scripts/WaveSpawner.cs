@@ -17,6 +17,12 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveNumber = 0;
 
+    private void Start()
+    {
+        //Comprovar si hi ha enemics començant al segon 10, cada 5 segons
+        InvokeRepeating("CheckForEnemies", 10f, 5f);
+    }
+
     private void Update()
     {
         if (countdown <= 0)
@@ -56,6 +62,15 @@ public class WaveSpawner : MonoBehaviour
             yield return new WaitForSeconds(2f);
         }
         yield return null;
+    }
+
+    void CheckForEnemies()
+    {
+        Debug.Log("Buscant enemics...");
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        {
+            HiHaEnemics = false;
+        }
     }
 
 }

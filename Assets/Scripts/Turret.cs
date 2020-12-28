@@ -16,7 +16,7 @@ public class Turret : MonoBehaviour
 
     [Header("Configuració")]
 
-    public string tag_enemic = "Enemic";
+    public string tag_enemic = "Enemy";
 
     public Transform pivotArma;
     public Transform puntBales;
@@ -33,7 +33,7 @@ public class Turret : MonoBehaviour
     void BuscaEnemics()
     {
         //Buscar si hi ha enemics a l'escena
-        GameObject[] enemics = GameObject.FindGameObjectsWithTag(tag_enemic);
+        GameObject[] enemics = GameObject.FindGameObjectsWithTag("Enemy");
         float distanciaCurta = Mathf.Infinity;
         GameObject enemicProper = null;
         //Calcular la distància de l'enemic més proper

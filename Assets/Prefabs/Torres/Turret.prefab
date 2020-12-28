@@ -268,7 +268,7 @@ MonoBehaviour:
   range: 4
   fireRate: 1
   velRotacio: 8
-  tag_enemic: Enemic
+  tag_enemic: Enemy
   pivotArma: {fileID: 8708444160249963063}
   puntBales: {fileID: 984294529610544187}
   balaPrefab: {fileID: 1109276263877937622, guid: 9b22009ec8ea6a34899be3d61bd82925,
