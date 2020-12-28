@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6184581362756043182}
   - component: {fileID: 8889293408787357863}
   - component: {fileID: 829690722615298495}
+  - component: {fileID: 4552477980432197068}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Bullet
@@ -93,3 +94,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4552477980432197068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109276263877937622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12052c9ef8dd2b34ab11a6af2de433ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocitatBala: 70
+  efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
+    type: 3}
+  hurt: 50
