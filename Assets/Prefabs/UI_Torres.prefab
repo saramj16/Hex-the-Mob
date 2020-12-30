@@ -147,7 +147,7 @@ MonoBehaviour:
   - {fileID: 4576522024976666178}
   - {fileID: 446530500315951631}
   - {fileID: 1535658199475734604}
-  position: {x: 0, y: 0, z: 0}
+  casella: {fileID: 0}
 --- !u!1 &5818761009708470560
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +468,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 23f95e2302fa5da46ba7700c65a2fe2e,
+      objectReference: {fileID: 21300000, guid: c89332d334e92f64a8c84eb41d1bc0fd,
         type: 3}
     - target: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
         type: 3}
@@ -937,7 +937,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 5d691954e7f0c5b4ba3c1310cbac2361,
+      objectReference: {fileID: 21300000, guid: 23f95e2302fa5da46ba7700c65a2fe2e,
         type: 3}
     - target: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
         type: 3}
@@ -1359,7 +1359,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c89332d334e92f64a8c84eb41d1bc0fd,
+      objectReference: {fileID: 21300000, guid: 5d691954e7f0c5b4ba3c1310cbac2361,
         type: 3}
     - target: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
         type: 3}

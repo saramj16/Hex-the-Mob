@@ -40,6 +40,8 @@ public class UI_Torres : MonoBehaviour
                 Vector3 position = casella.gameObject.transform.position;
                 position.y = 0.7345991f;
                 Instantiate(torres[i].prefab, position, Quaternion.identity);
+
+                //Hem de restar els recurosos, i en cas que no tingui els suficients no posar la torreta
             }
         }
     }
