@@ -16,5 +16,9 @@ MonoBehaviour:
   danyAtac: 30
   tempsAtac: 20
   vidaTorre: 80
-  prefab: {fileID: 0}
+  prefab: {fileID: 8708444162131765717, guid: 22f4f67df87d8c241ba97bfd8a1b50a0, type: 3}
   bala: {fileID: 0}
+  terra: 0
+  aire: 0
+  foc: 1
+  aigua: 0

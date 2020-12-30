@@ -13,4 +13,10 @@ public class Torre : ScriptableObject
 
     public GameObject prefab;
     public GameObject bala;
+
+    public int terra;
+    public int aire;
+    public int foc;
+    public int aigua;
+
 }

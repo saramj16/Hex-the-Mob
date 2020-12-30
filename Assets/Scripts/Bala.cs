@@ -44,7 +44,7 @@ public class Bala : MonoBehaviour
     void EnemicTocat()
     {
         GameObject particulesImpacte = Instantiate(efecteImpacte, transform.position, transform.rotation);
-        Enemy e = target.GetComponent<Enemy>();
+        ControlEnemic e = target.GetComponent<ControlEnemic>();
         e.restaVida(hurt);
         Destroy(particulesImpacte, 2f);
         Destroy(gameObject);

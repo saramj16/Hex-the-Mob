@@ -10,11 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb992187e0c3d8346b7bd45bf9df3035, type: 3}
-  m_Name: Torre 3
+  m_Name: Torre 4
   m_EditorClassIdentifier: 
   tipus: 
   danyAtac: 30
   tempsAtac: 20
   vidaTorre: 80
-  prefab: {fileID: 0}
+  prefab: {fileID: 8708444162131765717, guid: 214eef7e80a5e1f43af02f908704afd2, type: 3}
   bala: {fileID: 0}
+  terra: 0
+  aire: 0
+  foc: 0
+  aigua: 1

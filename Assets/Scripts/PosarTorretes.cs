@@ -7,7 +7,10 @@ public class PosarTorretes : MonoBehaviour
 
     public float distancia = 1;
     public GameObject torre;
-  
+
+
+    public GameObject UI_Missatge;
+    public GameObject UI_torres;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +24,29 @@ public class PosarTorretes : MonoBehaviour
         {
             
             Vector3 position = transform.position;
-            Vector3 direction = transform.forward;
-            //Debug.Log("Position " + position);
-            //Debug.Log("Direction " + direction);
-            RaycastHit hit;
 
-            int layerMask = 1 << 8;
+            position.y = 0;
+
+            GameObject casella = buscarTerreny(position);
+
+            UI_torres.GetComponent<UI_Torres>().guardaPosition(casella);
+
+            //Menu d'escollir torre
+            UI_torres.SetActive(true);
+
+
+
+        }
+
+        
+
+        //Prova per si funciona amb el raycast des de la camera
+        /*if (Input.GetKeyUp(KeyCode.G))
+        {
+            RaycastHit hit;
+            int layerMask = 1 << 8; 
+            Vector3 position = transform.position;
+            Vector3 direction = transform.forward;
             //layerMask = ~layerMask;
 
             Debug.DrawRay(position, direction * distancia, Color.yellow, 5f);
@@ -34,34 +54,34 @@ public class PosarTorretes : MonoBehaviour
             {
                 Debug.DrawRay(position, direction*distancia, Color.green, 5f);
                 //hit.transform.position;
-                Vector3 torreta = buscarTorreta(hit.transform.position);
-                torreta.y = 2;
-                posaTorreta(torreta, "Normal");
+                //Vector3 torreta = buscarTorreta(hit.transform.position);
+                //torreta.y = 2;
+                
             }
-        }
+        }*/
+        //posaTorreta(torreta, "Normal");
+
     }
 
-    public Vector3 buscarTorreta(Vector3 puntCollision)
-    {
-        //Debug.Log("Entra aqui");
-        GameObject[] terreny;
-        terreny = GameObject.FindGameObjectsWithTag("Terreny");
 
+        // TO-DO: poder eliminar o canviar torretes (Com les volem seleccionar?)
+
+    public GameObject buscarTerreny(Vector3 position)
+    {
+        
+        GameObject[] terreny;
+        terreny = GameObject.FindGameObjectsWithTag("Ground");
+        
         for (int i = 0; i < terreny.Length; i++)
         {
-            if (Vector3.Distance(puntCollision, terreny[i].transform.position) < 1f)
+            //Debug.Log("Casella  " + terreny[i].transform.position + "  /  Position " + position);
+            if (Vector3.Distance(position, terreny[i].transform.position) < 0.2f)
             {
                 Debug.Log("Casella " + terreny[i].name);
-                return terreny[i].transform.position;
+                return terreny[i];
             }
         }
-        return new Vector3(0, 0, 0);
-    }
-
-    public void posaTorreta(Vector3 position, string type)
-    {
-        Debug.Log("Entra aqui");
-        Instantiate(torre, position, Quaternion.identity);
+        return new GameObject();
     }
 
 
