@@ -36,7 +36,6 @@ public class UI_Torres : MonoBehaviour
             if(buttons[i].name == gameObject.name)
             {
                 Debug.Log("Entra a posar la torre");
-              
                 Vector3 position = casella.gameObject.transform.position;
                 position.y = 0.7345991f;
                 Instantiate(torres[i].prefab, position, Quaternion.identity);

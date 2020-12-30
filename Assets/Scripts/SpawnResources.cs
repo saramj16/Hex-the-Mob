@@ -4,26 +4,18 @@ using UnityEngine;
 
 public class SpawnResources : MonoBehaviour
 {
-    public GameObject air;
-    public GameObject fire;
-    public GameObject water;
-    public GameObject earth;
+    public Transform ground;
     public float countdown;
     public float timeToSpawn;
     public int element;
-    public GameObject resource;
+    public List<Resource> resource;
+    public int numSpawners;
+    Vector3 resourcePosition;
     // Start is called before the first frame update
     void Start()
     {
-        for (int i=0; i<ResourcePoints.points.Length; i++)
-        {
-            Debug.Log("Punt"+ i);
-        }
+        numSpawners = 2;
         timeToSpawn = 5f;
-        //air = GameObject.Find("Air");
-        //fire = GameObject.Find("Fire");
-        //water = GameObject.Find("Water");
-        //earth = GameObject.Find("Earth");
         countdown = timeToSpawn;
     }
 
@@ -32,28 +24,43 @@ public class SpawnResources : MonoBehaviour
     {
         if (countdown <= 0)
         {
-            for (int i = 0; i < ResourcePoints.points.Length; i++)
+            for (int i = 0; i < numSpawners; i++)
             {
+                resourcePosition = calculateResourcePosition();
                 element = Random.Range(1, 4);
                 switch (element)
                 {
                     case 1:
-                        resource = air;
+                        //Aire
+                        element = 1;
                         break;
                     case 2:
-                        resource = fire;
+                        //Terra
+                        element = 2;
                         break;
                     case 3:
-                        resource = water;
+                        //Foc
+                        element = 3;
                         break;
                     case 4:
-                        resource = earth;
+                        //Aigua
+                        element = 4;
                         break;
                 }
-                Instantiate(resource, ResourcePoints.points[i].position, ResourcePoints.points[i].rotation);
+                Instantiate(resource[element].prefab, resourcePosition, Quaternion.identity);
             }
             countdown = timeToSpawn;
         }
         countdown -= Time.deltaTime;
+    }
+
+    Vector3 calculateResourcePosition()
+    {
+        int num = Random.Range(1, ground.childCount);
+        float x_coord = ground.GetChild(num).position.x;
+        float y_coord = ground.GetChild(num).position.y;
+        float z_coord = ground.GetChild(num).position.z;
+        Vector3 pos = new Vector3(x_coord,y_coord+0.5f,z_coord);
+        return pos;
     }
 }
