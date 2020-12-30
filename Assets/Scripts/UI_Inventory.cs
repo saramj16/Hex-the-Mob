@@ -30,7 +30,7 @@ public class UI_Inventory : MonoBehaviour
         int i = 0;
         foreach (Transform itemSlot in itemSlotContainer)
         {
-             Text text = itemSlot.GetComponentInChildren<Text>();
+            Text text = itemSlot.GetComponentInChildren<Text>();
             if (text == null) {
                 Debug.Log("no es troba text");
 

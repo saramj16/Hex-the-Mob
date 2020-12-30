@@ -111,7 +111,7 @@ public class WaveManager : MonoBehaviour
 
     void CheckForEnemies()
     {
-        Debug.Log("Buscant enemics...");
+        //Debug.Log("Buscant enemics...");
         if (!esDia && GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
             HiHaEnemics = false;

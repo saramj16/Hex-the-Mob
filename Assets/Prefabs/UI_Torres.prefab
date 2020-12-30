@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5818761009317767327}
   - component: {fileID: 5818761009317767324}
-  - component: {fileID: 2847841569600633214}
+  - component: {fileID: 285858141535145899}
   m_Layer: 5
   m_Name: UI_Torres
   m_TagString: Untagged
@@ -125,7 +125,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5818761009317767326}
   m_CullTransparentMesh: 0
---- !u!114 &2847841569600633214
+--- !u!114 &285858141535145899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,9 +134,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 5818761009317767326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79feb4f4ddc71a74fa0ef79fee3d46ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 6edb7ece20968f044b18586ac4e015e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  torres:
+  - {fileID: 11400000, guid: 4fada97a74b5364438b0bb51141b97ee, type: 2}
+  - {fileID: 11400000, guid: d96c7e0dea38c6a4b9c5f2757b47db38, type: 2}
+  - {fileID: 11400000, guid: f6f98a0f936bebb4bb6357ddd7f0f35f, type: 2}
+  - {fileID: 11400000, guid: 275ba5f98b13dd847811f5a801c0766c, type: 2}
+  buttons:
+  - {fileID: 4924418127126064304}
+  - {fileID: 4576522024976666178}
+  - {fileID: 446530500315951631}
+  - {fileID: 1535658199475734604}
+  position: {x: 0, y: 0, z: 0}
 --- !u!1 &5818761009708470560
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +464,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5818761009896928118}
     m_Modifications:
+    - target: {fileID: 1082803303348898245, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 23f95e2302fa5da46ba7700c65a2fe2e,
+        type: 3}
     - target: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -563,8 +580,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorreButton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 285858141535145899}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClikButtonTorre
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 446530500315951631}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f590e3f980f5254dba0fb6a8401e5f4, type: 3}
+--- !u!1 &446530500315951631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1082803304478027191, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 663303211196456888}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &446530500315951630 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
@@ -578,6 +636,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5818761009896928118}
     m_Modifications:
+    - target: {fileID: 1082803303348898245, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e10308f3834aea444b8c9a6031664b3b,
+        type: 3}
     - target: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -688,8 +752,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorreButton (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 285858141535145899}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClikButtonTorre
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1535658199475734604}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f590e3f980f5254dba0fb6a8401e5f4, type: 3}
+--- !u!1 &1535658199475734604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1082803304478027191, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1894083744288138747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1535658199475734605 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
@@ -828,6 +933,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5818761009896928118}
     m_Modifications:
+    - target: {fileID: 1082803303348898245, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5d691954e7f0c5b4ba3c1310cbac2361,
+        type: 3}
     - target: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -938,8 +1049,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorreButton (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 285858141535145899}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClikButtonTorre
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4576522024976666178}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f590e3f980f5254dba0fb6a8401e5f4, type: 3}
+--- !u!1 &4576522024976666178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1082803304478027191, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 3496466039816086517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4576522024976666179 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
@@ -1203,6 +1355,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5818761009896928118}
     m_Modifications:
+    - target: {fileID: 1082803303348898245, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c89332d334e92f64a8c84eb41d1bc0fd,
+        type: 3}
     - target: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1313,11 +1471,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorreButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 285858141535145899}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClikButtonTorre
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4924418127126064304}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f590e3f980f5254dba0fb6a8401e5f4, type: 3}
 --- !u!224 &4924418127126064305 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5427382824961294599}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4924418127126064304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1082803304478027191, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
     type: 3}
   m_PrefabInstance: {fileID: 5427382824961294599}
   m_PrefabAsset: {fileID: 0}
