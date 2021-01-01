@@ -19,10 +19,16 @@ public class UI_Inventory : MonoBehaviour
         
     }
 
+    public Inventory GetInventory()
+    {
+        return inventory;
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
         itemSlotContainer = transform.Find("ItemsParent");
+        //Debug.Log(itemSlotContainer);
         instance = this;
     }
 
@@ -32,11 +38,13 @@ public class UI_Inventory : MonoBehaviour
         {
             Text text = itemSlot.GetComponentInChildren<Text>();
             if (text == null) {
-                Debug.Log("no es troba text");
+                Debug.Log("No es troba text");
 
             }
             else
             {
+                //Debug.Log("Text " + text.text);
+                //Debug.Log("Text inventari " + inventory.items[i].amount);
                 text.text = inventory.items[i].amount.ToString();
             }
             i++;

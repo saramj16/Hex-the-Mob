@@ -6,11 +6,10 @@ public class PosarTorretes : MonoBehaviour
 {
 
     public float distancia = 1;
-    public GameObject torre;
-
-
+  
     public GameObject UI_Missatge;
     public GameObject UI_torres;
+    public GameObject inventari;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +29,7 @@ public class PosarTorretes : MonoBehaviour
             GameObject casella = buscarTerreny(position);
 
             UI_torres.GetComponent<UI_Torres>().guardaPosition(casella);
-
+            UI_torres.GetComponent<UI_Torres>().guardaInventari(inventari);
             //Menu d'escollir torre
             UI_torres.SetActive(true);
 

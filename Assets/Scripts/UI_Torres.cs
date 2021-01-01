@@ -9,18 +9,13 @@ public class UI_Torres : MonoBehaviour
     public List<GameObject> buttons;
 
     public GameObject casella;
+    public Inventory inventari;
 
-    // Start is called before the first frame update
-    void Start()
+    public void guardaInventari(GameObject i)
     {
-
+        inventari = i.GetComponent<UI_Inventory>().GetInventory();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 
     public void guardaPosition(GameObject c)
     {

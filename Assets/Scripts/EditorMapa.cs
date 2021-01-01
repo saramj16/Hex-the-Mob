@@ -92,7 +92,7 @@ public class MyWindow : EditorWindow
             for (int j = 0; j < v; j++)
             {
                 //Instanciem el prefab i augmentem la coordenada z
-                Instantiate(Resources.Load("HexagonPrefab"), new Vector3(x, y, z), Quaternion.Euler(90, 0, 0));
+                Instantiate(Resources.Load("Hexagon"), new Vector3(x, y, z), Quaternion.Euler(90, 0, 0));
                 z += 0.24413f;            
             }
             // Quan acaben el bucle vertical augmentem la x i seguim amb la seguent linia de caselles
