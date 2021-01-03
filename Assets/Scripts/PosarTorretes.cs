@@ -28,6 +28,7 @@ public class PosarTorretes : MonoBehaviour
 
             GameObject casella = buscarTerreny(position);
 
+
             UI_torres.GetComponent<UI_Torres>().guardaPosition(casella);
             UI_torres.GetComponent<UI_Torres>().guardaInventari(inventari);
             //Menu d'escollir torre
@@ -69,18 +70,24 @@ public class PosarTorretes : MonoBehaviour
     {
         
         GameObject[] terreny;
+        GameObject terrenyFinal = new GameObject();
         terreny = GameObject.FindGameObjectsWithTag("Ground");
-        
+        //Debug.Log("Terreny Length" + terreny.Length);
         for (int i = 0; i < terreny.Length; i++)
         {
+            float x = Mathf.Abs(position.x - terreny[i].transform.position.x);
+            float z = Mathf.Abs(position.z - terreny[i].transform.position.z);
+            
             //Debug.Log("Casella  " + terreny[i].transform.position + "  /  Position " + position);
-            if (Vector3.Distance(position, terreny[i].transform.position) < 0.2f)
+            if (x < 0.2f  && z < 0.2f)
             {
                 Debug.Log("Casella " + terreny[i].name);
-                return terreny[i];
+                //return terreny[i];
+                terrenyFinal = terreny[i];
             }
         }
-        return new GameObject();
+        Debug.Log("Caslla final " + terrenyFinal.name);
+        return terrenyFinal;
     }
 
 

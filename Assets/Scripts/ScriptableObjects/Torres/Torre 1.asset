@@ -18,7 +18,7 @@ MonoBehaviour:
   vidaTorre: 100
   prefab: {fileID: 8708444162131765717, guid: 3fe0123789b457d46ba9a4cb19e099c3, type: 3}
   bala: {fileID: 0}
-  terra: 1
-  aire: 0
-  foc: 0
-  aigua: 0
+  element1: 3
+  quantiatElement1: 1
+  element2: 4
+  quantitatElement2: 0

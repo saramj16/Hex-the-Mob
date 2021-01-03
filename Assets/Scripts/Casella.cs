@@ -11,6 +11,7 @@ public class Casella : MonoBehaviour
 
     public void OmpleCasella(GameObject go)
     {
+        Debug.Log("Omple");
         x = go.gameObject.transform.position.x;
         y = go.gameObject.transform.position.y;
         z = go.gameObject.transform.position.z;

@@ -10,19 +10,13 @@ public class GameControl : MonoBehaviour
     public GameObject[] c;
     private void Start()
     {
-        if (c == null)
-        {
-            c = GameObject.FindGameObjectsWithTag("Ground");
+        c = GameObject.FindGameObjectsWithTag("Ground");
 
-            for (int i = 0; i < c.Length; i++)
-            {
-                caselles[i].OmpleCasella(c[i]);
-            }
+        for (int i = 0; i < c.Length; i++)
+        {
+            caselles[i].OmpleCasella(c[i]);
         }
         
-        
-
-
     }
 }
 
