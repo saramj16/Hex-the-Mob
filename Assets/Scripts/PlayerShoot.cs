@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-
-    public Transform pivotArma;
-    public Transform puntBales;
-    private Transform target;
-
-    public GameObject balaPrefab;
     public Camera cam;
     public Collider collider;
+    float bulletSpeed;
+    public Rigidbody bullet;
     // Start is called before the first frame update
     void Start()
     {
+        bulletSpeed = 10f;
         cam = GameObject.Find("Camera").GetComponent<Camera>();
         //int layerMask = 1 << 30;
         //layerMask = ~layerMask;
@@ -50,20 +47,17 @@ public class PlayerShoot : MonoBehaviour
                 if (hit.collider != null)
                 {
                     Debug.DrawLine(transform.position, hit.point, Color.red, 5f);
-                    Dispara();
+                    Dispara(hit.point);
                 }
             }
 
         }
     }
 
-    void Dispara()
+    void Dispara(Vector3 punt)
     {
-        GameObject balaGO = (GameObject)Instantiate(balaPrefab, puntBales.position, puntBales.rotation);
-        Bala bala = balaGO.GetComponent<Bala>();
-
-        if (bala != null)
-            bala.Target(target);
-
+        Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, transform.position, transform.rotation);
+        Vector3 dir = punt - transform.position;
+        bulletClone.velocity = dir.normalized * bulletSpeed;
     }
 }
