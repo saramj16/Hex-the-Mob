@@ -14,4 +14,5 @@ public class Enemic : ScriptableObject
     public int dificultat;
 
     public GameObject prefab;
+
 }

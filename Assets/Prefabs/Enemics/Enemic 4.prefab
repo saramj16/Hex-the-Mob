@@ -108,3 +108,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocitat: 4
   vida: 100
+  atac: 10
+  torre: {fileID: 0}
+  enemic:
+  - {fileID: 11400000, guid: 46574430e99b2f0459d8efe86e3bc17a, type: 2}
+  - {fileID: 11400000, guid: da1b421249a56ea4f93d5f625093ec91, type: 2}
+  - {fileID: 11400000, guid: cf6ce742760208a4895bf290824cf36d, type: 2}
+  - {fileID: 11400000, guid: f7e63993ac7edb94b83a432db9085657, type: 2}
+  - {fileID: 11400000, guid: 93e0bf5d0723c37419dc74266869cd4e, type: 2}

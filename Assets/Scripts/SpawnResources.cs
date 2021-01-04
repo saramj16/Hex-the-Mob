@@ -60,7 +60,7 @@ public class SpawnResources : MonoBehaviour
         float x_coord = ground.GetChild(num).position.x;
         float y_coord = ground.GetChild(num).position.y;
         float z_coord = ground.GetChild(num).position.z;
-        Vector3 pos = new Vector3(x_coord,y_coord,z_coord);
+        Vector3 pos = new Vector3(x_coord,y_coord+0.1f,z_coord);
         return pos;
     }
 }

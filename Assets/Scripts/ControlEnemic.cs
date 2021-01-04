@@ -10,15 +10,33 @@ public class ControlEnemic : MonoBehaviour
     private int waypointIndex = 0;
 
     public float vida = 100f;
+    public float atac = 10f;
 
     public GameObject torre;
+    public List<Enemic> enemic = new List<Enemic>();
+    public string name;
+
     // Start is called before the first frame update
     void Start()
     {
-        torre = GameObject.Find("Hexentrum");
+       
         target = Waypoints.points[0];
+        name = this.gameObject.name;
+        for (int i = 0; i < enemic.Count; i++)
+        {
+            name = name.Replace("(Clone)", string.Empty);
+            //Debug.Log("Nom1 " + name + " Nom2 " + enemic[i].prefab.name);
+            if (enemic[i].prefab.name == name)
+            {
+                //Debug.Log("Mira que funcioni");
+                vida = enemic[i].vida;
+                atac = enemic[i].atac;
+                velocitat = enemic[i].velocitat;
+            }
+        }
 
-        //Debug.Log("Target " + target);
+        //Debug.Log("Torre"+ GameObject.Find("Hexentrum"));
+       
     }
 
     // Update is called once per frame
@@ -39,12 +57,24 @@ public class ControlEnemic : MonoBehaviour
         {
             //Destroy(gameObject);
             //Hem d'atacar a la torre
-            Debug.Log("Ataquem a la torre");
-
+            //Debug.Log("Ataquem a la torre");
+            //Ho hem de cirdar cada 5 segons
+            AtacaTorre();
+            //Invoke("AtacaTorre", 3.0f);
             return;
         }
         waypointIndex++;
         target = Waypoints.points[waypointIndex];
+    }
+
+    void AtacaTorre()
+    {
+        torre = GameObject.Find("Hexentrum");
+        if(torre != null)
+        {
+            torre.gameObject.GetComponent<Hexentrum>().restaVida(atac);
+            //Invoke("AtacaTorre", 3.0f);
+        }
     }
 
     public void restaVida(float dany)
