@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8ef832d796fd7524cbe0fb38844344bb
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: HEXAGON cup font
+  fontNames:
+  - HEXAGON cup font
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f6fa2dda9a8910445977684a63939ab5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
