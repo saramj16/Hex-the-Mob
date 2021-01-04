@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pueblo
   m_EditorClassIdentifier: 
   tipus: 
-  velocitat: 1
+  velocitat: 0.05
   vida: 50
   atac: 10
   dificultat: 1

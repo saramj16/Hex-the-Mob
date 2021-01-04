@@ -44,10 +44,11 @@ public class ControlEnemic : MonoBehaviour
     public void restaVida(float dany)
     {
 
+        Debug.Log("Vida" + vida);
         vida -= dany;
         if (vida <= 0)
         {
-
+            Debug.Log("Has mort" + vida);
             Destroy(gameObject);
         }
     }

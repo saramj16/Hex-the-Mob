@@ -5,25 +5,16 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    Rigidbody rb;
-    [HideInInspector]
-    public Vector3 direction;
-    public GeneradorBales gb;
+    float flyTime = 3f;
 
-    float flyTime = 2f;
-    // Start is called before the first frame update
+    float dany = 500f;
+    // Start is caled before the first frame update
     void Start()
     {
         Invoke("DestroyBullet", flyTime);
-        rb.AddRelativeForce(direction * 30, ForceMode.Impulse);
-    }
-
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-        //rb.AddForce(transform.forward * speed, ForceMode.VelocityChange);
 
     }
+
 
     void DestroyBullet()
     {
@@ -42,7 +33,10 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            DestroyBullet();
+            //Treure vida a l'enemic
+            Debug.Log("Collisiona amb l'enemic");
+            other.gameObject.GetComponent<ControlEnemic>().restaVida(dany);
+
         }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5146584369116288205}
   - component: {fileID: 29931242638045258}
   - component: {fileID: 7321864429074526176}
+  - component: {fileID: 7504587762934664704}
   m_Layer: 0
   m_Name: Enemic 1
   m_TagString: Enemy
@@ -104,6 +105,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce1c4ddf11d0e0f4b920072d75e3fc45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocitat: 4
+  vida: 100
+--- !u!114 &7504587762934664704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7241863359413747400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72aaf903c34ff744d8ddb49b02255d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocitat: 4

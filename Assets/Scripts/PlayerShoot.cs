@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     public Camera cam;
-    public Collider collider;
+    //public Collider collider;
     float bulletSpeed;
     public Rigidbody bullet;
     // Start is called before the first frame update
