@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControlEnemic : MonoBehaviour
 {
-    public float velocitat = 4f;
+    public float velocitat = 0.1f;
 
     private Transform target;
     private int waypointIndex = 0;
