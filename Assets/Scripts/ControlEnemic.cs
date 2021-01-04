@@ -10,9 +10,12 @@ public class ControlEnemic : MonoBehaviour
     private int waypointIndex = 0;
 
     public float vida = 100f;
+
+    public GameObject torre;
     // Start is called before the first frame update
     void Start()
     {
+        torre = GameObject.Find("Hexentrum");
         target = Waypoints.points[0];
 
         //Debug.Log("Target " + target);
@@ -34,7 +37,10 @@ public class ControlEnemic : MonoBehaviour
     {
         if (waypointIndex >= Waypoints.points.Length - 1)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            //Hem d'atacar a la torre
+            Debug.Log("Ataquem a la torre");
+
             return;
         }
         waypointIndex++;

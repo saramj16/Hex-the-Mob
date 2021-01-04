@@ -108,3 +108,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocitat: 4
   vida: 100
+  torre: {fileID: 0}
