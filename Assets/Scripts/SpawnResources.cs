@@ -11,21 +11,27 @@ public class SpawnResources : MonoBehaviour
     public List<Resource> resource;
     public int numSpawners;
     Vector3 resourcePosition;
+
+    GameObject GameMaster;
+    WaveManager waveManager;
     // Start is called before the first frame update
-    void Start()
+    void Start()    
     {
+        GameMaster = GameObject.Find("GameMaster");
         numSpawners = 2;
         timeToSpawn = 5f;
         countdown = timeToSpawn;
+        waveManager = GameMaster.GetComponent<WaveManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (countdown <= 0)
+        if (countdown <= 0 && waveManager.esDia)
         {
             for (int i = 0; i < numSpawners; i++)
             {
+                Debug.Log("NOU RECURS");
                 resourcePosition = calculateResourcePosition();
                 element = Random.Range(1, 4);
                 switch (element)
