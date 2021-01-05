@@ -81,12 +81,12 @@ public class PosarTorretes : MonoBehaviour
             //Debug.Log("Casella  " + terreny[i].transform.position + "  /  Position " + position);
             if (x < 0.2f  && z < 0.2f)
             {
-                Debug.Log("Casella " + terreny[i].name);
+                //Debug.Log("Casella " + terreny[i].name);
                 //return terreny[i];
                 terrenyFinal = terreny[i];
             }
         }
-        Debug.Log("Caslla final " + terrenyFinal.name);
+        //Debug.Log("Caslla final " + terrenyFinal.name);
         return terrenyFinal;
     }
 

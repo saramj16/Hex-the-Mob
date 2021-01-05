@@ -32,11 +32,17 @@ public class UI_Torres : MonoBehaviour
             //Debug.Log("Nom1: " + buttons[i].name + " /  Nom2: " + gameObject.name);
             if(buttons[i].name == gameObject.name)
             {
-                Debug.Log("Entra a posar la torre");
+                Debug.Log(torres[i].name);
                 Vector3 position = casella.gameObject.transform.position;
-                position.y = 0.7345991f;
                 
-
+                if (torres[i].name == "Torre 4")
+                {
+                    position.y = 0.395f;
+                }
+                else
+                {
+                    position.y = 0.7345991f;
+                }
                 //Hem de restar els recurosos, i en cas que no tingui els suficients no posar la torreta
                 //La torreta ha de tenir els Items q gasta
                 bool error = inventari.spendResources(torres[i].element1, torres[i].quantiatElement1, torres[i].element2, torres[i].quantitatElement2);

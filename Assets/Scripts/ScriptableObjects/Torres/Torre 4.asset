@@ -16,7 +16,7 @@ MonoBehaviour:
   danyAtac: 30
   tempsAtac: 20
   vidaTorre: 80
-  prefab: {fileID: 8708444162131765717, guid: 214eef7e80a5e1f43af02f908704afd2, type: 3}
+  prefab: {fileID: 3801158729553809960, guid: c969bb2c2243f904f8e9fd6e893b0503, type: 3}
   bala: {fileID: 0}
   element1: 0
   quantiatElement1: 1

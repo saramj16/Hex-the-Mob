@@ -47,6 +47,36 @@ public class Inventory
 
     }
 
+    public bool spendResourcesDisparo()
+    {
+        int mesgran = 0;
+        int majorAmount = 0;
+        bool haEntrat = false;
+        //Hem de busarc el item que te més amount i restar-li un, si tots tenen 0 no es pot disparar
+        for (int i = 0; i < items.Count; i++)
+        {
+            if(items[i].amount > 0)
+            {
+                haEntrat = true;
+                if(items[i].amount > majorAmount)
+                {
+                    mesgran = i;
+                    majorAmount = items[i].amount;
+                }
+            }
+        }
+
+        if(haEntrat == true)
+        {
+            items[mesgran].amount -= 1;
+            return true;
+        } else
+        {
+            return false;
+        }
+       
+    }
+
     public bool spendResources(Item.Element item1, int q1, Item.Element item2, int q2)
     {
         int i = elemPos(item1);

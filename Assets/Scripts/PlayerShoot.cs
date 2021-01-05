@@ -8,6 +8,9 @@ public class PlayerShoot : MonoBehaviour
     //public Collider collider;
     float bulletSpeed;
     public Rigidbody bullet;
+
+    public Inventory inventari;
+    public UI_Inventory inventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,7 @@ public class PlayerShoot : MonoBehaviour
         cam = GameObject.Find("Camera").GetComponent<Camera>();
         //int layerMask = 1 << 30;
         //layerMask = ~layerMask;
+        inventari = inventory.GetInventory();
     }
 
     // Update is called once per frame
@@ -56,8 +60,14 @@ public class PlayerShoot : MonoBehaviour
 
     void Dispara(Vector3 punt)
     {
-        Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, transform.position, transform.rotation);
-        Vector3 dir = punt - transform.position;
-        bulletClone.velocity = dir.normalized * bulletSpeed;
+        
+        if (inventari.spendResourcesDisparo())
+        {
+            Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, transform.position, transform.rotation);
+            Vector3 dir = punt - transform.position;
+            bulletClone.velocity = dir.normalized * bulletSpeed;
+            inventory.RefreshInventoryItems();
+        }
+        
     }
 }
