@@ -24,6 +24,13 @@ public class UI_Torres : MonoBehaviour
             UnityEngine.Cursor.visible = true;
 
         }
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            this.gameObject.SetActive(false);
+            cursor.top = false;
+            UnityEngine.Cursor.visible = false;
+        }
         
     }
     public void guardaInventari(GameObject i)
