@@ -14,7 +14,7 @@ public class Hexentrum : MonoBehaviour
         if (vida <= 0)
         {
             //Debug.LogError("Game OVER");
-            //SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
