@@ -11,7 +11,21 @@ public class UI_Torres : MonoBehaviour
     public GameObject casella;
     public Inventory inventari;
     public UI_Inventory inventory;
+    public Cursor cursor;
 
+    
+
+    private void Update()
+    {
+        if(this.enabled)
+        {
+            cursor.top = true;
+            
+            UnityEngine.Cursor.visible = true;
+
+        }
+        
+    }
     public void guardaInventari(GameObject i)
     {
         inventari = i.GetComponent<UI_Inventory>().GetInventory();
@@ -32,7 +46,7 @@ public class UI_Torres : MonoBehaviour
             //Debug.Log("Nom1: " + buttons[i].name + " /  Nom2: " + gameObject.name);
             if(buttons[i].name == gameObject.name)
             {
-                Debug.Log(torres[i].name);
+                //Debug.Log(torres[i].name);
                 Vector3 position = casella.gameObject.transform.position;
                 
                 if (torres[i].name == "Torre 4")
@@ -55,7 +69,10 @@ public class UI_Torres : MonoBehaviour
                     //Debug.Log("Posem la torre");
                     inventory.RefreshInventoryItems();
                     Instantiate(torres[i].prefab, position, Quaternion.identity);
+                    
                 }
+                cursor.top = false;
+                UnityEngine.Cursor.visible = false;
                 break;
 
             }

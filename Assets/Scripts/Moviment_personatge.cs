@@ -13,7 +13,7 @@ public class Moviment_personatge : MonoBehaviour
 
     public float temps_rotacio = 0.1f;
     public float vel_rotacio;
-    public float jump = 10f;
+    public float jump = 3f;
     public Vector3 moveDirection = Vector3.zero;
 
     private void Start()

@@ -47,6 +47,7 @@ public class WaveManager : MonoBehaviour
         {
             StartCoroutine(SpawnWave());
             SetNit();
+            
         }
         if (!HiHaEnemics && !esDia)
         {
@@ -96,6 +97,13 @@ public class WaveManager : MonoBehaviour
         HiHaEnemics = true;
         //Debug.Log("Nit num: " + nNit);
         ColorSol = Color.Lerp(dia, nit, LightTransitionDiaTime);
+
+        // Busquem recursos i els eliminem
+        GameObject[] recursos = GameObject.FindGameObjectsWithTag("Resource");
+        for(int i = 0; i < recursos.Length; i++)
+        {
+            Destroy(recursos[i]);
+        }
     }
 
     void SetDia()
