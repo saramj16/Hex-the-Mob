@@ -31,7 +31,7 @@ public class SpawnResources : MonoBehaviour
         {
             for (int i = 0; i < numSpawners; i++)
             {
-                Debug.Log("NOU RECURS");
+                //Debug.Log("NOU RECURS");
                 resourcePosition = calculateResourcePosition();
                 element = Random.Range(1, 4);
                 switch (element)

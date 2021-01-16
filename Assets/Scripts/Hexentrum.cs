@@ -10,7 +10,7 @@ public class Hexentrum : MonoBehaviour
     public void restaVida(float dany)
     {
         vida -= dany;
-        Debug.Log("Vida  " +vida);
+        //Debug.Log("Vida  " +vida);
         if (vida <= 0)
         {
             //Debug.LogError("Game OVER");
