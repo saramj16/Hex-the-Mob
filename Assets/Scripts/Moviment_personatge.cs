@@ -57,14 +57,46 @@ public class Moviment_personatge : MonoBehaviour
             moveDirection.z = Mathf.Lerp(moveDirection.z, 0, 0.2f);
         }
 
+        if (anim.GetBool("isRunning"))
+        {
+            JumpingRunAnimations();
+        } else
+        {
+            JumpingAnimations();
+        }
 
-        JumpingAnimations();
         RunAnimations();
-
+        
         controller.Move(moveDirection*Time.deltaTime);
 
       }
 
+    void JumpingRunAnimations()
+    {
+        // Si apreten l'espai per saltar
+        if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
+        {
+            // Esta saltant
+            Debug.Log("Esta saltant");
+            anim.SetBool("jumping", true);
+            moveDirection.y = jump;
+
+
+        }
+        if (anim.GetBool("onAir") && controller.isGrounded)
+        {
+            Debug.Log("Terra");
+            anim.SetBool("onAir", false);
+        }
+
+        if (!controller.isGrounded)
+        {
+            //Debug.Log("Esta baixant");
+            anim.SetBool("jumping", false);
+            anim.SetBool("onAir", true);
+            moveDirection.y -= gravetat * Time.deltaTime;
+        }
+    }
     void JumpingAnimations()
     {
 
@@ -91,9 +123,6 @@ public class Moviment_personatge : MonoBehaviour
             anim.SetBool("onAir", true);
             moveDirection.y -= gravetat * Time.deltaTime;
         }
-
-
-
     }
 
     void JumpingFalse()
