@@ -30,7 +30,6 @@ public class Moviment_personatge : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-   
         anim.SetFloat("VelX", horizontal);
         anim.SetFloat("VelY", vertical);
 
@@ -48,7 +47,6 @@ public class Moviment_personatge : MonoBehaviour
             moveDirection *= velocitat;
             if (!controller.isGrounded)
             {
-                //anim.SetBool("jumping", false);
                 moveDirection.x *= 0.5f;
                 moveDirection.z *= 0.5f;
             }
@@ -59,36 +57,66 @@ public class Moviment_personatge : MonoBehaviour
             moveDirection.z = Mathf.Lerp(moveDirection.z, 0, 0.2f);
         }
 
+
+        JumpingAnimations();
+        RunAnimations();
+
+        controller.Move(moveDirection*Time.deltaTime);
+
+      }
+
+    void JumpingAnimations()
+    {
+
         // Si apreten l'espai per saltar
         if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
         {
             // Esta saltant
-            //Debug.Log("Esta saltant");
-            //anim.SetBool("jumping", true);
+            Debug.Log("Esta saltant");
+            anim.SetBool("jumping", true);
             moveDirection.y = jump;
+
+            
         }
+        if (anim.GetBool("onAir") && controller.isGrounded)
+        {
+            Debug.Log("Terra");
+            anim.SetBool("onAir", false);
+        }
+
         if (!controller.isGrounded)
         {
+            //Debug.Log("Esta baixant");
+            anim.SetBool("jumping", false);
+            anim.SetBool("onAir", true);
             moveDirection.y -= gravetat * Time.deltaTime;
         }
 
+
+
+    }
+
+    void JumpingFalse()
+    {
+        anim.SetBool("jumping", false);
+    }
+    
+    void RunAnimations()
+    {
         // Control animacions correr
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            //Debug.Log("Running");
+            Debug.Log("Running");
             velocitat = 3.5f;
             anim.SetBool("isRunning", true);
         }
         // Control animacions caminar
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            //Debug.Log("ja no està running");
+            Debug.Log("ja no està running");
             velocitat = 2f;
             anim.SetBool("isRunning", false);
         }
-
-        controller.Move(moveDirection*Time.deltaTime);
-
-      }
+    }
 
 }
