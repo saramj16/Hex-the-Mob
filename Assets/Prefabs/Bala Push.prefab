@@ -109,4 +109,4 @@ MonoBehaviour:
   velocitatBala: 70
   efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
     type: 3}
-  hurt: 50
+  hurt: 0
