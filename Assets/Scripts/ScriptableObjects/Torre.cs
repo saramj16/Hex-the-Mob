@@ -6,10 +6,11 @@ using UnityEngine;
 public class Torre : ScriptableObject
 {
     public string tipus;
-    public float danyAtac;
 
-    public int tempsAtac;
-    public int vidaTorre;
+    //public int vidaTorre;
+    public float range;
+    public float fireRate;
+    public float velRotacio;
 
     public GameObject prefab;
     public GameObject bala;

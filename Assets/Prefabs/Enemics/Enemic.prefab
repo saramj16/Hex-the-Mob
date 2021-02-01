@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5146584369116288205}
   - component: {fileID: 29931242638045258}
   - component: {fileID: 2463900679867496335}
+  - component: {fileID: -325430097186855868}
   m_Layer: 0
   m_Name: Enemic
   m_TagString: Enemy
@@ -116,3 +117,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cf6ce742760208a4895bf290824cf36d, type: 2}
   - {fileID: 11400000, guid: f7e63993ac7edb94b83a432db9085657, type: 2}
   - {fileID: 11400000, guid: 93e0bf5d0723c37419dc74266869cd4e, type: 2}
+  name: 
+--- !u!54 &-325430097186855868
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7241863359413747400}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

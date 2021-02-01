@@ -41,7 +41,7 @@ public class UI_Torres : MonoBehaviour
 
     public void guardaPosition(GameObject c)
     {
-        Debug.Log("Guarda posicio");
+        //Debug.Log("Guarda posicio");
         casella = c;
     }
 
@@ -75,7 +75,15 @@ public class UI_Torres : MonoBehaviour
                 {
                     //Debug.Log("Posem la torre");
                     inventory.RefreshInventoryItems();
-                    Instantiate(torres[i].prefab, position, Quaternion.identity);
+                    GameObject go = Instantiate(torres[i].prefab, position, Quaternion.identity);
+
+                    //Aqui posem el q necesitem
+                    go.GetComponent<Turret>().balaPrefab = torres[i].bala;
+                    go.GetComponent<Turret>().range = torres[i].range;
+                    go.GetComponent<Turret>().fireRate = torres[i].fireRate;
+                    go.GetComponent<Turret>().velRotacio = torres[i].velRotacio;
+
+
                     
                 }
                 cursor.top = false;

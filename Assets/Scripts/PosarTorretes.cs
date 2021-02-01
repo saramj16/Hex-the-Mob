@@ -38,33 +38,9 @@ public class PosarTorretes : MonoBehaviour
 
         }
 
-        
-
-        //Prova per si funciona amb el raycast des de la camera
-        /*if (Input.GetKeyUp(KeyCode.G))
-        {
-            RaycastHit hit;
-            int layerMask = 1 << 8; 
-            Vector3 position = transform.position;
-            Vector3 direction = transform.forward;
-            //layerMask = ~layerMask;
-
-            Debug.DrawRay(position, direction * distancia, Color.yellow, 5f);
-            if (Physics.Raycast(position, direction, out hit, distancia, layerMask))
-            {
-                Debug.DrawRay(position, direction*distancia, Color.green, 5f);
-                //hit.transform.position;
-                //Vector3 torreta = buscarTorreta(hit.transform.position);
-                //torreta.y = 2;
-                
-            }
-        }*/
-        //posaTorreta(torreta, "Normal");
 
     }
 
-
-        // TO-DO: poder eliminar o canviar torretes (Com les volem seleccionar?)
 
     public GameObject buscarCasella(Vector3 position)
     {
