@@ -5,19 +5,23 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Nova Torre", menuName ="Torre")] 
 public class Torre : ScriptableObject
 {
-    public string tipus;
+    public int idBala;
 
     //public int vidaTorre;
+    [Range(0,10)]
     public float range;
+    
     public float fireRate;
     public float velRotacio;
 
+    [Header("Prefabs")]
     public GameObject prefab;
-    public GameObject bala;
 
+    
+    [Header("Recursos")]
     public Item.Element element1;
     public int quantiatElement1;
-
+ 
     public Item.Element element2;
     public int quantitatElement2;
     

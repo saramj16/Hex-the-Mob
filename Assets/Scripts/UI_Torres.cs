@@ -6,7 +6,9 @@ public class UI_Torres : MonoBehaviour
 {
 
     public List<Torre> torres;
+    public List<Bales> bales;
     public List<GameObject> buttons;
+
 
     public GameObject casella;
     public Inventory inventari;
@@ -78,10 +80,12 @@ public class UI_Torres : MonoBehaviour
                     GameObject go = Instantiate(torres[i].prefab, position, Quaternion.identity);
 
                     //Aqui posem el q necesitem
-                    go.GetComponent<Turret>().balaPrefab = torres[i].bala;
+                    //go.GetComponent<Turret>().balaPrefab = torres[i].bala;
                     go.GetComponent<Turret>().range = torres[i].range;
                     go.GetComponent<Turret>().fireRate = torres[i].fireRate;
                     go.GetComponent<Turret>().velRotacio = torres[i].velRotacio;
+                    go.GetComponent<Turret>().idBala = torres[i].idBala; 
+                    go.GetComponent<Turret>().bales = bales;
 
 
                     
