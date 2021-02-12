@@ -9,15 +9,22 @@ public class Bala : MonoBehaviour
     private GameObject efecteImpacte;
     private float damage;
 
-    private int id;
+    private float pushForce;
+    private float poisonDamage;
+    private float posionDuration;
+    private float freezeDuration;
 
-    public void BalaInit(int _id, float _velocitatBala, float _damage, Transform _target)
+
+    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration)
     {
         Debug.Log("Inicialitza dades");
-        id = _id;
         velocitatBala = _velocitatBala;
         damage = _damage;
         target = _target;
+        pushForce = _pushForce;
+        poisonDamage = _posionDamage;
+        posionDuration = _posionDuration;
+        freezeDuration = _freezeDuration;
     }
     public void Target(Transform _target) 
     {
@@ -45,22 +52,20 @@ public class Bala : MonoBehaviour
         //Evitar traspassar enemic
         if (dir.magnitude <= 0.1f)
         {
-            Debug.Log("ID BALA: " + id);
-            switch (id)
-            {
-                case 0:
-                    EnemicTocat();
-                    break;
-                case 1:
-                    EnemicPush(dir);
-                    
-                    break;
-                case 2:
-        
-                    break;
-  
-            }
-            return;
+
+            //Tenint la referencia de la bala apliquem els efectes definits
+            // SI es 0 no fa res
+            // Bala normal 
+            GameObject particulesImpacte = Instantiate(efecteImpacte, transform.position, transform.rotation);
+            ControlEnemic e = target.GetComponent<ControlEnemic>();
+            e.restaVida(damage);
+            Destroy(particulesImpacte, 2f);
+            Destroy(gameObject);
+
+            //Bala freeze
+
+
+
         }
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);

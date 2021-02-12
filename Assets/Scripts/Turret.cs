@@ -7,11 +7,11 @@ public class Turret : MonoBehaviour
     private Transform target;
 
     [Header("Paràmetres")]
-    public int idBala;
     public float range;
     public float fireRate;
     private float fireCountdown = 0f;
     public float velRotacio;
+    public Bales bala;
 
     [Header("Configuració")]
 
@@ -20,8 +20,7 @@ public class Turret : MonoBehaviour
     public Transform pivotArma;
     public Transform puntBales;
 
-    [Header("Bales")]
-    public List<Bales> bales;
+
 
     // Start is called before the first frame update
     void Start()
@@ -85,17 +84,12 @@ public class Turret : MonoBehaviour
     {
 
         Debug.Log("Dispara");
-        GameObject balaGO = (GameObject) Instantiate(bales[idBala].balaPrefab, puntBales.position, puntBales.rotation);
-        Bala bala = balaGO.GetComponent<Bala>();
+        GameObject balaGO = (GameObject) Instantiate(bala.balaPrefab, puntBales.position, puntBales.rotation);
+        Bala b = balaGO.GetComponent<Bala>();
 
-        if (bala != null)
+        if (b != null)
         {
-
-            Debug.Log("Bala " + bala);
-            //Debug.Log("Target: " + target);
-            bala.BalaInit(bales[idBala].id, bales[idBala].velocitatBala, bales[idBala].damage, target);
-            //balaGO.GetComponent<Bala>().BalaInit(bales[idBala].id, bales[idBala].velocitatBala, bales[idBala].damage, target);
-            //balaGO.GetComponent<Bala>().Target(target);
+             b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration);
         }
 
     }

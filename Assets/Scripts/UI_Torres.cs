@@ -79,15 +79,11 @@ public class UI_Torres : MonoBehaviour
                     inventory.RefreshInventoryItems();
                     GameObject go = Instantiate(torres[i].prefab, position, Quaternion.identity);
 
-                    //Aqui posem el q necesitem
-                    //go.GetComponent<Turret>().balaPrefab = torres[i].bala;
-                    go.GetComponent<Turret>().range = torres[i].range;
-                    go.GetComponent<Turret>().fireRate = torres[i].fireRate;
-                    go.GetComponent<Turret>().velRotacio = torres[i].velRotacio;
-                    go.GetComponent<Turret>().idBala = torres[i].idBala; 
-                    go.GetComponent<Turret>().bales = bales;
-
-
+                    Turret t = go.GetComponent<Turret>();
+                    t.range = torres[i].range;
+                    t.fireRate = torres[i].fireRate;
+                    t.velRotacio = torres[i].velRotacio;
+                    t.bala = torres[i].bala;
                     
                 }
                 cursor.top = false;

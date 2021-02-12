@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c096cecda9bae8c4b9a4c91bf148e632, type: 3}
-  m_Name: BalaNormal 1
+  m_Name: BalaNormal
   m_EditorClassIdentifier: 
   id: 0
-  damage: 0
-  velocitatBala: 70
-  efecteImpacte: {fileID: 0}
-  balaPrefab: {fileID: 0}
+  damage: 20
+  velocitatBala: 50
+  efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
+    type: 3}
+  balaPrefab: {fileID: 1109276263877937622, guid: 9b22009ec8ea6a34899be3d61bd82925,
+    type: 3}

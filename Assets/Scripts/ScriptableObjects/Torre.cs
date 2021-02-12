@@ -5,8 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Nova Torre", menuName ="Torre")] 
 public class Torre : ScriptableObject
 {
-    public int idBala;
-
+    public Bales bala;
     //public int vidaTorre;
     [Range(0,10)]
     public float range;
