@@ -78,7 +78,7 @@ public class UI_Torres : MonoBehaviour
                     //Debug.Log("Posem la torre");
                     inventory.RefreshInventoryItems();
                     GameObject go = Instantiate(torres[i].prefab, position, Quaternion.identity);
-
+                    
                     Turret t = go.GetComponent<Turret>();
                     t.range = torres[i].range;
                     t.fireRate = torres[i].fireRate;

@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb992187e0c3d8346b7bd45bf9df3035, type: 3}
   m_Name: Bear Trap
   m_EditorClassIdentifier: 
-  tipus: 
+  bala: {fileID: 11400000, guid: 95293a2b2a5d2a040b2e798ec3021eaa, type: 2}
   range: 4
   fireRate: 1
   velRotacio: 8
   prefab: {fileID: 8708444162131765717, guid: 3fe0123789b457d46ba9a4cb19e099c3, type: 3}
-  bala: {fileID: 1109276263877937622, guid: 9b22009ec8ea6a34899be3d61bd82925, type: 3}
   element1: 3
   quantiatElement1: 1
   element2: 3

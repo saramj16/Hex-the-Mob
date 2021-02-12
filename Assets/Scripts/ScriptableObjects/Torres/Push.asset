@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb992187e0c3d8346b7bd45bf9df3035, type: 3}
   m_Name: Push
   m_EditorClassIdentifier: 
-  idBala: 1
+  bala: {fileID: 11400000, guid: 95293a2b2a5d2a040b2e798ec3021eaa, type: 2}
   range: 3
   fireRate: 2
   velRotacio: 3

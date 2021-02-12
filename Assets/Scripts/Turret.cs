@@ -89,7 +89,7 @@ public class Turret : MonoBehaviour
 
         if (b != null)
         {
-             b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration);
+             b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte);
         }
 
     }

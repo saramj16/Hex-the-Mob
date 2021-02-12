@@ -15,7 +15,7 @@ public class Bala : MonoBehaviour
     private float freezeDuration;
 
 
-    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration)
+    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte)
     {
         Debug.Log("Inicialitza dades");
         velocitatBala = _velocitatBala;
@@ -25,6 +25,7 @@ public class Bala : MonoBehaviour
         poisonDamage = _posionDamage;
         posionDuration = _posionDuration;
         freezeDuration = _freezeDuration;
+        efecteImpacte = _efecteImpacte;
     }
     public void Target(Transform _target) 
     {
@@ -36,18 +37,16 @@ public class Bala : MonoBehaviour
     void Update()
     {
         //Un cop la bala ha tocat l'enemic
-        Debug.Log("Target " + target);
+        //Debug.Log("Target " + target);
         if (target == null)
         {
             Destroy(gameObject);
             return;
         }
 
-
-        
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = velocitatBala * Time.deltaTime;
-        Debug.Log("Dir " + dir);
+        //Debug.Log("Dir " + dir);
 
         //Evitar traspassar enemic
         if (dir.magnitude <= 0.1f)
@@ -55,16 +54,27 @@ public class Bala : MonoBehaviour
 
             //Tenint la referencia de la bala apliquem els efectes definits
             // SI es 0 no fa res
-            // Bala normal 
+
+            // Efecte impacte
             GameObject particulesImpacte = Instantiate(efecteImpacte, transform.position, transform.rotation);
+            
             ControlEnemic e = target.GetComponent<ControlEnemic>();
+
+            // Bala push
+            if(pushForce > 0)
+            {
+                dir.y = 0;
+                //Hem de moure l'enemic endarrere
+                e.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * pushForce, ForceMode.Impulse);
+            }
+
+            // Bala freeze
+
+
             e.restaVida(damage);
+
             Destroy(particulesImpacte, 2f);
             Destroy(gameObject);
-
-            //Bala freeze
-
-
 
         }
 
@@ -89,10 +99,7 @@ public class Bala : MonoBehaviour
         e.restaVida(damage);
 
 
-        dir.y = 0;
-        //Hem de moure l'enemic endarrere
-        //e.gameObject.transform.position = Vector3.MoveTowards(e.gameObject.transform.position, dir, 10 * Time.deltaTime);
-        e.gameObject.GetComponent<Rigidbody>().AddForce(dir.normalized * 3, ForceMode.Impulse);
+        
 
         //Debug.Log("Position enemic" + e.gameObject.transform.position);
         //Destroy(particulesImpacte, 2f);
