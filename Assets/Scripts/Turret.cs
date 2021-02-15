@@ -9,7 +9,7 @@ public class Turret : MonoBehaviour
     [Header("Paràmetres")]
     public float range;
     public float fireRate;
-    private float fireCountdown = 0f;
+    private float fireCountdown = 1f;
     public float velRotacio;
     public Bales bala;
 
@@ -72,7 +72,7 @@ public class Turret : MonoBehaviour
 
         if(fireCountdown <= 0)
         {
-            //Debug.Log("Dispara");
+            Debug.Log("Dispara");
             Dispara();
             fireCountdown = 1f / fireRate;
         }
@@ -83,7 +83,7 @@ public class Turret : MonoBehaviour
     void Dispara()
     {
 
-        Debug.Log("Dispara");
+        //Debug.Log("Dispara");
         GameObject balaGO = (GameObject) Instantiate(bala.balaPrefab, puntBales.position, puntBales.rotation);
         Bala b = balaGO.GetComponent<Bala>();
 

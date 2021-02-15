@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb992187e0c3d8346b7bd45bf9df3035, type: 3}
   m_Name: Gun
   m_EditorClassIdentifier: 
-  bala: {fileID: 11400000, guid: 95293a2b2a5d2a040b2e798ec3021eaa, type: 2}
+  bala: {fileID: 11400000, guid: 43591dbe02270f541afbc56740f6711e, type: 2}
   range: 5
   fireRate: 3
   velRotacio: 2
