@@ -12,6 +12,8 @@ public class ControlEnemic : MonoBehaviour
     public float vida = 100f;
     public float atac = 10f;
 
+    public bool freeze;
+
     public GameObject torre;
     public List<Enemic> enemic = new List<Enemic>();
     public string name;
@@ -19,7 +21,7 @@ public class ControlEnemic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        freeze = false;
         target = Waypoints.points[0];
         name = this.gameObject.name;
         for (int i = 0; i < enemic.Count; i++)
@@ -42,13 +44,17 @@ public class ControlEnemic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * velocitat * Time.deltaTime, Space.World);
-
-        if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+        if( freeze == false)
         {
-            GetNextWaypoint();
+            Vector3 dir = target.position - transform.position;
+            transform.Translate(dir.normalized * velocitat * Time.deltaTime, Space.World);
+
+            if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+            {
+                GetNextWaypoint();
+            }
         }
+
     }
 
     void GetNextWaypoint()
@@ -65,6 +71,19 @@ public class ControlEnemic : MonoBehaviour
         }
         waypointIndex++;
         target = Waypoints.points[waypointIndex];
+    }
+
+
+    public void Descongela(float freezeDuration)
+    {
+        //Debug.Log("Entra");
+        Invoke("IsNotFreeze", freezeDuration);
+    }
+
+    void IsNotFreeze()
+    {
+        //Debug.Log("Descongela al parguelas ese");
+        freeze = false;
     }
 
     void AtacaTorre()

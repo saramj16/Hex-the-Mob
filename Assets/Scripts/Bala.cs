@@ -17,7 +17,7 @@ public class Bala : MonoBehaviour
 
     public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte)
     {
-        Debug.Log("Inicialitza dades");
+        //Debug.Log("Inicialitza dades");
         velocitatBala = _velocitatBala;
         damage = _damage;
         target = _target;
@@ -51,7 +51,7 @@ public class Bala : MonoBehaviour
         //Evitar traspassar enemic
         if (dir.magnitude <= 0.1f)
         {
-
+            //Debug.Log("Dispara crack");
             //Tenint la referencia de la bala apliquem els efectes definits
             // SI es 0 no fa res
 
@@ -65,11 +65,18 @@ public class Bala : MonoBehaviour
             {
                 dir.y = 0;
                 //Hem de moure l'enemic endarrere
-                e.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * pushForce, ForceMode.Impulse);
+                //Debug.Log("Direcció " + dir.x + " " + dir.y + " " + dir.z);
+                e.gameObject.GetComponent<Rigidbody>().AddForce(dir.normalized * pushForce, ForceMode.Impulse);
             }
 
             // Bala freeze
+            if (freezeDuration > 0)
+            {
+                //Debug.Log("Entra a congelar");
+                e.freeze = true;
+                e.Descongela(freezeDuration);
 
+            }
 
             e.restaVida(damage);
 
@@ -80,6 +87,12 @@ public class Bala : MonoBehaviour
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
 
+    }
+
+    void Descongela(ControlEnemic e)
+    {
+        Debug.Log("Entra aqui");
+        e.freeze = false;
     }
 
     void EnemicTocat()
