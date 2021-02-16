@@ -72,7 +72,7 @@ public class Turret : MonoBehaviour
 
         if(fireCountdown <= 0)
         {
-            Debug.Log("Dispara");
+            //Debug.Log("Dispara");
             Dispara();
             fireCountdown = 1f / fireRate;
         }

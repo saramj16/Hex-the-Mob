@@ -11,7 +11,7 @@ public class Bala : MonoBehaviour
 
     private float pushForce;
     private float poisonDamage;
-    private float posionDuration;
+    private float poisonDuration;
     private float freezeDuration;
 
 
@@ -23,7 +23,7 @@ public class Bala : MonoBehaviour
         target = _target;
         pushForce = _pushForce;
         poisonDamage = _posionDamage;
-        posionDuration = _posionDuration;
+        poisonDuration = _posionDuration;
         freezeDuration = _freezeDuration;
         efecteImpacte = _efecteImpacte;
     }
@@ -65,8 +65,10 @@ public class Bala : MonoBehaviour
             {
                 dir.y = 0;
                 //Hem de moure l'enemic endarrere
-                //Debug.Log("Direcció " + dir.x + " " + dir.y + " " + dir.z);
-                e.gameObject.GetComponent<Rigidbody>().AddForce(dir.normalized * pushForce, ForceMode.Impulse);
+                
+                //Debug.Log("Direcció " + e.transform.forward);
+
+                e.gameObject.GetComponent<Rigidbody>().AddForce(e.transform.forward * -pushForce, ForceMode.Impulse);
             }
 
             // Bala freeze
@@ -78,7 +80,19 @@ public class Bala : MonoBehaviour
 
             }
 
-            e.restaVida(damage);
+            // Bala venom
+            if(poisonDamage > 0)
+            {
+                //e.PoisonDamage(poisonDuration, poisonDamage, e);
+                //StartCoroutine(e.PoisonDamage(poisonDuration, poisonDamage, e));
+
+            }
+
+            // Bala normal
+            if(damage > 0)
+            {
+                e.restaVida(damage);
+            }
 
             Destroy(particulesImpacte, 2f);
             Destroy(gameObject);
@@ -89,33 +103,14 @@ public class Bala : MonoBehaviour
 
     }
 
+
+
+
     void Descongela(ControlEnemic e)
     {
-        Debug.Log("Entra aqui");
+        //Debug.Log("Entra aqui");
         e.freeze = false;
     }
 
-    void EnemicTocat()
-    {
-        Debug.Log("Has tocat l'enemic");
-        GameObject particulesImpacte = Instantiate(efecteImpacte, transform.position, transform.rotation);
-        ControlEnemic e = target.GetComponent<ControlEnemic>();
-        e.restaVida(damage);
-        Destroy(particulesImpacte, 2f);
-        Destroy(gameObject);
-    }
-
-    void EnemicPush(Vector3 dir)
-    {
-        //GameObject particulesImpacte = Instantiate(efecteImpacte, transform.position, transform.rotation);
-        ControlEnemic e = target.GetComponent<ControlEnemic>();
-        e.restaVida(damage);
-
-
-        
-
-        //Debug.Log("Position enemic" + e.gameObject.transform.position);
-        //Destroy(particulesImpacte, 2f);
-        Destroy(gameObject);
-    }
+    
 }

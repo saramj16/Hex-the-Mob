@@ -73,6 +73,49 @@ public class ControlEnemic : MonoBehaviour
         target = Waypoints.points[waypointIndex];
     }
 
+  /*  public void PoisonDamage(float poisonDuration, float poisonDamage, ControlEnemic e)
+    {
+        float duration = poisonDuration;
+        if (duration > 0)
+        {
+            duration--;
+            Debug.Log("Duration " + duration);
+            e.restaVida(poisonDamage);
+            Invoke("PoisonDamage(" + duration + "," + poisonDamage + "," + e + ")", 1f);
+            //Debug.Log("Segueix la Corutina de merda");
+
+        } else
+        {
+            Debug.Log("Ja estas makuina");
+        }
+    }*/
+
+  /*  public IEnumerator PoisonDamage(float poisonDuration, float poisonDamage, ControlEnemic e)
+    {
+
+        float duration = poisonDuration;
+
+        Debug.Log("Entra al Poison Damage");
+        //Necesitem que es cridi cada frame durant X segons
+        if (duration > 0)
+        {
+            duration--;
+            Debug.Log("Duration " + duration);
+            e.restaVida(poisonDamage);
+            yield return new WaitForSeconds(1f);
+            //Debug.Log("Segueix la Corutina de merda");
+            
+        }
+
+        Debug.Log("Segueix la Corutina de merda");
+        StartCoroutine(PoisonDamage(duration, poisonDamage, e));
+
+        if(duration <= 0)
+        {
+            Debug.Log("Ha acabat");
+            yield return null;
+        }
+    }*/
 
     public void Descongela(float freezeDuration)
     {
@@ -99,7 +142,7 @@ public class ControlEnemic : MonoBehaviour
     public void restaVida(float dany)
     {
 
-        //Debug.Log("Vida" + vida);
+        Debug.Log("Vida" + vida);
         vida -= dany;
         if (vida <= 0)
         {

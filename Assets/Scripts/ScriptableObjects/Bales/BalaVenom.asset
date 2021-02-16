@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c096cecda9bae8c4b9a4c91bf148e632, type: 3}
+  m_Name: BalaVenom
+  m_EditorClassIdentifier: 
+  tipusbala: 1
+  pushForce: 0
+  poisonDamage: 1
+  posionDuration: 6
+  freezeDuration: 0
+  damage: 15
+  velocitatBala: 70
+  efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
+    type: 3}
+  balaPrefab: {fileID: 1109276263877937622, guid: 34bee99fb5955fe4fa84ab877b023e64,
+    type: 3}

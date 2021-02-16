@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 29931242638045258}
   - component: {fileID: 7321864429074526176}
   - component: {fileID: 8929357557834044267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemic 4
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -110,6 +110,7 @@ MonoBehaviour:
   velocitat: 4
   vida: 100
   atac: 10
+  freeze: 0
   torre: {fileID: 0}
   enemic:
   - {fileID: 11400000, guid: 46574430e99b2f0459d8efe86e3bc17a, type: 2}
