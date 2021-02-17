@@ -51,7 +51,7 @@ public class Bala : MonoBehaviour
         //Evitar traspassar enemic
         if (dir.magnitude <= 0.1f)
         {
-            //Debug.Log("Dispara crack");
+            Debug.Log("Dispara crack");
             //Tenint la referencia de la bala apliquem els efectes definits
             // SI es 0 no fa res
 
@@ -84,6 +84,7 @@ public class Bala : MonoBehaviour
             if(poisonDamage > 0)
             {
                 //e.PoisonDamage(poisonDuration, poisonDamage, e);
+                e.ActivarVeneno(poisonDuration, poisonDamage, e);
                 //StartCoroutine(e.PoisonDamage(poisonDuration, poisonDamage, e));
 
             }
@@ -95,7 +96,7 @@ public class Bala : MonoBehaviour
             }
 
             Destroy(particulesImpacte, 2f);
-            Destroy(gameObject);
+            //Destroy(gameObject);
 
         }
 

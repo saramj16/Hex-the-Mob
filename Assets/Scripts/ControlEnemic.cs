@@ -89,33 +89,26 @@ public class ControlEnemic : MonoBehaviour
             Debug.Log("Ja estas makuina");
         }
     }*/
+    public void ActivarVeneno(float poisonDuration, float poisonDamage, ControlEnemic e)
+    {
+        //Debug.Log("Activem corrutina");
+        StartCoroutine(PoisonDamage(poisonDuration, poisonDamage, e));
+    }
 
-  /*  public IEnumerator PoisonDamage(float poisonDuration, float poisonDamage, ControlEnemic e)
+    public IEnumerator PoisonDamage(float poisonDuration, float poisonDamage, ControlEnemic e)
     {
 
-        float duration = poisonDuration;
+        float duration = 0;
 
-        Debug.Log("Entra al Poison Damage");
-        //Necesitem que es cridi cada frame durant X segons
-        if (duration > 0)
+        while (duration < poisonDuration)
         {
-            duration--;
-            Debug.Log("Duration " + duration);
+            //Debug.Log("Duration " + duration);
             e.restaVida(poisonDamage);
+            duration++;
             yield return new WaitForSeconds(1f);
-            //Debug.Log("Segueix la Corutina de merda");
-            
         }
-
-        Debug.Log("Segueix la Corutina de merda");
-        StartCoroutine(PoisonDamage(duration, poisonDamage, e));
-
-        if(duration <= 0)
-        {
-            Debug.Log("Ha acabat");
-            yield return null;
-        }
-    }*/
+        
+    }
 
     public void Descongela(float freezeDuration)
     {
