@@ -16,8 +16,12 @@ MonoBehaviour:
   range: 4
   fireRate: 1
   velRotacio: 8
+  inWay: 1
+  inGround: 0
   prefab: {fileID: 8708444162131765717, guid: 3fe0123789b457d46ba9a4cb19e099c3, type: 3}
   element1: 3
   quantiatElement1: 1
   element2: 3
   quantitatElement2: 0
+  nom: Bear Trap
+  description: 

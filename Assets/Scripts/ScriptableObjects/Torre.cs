@@ -13,6 +13,9 @@ public class Torre : ScriptableObject
     public float fireRate;
     public float velRotacio;
 
+    public bool inWay;
+    public bool inGround;
+
     [Header("Prefabs")]
     public GameObject prefab;
 
@@ -23,7 +26,10 @@ public class Torre : ScriptableObject
  
     public Item.Element element2;
     public int quantitatElement2;
-    
-    
+
+    [Header("Info")]
+    public string nom;
+    public string description;
+
 
 }

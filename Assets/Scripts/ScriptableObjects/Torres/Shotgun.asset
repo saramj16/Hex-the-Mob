@@ -12,12 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb992187e0c3d8346b7bd45bf9df3035, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  bala: {fileID: 11400000, guid: 8e37d36c068fc5941ad01d6c0601f50a, type: 2}
+  bala: {fileID: 11400000, guid: 027eeefa36be8d745bcd256e16e1eddc, type: 2}
   range: 2
   fireRate: 2.81
   velRotacio: 6
+  inWay: 0
+  inGround: 1
   prefab: {fileID: 8708444162131765717, guid: 22f4f67df87d8c241ba97bfd8a1b50a0, type: 3}
   element1: 2
   quantiatElement1: 1
   element2: 2
   quantitatElement2: 0
+  nom: Shotgun
+  description: 

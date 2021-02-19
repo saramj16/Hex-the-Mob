@@ -6,11 +6,10 @@ public class UI_Torres : MonoBehaviour
 {
 
     public List<Torre> torres;
-    public List<Bales> bales;
     public List<GameObject> buttons;
 
-
     public GameObject casella;
+    public GameObject cami;
     public Inventory inventari;
     public UI_Inventory inventory;
     public Cursor cursor;
@@ -41,10 +40,11 @@ public class UI_Torres : MonoBehaviour
     }
  
 
-    public void guardaPosition(GameObject c)
+    public void guardaPosition(GameObject c, GameObject way)
     {
         //Debug.Log("Guarda posicio");
         casella = c;
+        cami = way;
     }
 
     public void OnClikButtonTorre(GameObject gameObject)
@@ -55,9 +55,19 @@ public class UI_Torres : MonoBehaviour
             //Debug.Log("Nom1: " + buttons[i].name + " /  Nom2: " + gameObject.name);
             if(buttons[i].name == gameObject.name)
             {
+                Vector3 position = new Vector3();
                 //Debug.Log(torres[i].name);
-                Vector3 position = casella.gameObject.transform.position;
-                
+                if (torres[i].inGround)
+                {
+                    position = casella.gameObject.transform.position;
+                }
+
+                if (torres[i].inWay)
+                {
+                    position = cami.gameObject.transform.position;
+                }
+
+
                 if (torres[i].name == "Torre 4")
                 {
                     position.y = 0.395f;
@@ -66,16 +76,18 @@ public class UI_Torres : MonoBehaviour
                 {
                     position.y = 0.7345991f;
                 }
+
+
                 //Hem de restar els recurosos, i en cas que no tingui els suficients no posar la torreta
                 //La torreta ha de tenir els Items q gasta
                 bool error = inventari.spendResources(torres[i].element1, torres[i].quantiatElement1, torres[i].element2, torres[i].quantitatElement2);
 
                 if (error == false)
                 {
-                   // Debug.Log("Hi ha hagut un error");
+                   Debug.Log("Hi ha hagut un error");
                 } else
                 {
-                    //Debug.Log("Posem la torre");
+                    Debug.Log("Posem la torre");
                     inventory.RefreshInventoryItems();
                     GameObject go = Instantiate(torres[i].prefab, position, Quaternion.identity);
                     
