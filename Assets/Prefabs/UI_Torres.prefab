@@ -148,6 +148,18 @@ MonoBehaviour:
   - {fileID: 446530500315951631}
   - {fileID: 1535658199475734604}
   casella: {fileID: 0}
+  cami: {fileID: 0}
+  inventory: {fileID: 0}
+  cursor: {fileID: 0}
+  earth: {fileID: 0}
+  water: {fileID: 0}
+  air: {fileID: 0}
+  fire: {fileID: 0}
+  imatgeEarth: {fileID: 0}
+  imatgeWater: {fileID: 0}
+  imatgeAir: {fileID: 0}
+  imatgeFire: {fileID: 0}
+  imatgeNull: {fileID: 0}
 --- !u!1 &5818761009708470560
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +654,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e10308f3834aea444b8c9a6031664b3b,
         type: 3}
+    - target: {fileID: 1082803303348898245, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1082803304478027190, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -787,6 +804,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 1535658199475734604}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082803305036999603, guid: 8f590e3f980f5254dba0fb6a8401e5f4,
+        type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f590e3f980f5254dba0fb6a8401e5f4, type: 3}
 --- !u!1 &1535658199475734604 stripped

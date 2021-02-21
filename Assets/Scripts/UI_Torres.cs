@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI_Torres : MonoBehaviour
 {
@@ -14,8 +15,89 @@ public class UI_Torres : MonoBehaviour
     public UI_Inventory inventory;
     public Cursor cursor;
 
-    
+    public GameObject earth;
+    public GameObject water;
+    public GameObject air;
+    public GameObject fire;
 
+    public Sprite imatgeEarth;
+    public Sprite imatgeWater;
+    public Sprite imatgeAir;
+    public Sprite imatgeFire;
+    public Sprite imatgeNull;
+
+
+    public void Start()
+    {
+    
+        GameObject panel;
+        for(int j = 0; j < torres.Count; j = j)
+        {
+            panel = null;
+            if(j >= 0 && j < 3)
+            {
+    
+                panel = earth;
+            }
+            if (j >= 3 && j < 6)
+            {
+                //Debug.Log("Entra a la Water");
+                panel = water;
+            }
+            if (j >= 6 && j < 9)
+            {
+                //Debug.Log("Entra a la Air");
+                panel = air;
+            }
+            if (j >= 9 && j < 12)
+            {
+                //Debug.Log("Entra a la Fire");
+                panel = fire;
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                GameObject panelAux;
+                panelAux = panel.gameObject.transform.GetChild(i).gameObject;
+                //Debug.Log("Panel " + panel.name);
+                panelAux.transform.GetChild(0).GetComponent<Text>().text = torres[j].nom;
+                panelAux.transform.GetChild(1).GetComponent<Text>().text = torres[j].description;
+
+                panelAux.transform.GetChild(2).GetComponent<Image>().sprite = retornaElement(torres[j].element1);
+                if(torres[j].quantitatElement2 == 0)
+                {
+                    panelAux.transform.GetChild(3).GetComponent<Image>().sprite = imatgeNull;
+                } else {
+                    panelAux.transform.GetChild(3).GetComponent<Image>().sprite = retornaElement(torres[j].element2);
+                }
+
+                //panelAux.transform.GetChild(4).GetComponent<Text>().text = torres[j].description;
+                panelAux.transform.GetChild(5).GetComponent<Text>().text = torres[j].quantiatElement1.ToString();
+                panelAux.transform.GetChild(6).GetComponent<Text>().text = torres[j].quantitatElement2.ToString();
+                j++;
+            }
+        }
+
+
+    }
+    private Sprite retornaElement(Item.Element e)
+    {
+        switch (e)
+        {
+            case Item.Element.Water:
+                return imatgeWater;
+            case Item.Element.Air:
+                return imatgeAir;
+            case Item.Element.Fire:
+                return imatgeFire;
+            case Item.Element.Earth:
+                return imatgeEarth;
+            default:
+                return imatgeNull;
+        }
+        
+
+    }
     private void Update()
     {
         if(this.enabled)
@@ -49,6 +131,7 @@ public class UI_Torres : MonoBehaviour
 
     public void OnClikButtonTorre(GameObject gameObject)
     {
+        Debug.Log("Li fa click al button");
         this.gameObject.SetActive(false);
         for (int i = 0; i < buttons.Count; i++)
         {

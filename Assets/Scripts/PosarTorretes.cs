@@ -43,7 +43,7 @@ public class PosarTorretes : MonoBehaviour
     {
 
         GameObject[] terreny;
-        GameObject terrenyFinal = new GameObject();
+        GameObject terrenyFinal = null;
 
         terreny = GameObject.FindGameObjectsWithTag("Way");
         float minDist = Mathf.Infinity;
@@ -67,7 +67,7 @@ public class PosarTorretes : MonoBehaviour
     {
 
         GameObject[] terreny;
-        GameObject terrenyFinal = new GameObject();
+        GameObject terrenyFinal = null;
 
         terreny = GameObject.FindGameObjectsWithTag("Ground");
         float minDist = Mathf.Infinity;

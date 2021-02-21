@@ -24,4 +24,4 @@ MonoBehaviour:
   element2: 3
   quantitatElement2: 0
   nom: Bear Trap
-  description: 
+  description: Quan passen enemics per sobre, s'activa.
