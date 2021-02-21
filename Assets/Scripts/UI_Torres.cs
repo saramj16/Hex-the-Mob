@@ -66,14 +66,22 @@ public class UI_Torres : MonoBehaviour
                 panelAux.transform.GetChild(2).GetComponent<Image>().sprite = retornaElement(torres[j].element1);
                 if(torres[j].quantitatElement2 == 0)
                 {
-                    panelAux.transform.GetChild(3).GetComponent<Image>().sprite = imatgeNull;
+                    panelAux.transform.GetChild(3).GetComponent<Image>().sprite = null;
                 } else {
                     panelAux.transform.GetChild(3).GetComponent<Image>().sprite = retornaElement(torres[j].element2);
                 }
 
-                //panelAux.transform.GetChild(4).GetComponent<Text>().text = torres[j].description;
+                //panelAux.transform.GetChild(4).GetComponent<Image>().sprite = torres[j].imatge;
+
                 panelAux.transform.GetChild(5).GetComponent<Text>().text = torres[j].quantiatElement1.ToString();
-                panelAux.transform.GetChild(6).GetComponent<Text>().text = torres[j].quantitatElement2.ToString();
+                if(torres[j].quantitatElement2 == 0)
+                {
+                    panelAux.transform.GetChild(6).GetComponent<Text>().text = " ";
+                } else
+                {
+                    panelAux.transform.GetChild(6).GetComponent<Text>().text = torres[j].quantitatElement2.ToString();
+                }
+                
                 j++;
             }
         }
@@ -93,7 +101,7 @@ public class UI_Torres : MonoBehaviour
             case Item.Element.Earth:
                 return imatgeEarth;
             default:
-                return imatgeNull;
+                return null;
         }
         
 
@@ -106,15 +114,9 @@ public class UI_Torres : MonoBehaviour
             
             UnityEngine.Cursor.visible = true;
 
-        }
+            inventory.gameObject.SetActive(false);
 
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            this.gameObject.SetActive(false);
-            cursor.top = false;
-            UnityEngine.Cursor.visible = false;
-        }
-        
+        }        
     }
     public void guardaInventari(GameObject i)
     {
@@ -128,11 +130,19 @@ public class UI_Torres : MonoBehaviour
         casella = c;
         cami = way;
     }
+    public void OnClickButtonClose()
+    {
+        inventory.gameObject.SetActive(true);
+        this.gameObject.SetActive(false);
+        cursor.top = false;
+        UnityEngine.Cursor.visible = false;
+    }
 
     public void OnClikButtonTorre(GameObject gameObject)
     {
         Debug.Log("Li fa click al button");
         this.gameObject.SetActive(false);
+        inventory.gameObject.SetActive(true);
         for (int i = 0; i < buttons.Count; i++)
         {
             //Debug.Log("Nom1: " + buttons[i].name + " /  Nom2: " + gameObject.name);

@@ -30,6 +30,7 @@ public class Torre : ScriptableObject
     [Header("Info")]
     public string nom;
     public string description;
+    public Sprite imatge;
 
 
 }
