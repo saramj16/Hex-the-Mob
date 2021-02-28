@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8977789240078372603}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PuntBales
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4578961345040238738}
   - component: {fileID: 9024878357962331195}
-  m_Layer: 0
+  - component: {fileID: 8263245405208369954}
+  m_Layer: 9
   m_Name: 01_Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,11 +79,23 @@ MonoBehaviour:
   range: 1
   fireRate: 1
   velRotacio: 8
+  bala: {fileID: 0}
   tag_enemic: Enemy
   pivotArma: {fileID: 1023419187769999167}
   puntBales: {fileID: 8977789240078372603}
-  balaPrefab: {fileID: 1109276263877937622, guid: 9b22009ec8ea6a34899be3d61bd82925,
-    type: 3}
+--- !u!65 &8263245405208369954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3801158729553809960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.234654, y: 1.0968463, z: 1.2582012}
+  m_Center: {x: 0.012137208, y: 0.46808803, z: 0}
 --- !u!1 &4945695431196075160
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +107,7 @@ GameObject:
   - component: {fileID: 4252325278649263322}
   - component: {fileID: 1265822685759406836}
   - component: {fileID: 1599601271925312914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1023419187769999167}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PivotArma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +218,8 @@ GameObject:
   - component: {fileID: 4568704109693283708}
   - component: {fileID: 9068391202870897980}
   - component: {fileID: 6941000638735820272}
-  m_Layer: 0
+  - component: {fileID: 783145692729075555}
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,3 +287,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &783145692729075555
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7818978168056931189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3909233067320746374, guid: 6588541e0350899498a8665ea67e445e, type: 3}

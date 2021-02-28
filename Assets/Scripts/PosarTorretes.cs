@@ -10,10 +10,16 @@ public class PosarTorretes : MonoBehaviour
     public GameObject UI_Missatge;
     public GameObject UI_torres;
     public GameObject inventari;
+
+    private bool improveWay;
+    private bool improveGround;
+    private GameObject terrenyTorre;
     // Start is called before the first frame update
     void Start()
     {
-        
+        improveGround = false;
+        improveWay = false;
+        terrenyTorre = null;
     }
 
     // Update is called once per frame
@@ -28,6 +34,23 @@ public class PosarTorretes : MonoBehaviour
 
             GameObject casella = buscarCasella(position);
             GameObject way = buscarWay(position);
+
+            if(improveGround == true)
+            {
+                //Millorar Torre
+                GameObject g = torreDeCasella(terrenyTorre);
+                Debug.Log("Millorar Torre " + g.name);
+                improveGround = false;
+                terrenyTorre = null;
+            }
+
+            if(improveWay == true)
+            {
+                GameObject g = torreDeCasella(terrenyTorre);
+                Debug.Log("Millorar Torre " + g.name);
+                improveWay = false;
+                terrenyTorre = null;
+            }
 
             UI_torres.GetComponent<UI_Torres>().guardaPosition(casella, way);
             UI_torres.GetComponent<UI_Torres>().guardaInventari(inventari);
@@ -54,8 +77,17 @@ public class PosarTorretes : MonoBehaviour
             float dist = Vector3.Distance(terreny[i].transform.position, position);
             if (dist < minDist)
             {
-                terrenyFinal = terreny[i];
-                minDist = dist;
+                if (hihaTorre(terreny[i]))
+                {
+                    terrenyFinal = terreny[i];
+                    minDist = dist;
+                }
+                else
+                {
+                    terrenyTorre = terreny[i];
+                    improveWay = true;
+                    return terrenyTorre;
+                }
             }
 
         }
@@ -78,13 +110,61 @@ public class PosarTorretes : MonoBehaviour
             float dist = Vector3.Distance(terreny[i].transform.position, position);
             if (dist < minDist)
             {
-                terrenyFinal = terreny[i];
-                minDist = dist;
+                if (hihaTorre(terreny[i]))
+                {
+                    terrenyFinal = terreny[i];
+                    minDist = dist;
+                } else
+                {
+                    terrenyTorre = terreny[i];
+                    improveGround = true;
+                    return terrenyTorre;
+                }
             }
 
         }
         //Debug.Log("Caslla final " + terrenyFinal.name);
         return terrenyFinal;
+    }
+
+    public bool hihaTorre(GameObject g)
+    {
+
+        LayerMask mask = LayerMask.GetMask("Torre");
+
+        Vector3 aux = g.transform.position;
+        aux.y = -2f;
+        if (Physics.Raycast(aux, -g.transform.forward * 10f,  Mathf.Infinity, mask))
+        {
+            Debug.DrawRay(aux, -g.transform.forward * 10f, Color.blue, 10f);
+            Debug.Log("Ha Xocat contra una torre");
+            return false;
+        }
+        else
+        {
+            Debug.DrawRay(aux, -g.transform.forward * 10f, Color.red, 10f);
+            Debug.Log("No ha xocat contra res");
+            return true;
+        }
+       
+
+    }
+
+    public GameObject torreDeCasella(GameObject casella)
+    {
+        GameObject torre = null;
+        LayerMask mask = LayerMask.GetMask("Torre");
+
+        Vector3 aux = casella.transform.position;
+        aux.y = -2f;
+        RaycastHit hit;
+        if (Physics.Raycast(aux, -casella.transform.forward * 10f, out hit, Mathf.Infinity, mask))
+        {
+            return hit.collider.gameObject;
+        }
+
+        return torre;
+            
     }
 }
 

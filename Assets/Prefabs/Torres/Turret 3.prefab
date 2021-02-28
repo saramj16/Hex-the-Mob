@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 984294529610544187}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PuntBales
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 8708444160069069331}
   - component: {fileID: 8708444160069069341}
   - component: {fileID: 8708444160069069330}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Arma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8708444160249963063}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PivotArma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,8 @@ GameObject:
   - component: {fileID: 8708444161785535877}
   - component: {fileID: 8708444161785535879}
   - component: {fileID: 8708444161785535876}
-  m_Layer: 0
+  - component: {fileID: 1517660025583484648}
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,6 +221,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1517660025583484648
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8708444161785535994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -951608786083511892, guid: 52056fa5712e6f44f8cf1991c68d778d, type: 3}
 --- !u!1 &8708444162131765717
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +245,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8708444162131765719}
   - component: {fileID: 8708444162131765716}
-  m_Layer: 0
+  - component: {fileID: 8578593507207838731}
+  m_Layer: 9
   m_Name: Turret 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,8 +284,20 @@ MonoBehaviour:
   range: 1
   fireRate: 1
   velRotacio: 8
+  bala: {fileID: 0}
   tag_enemic: Enemy
   pivotArma: {fileID: 8708444160249963063}
   puntBales: {fileID: 984294529610544187}
-  balaPrefab: {fileID: 1109276263877937622, guid: 086d35a719b75134eb23ddc900e975e8,
-    type: 3}
+--- !u!65 &8578593507207838731
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8708444162131765717}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.13377666, y: 0.19939125, z: 0.10781467}
+  m_Center: {x: 0.016185045, y: -0.24446696, z: 0.022960603}

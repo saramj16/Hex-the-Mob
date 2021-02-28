@@ -26,13 +26,15 @@ public class UI_Torres : MonoBehaviour
     public Sprite imatgeFire;
     public Sprite imatgeNull;
 
+    public GameObject quantitatElements;
+
 
     public void Start()
     {
     
         GameObject panel;
-        for(int j = 0; j < torres.Count; j = j)
-        {
+        int j = 0;
+        while(j < torres.Count) { 
             panel = null;
             if(j >= 0 && j < 3)
             {
@@ -85,6 +87,8 @@ public class UI_Torres : MonoBehaviour
                 j++;
             }
         }
+
+        //quantitatElements.transform.GetChild(0).GetComponent<Text>().text = "";
 
 
     }
@@ -140,7 +144,7 @@ public class UI_Torres : MonoBehaviour
 
     public void OnClikButtonTorre(GameObject gameObject)
     {
-        Debug.Log("Li fa click al button");
+        //Debug.Log("Li fa click al button");
         this.gameObject.SetActive(false);
         inventory.gameObject.SetActive(true);
         for (int i = 0; i < buttons.Count; i++)
@@ -161,9 +165,9 @@ public class UI_Torres : MonoBehaviour
                 }
 
 
-                if (torres[i].name == "Torre 4")
+                if (torres[i].name == "Gun")
                 {
-                    position.y = 0.395f;
+                    position.y = 0.402f;
                 }
                 else
                 {
@@ -177,10 +181,10 @@ public class UI_Torres : MonoBehaviour
 
                 if (error == false)
                 {
-                   Debug.Log("Hi ha hagut un error");
+                   //Debug.Log("Hi ha hagut un error");
                 } else
                 {
-                    Debug.Log("Posem la torre");
+                    //Debug.Log("Posem la torre");
                     inventory.RefreshInventoryItems();
                     GameObject go = Instantiate(torres[i].prefab, position, Quaternion.identity);
                     
