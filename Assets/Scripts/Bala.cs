@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
+
+    private tipusBala tb;
     private Transform target;
     private float velocitatBala;
     private GameObject efecteImpacte;
@@ -16,9 +18,10 @@ public class Bala : MonoBehaviour
 
     private float areaDamage;
     private List<GameObject> targetsArea;
-    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage)
+    public void BalaInit(tipusBala _tb, float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage)
     {
         Debug.Log("Inicialitza dades");
+        tb = _tb;
         velocitatBala = _velocitatBala;
         damage = _damage;
         target = _target;
@@ -54,13 +57,24 @@ public class Bala : MonoBehaviour
         if (areaDamage > 0)
         {
             // Aqui s'activa el danyo en area
-
-            // Fer efecte que toqui i dany als tagrets que hi hagi a l'area
-            for(int i = 0; i < targetsArea.Count; i++)
+            if (tipusBala.MultiBala == tb)
             {
-                ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
-                e.restaVida(damage);
+              /*  for (int i = 0; i < targetsArea.Count; i++)
+                {
+                    // Estem atancat a gass a les bales
+                   // GameObject balaGO = (GameObject)Instantiate(this.gameObject.balaPrefab, puntBales.position, puntBales.rotation);
+                    //Bala b = balaGO.GetComponent<Bala>();
+                    Debug.Log("Ataquem als enemics ueueuue " + targetsArea[i].name);
+                }*/
+            } else {
+                // Fer efecte que toqui i dany als tagrets que hi hagi a l'area
+                for (int i = 0; i < targetsArea.Count; i++)
+                {
+                    ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
+                    e.restaVida(damage);
+                }
             }
+
 
             Destroy(gameObject);
 

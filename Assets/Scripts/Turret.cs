@@ -87,16 +87,57 @@ public class Turret : MonoBehaviour
     {
 
         //Debug.Log("Dispara");
-        GameObject balaGO = (GameObject) Instantiate(bala.balaPrefab, puntBales.position, puntBales.rotation);
-        Bala b = balaGO.GetComponent<Bala>();
-
-        if (b != null)
+        if (tipusBala.MultiBala == bala.tipusbala)
         {
-             b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage);
+            List<GameObject> targetArea = buscaEnemicsArea(areaDamage);
+
+            for (int i = 0; i < targetArea.Count; i++)
+            {
+                // Estem atancat a gass a les bales
+                // GameObject balaGO = (GameObject)Instantiate(this.gameObject.balaPrefab, puntBales.position, puntBales.rotation);
+                //Bala b = balaGO.GetComponent<Bala>();
+                GameObject balaGO = (GameObject)Instantiate(bala.balaPrefab, puntBales.position, puntBales.rotation);
+                Bala b = balaGO.GetComponent<Bala>();
+
+                if (b != null)
+                {
+                    b.BalaInit(bala.tipusbala, bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage);
+                }
+            }
+        } else
+        {
+            GameObject balaGO = (GameObject)Instantiate(bala.balaPrefab, puntBales.position, puntBales.rotation);
+            Bala b = balaGO.GetComponent<Bala>();
+
+            if (b != null)
+            {
+                b.BalaInit(bala.tipusbala, bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage);
+            }
         }
 
+
     }
-    
+
+    private List<GameObject> buscaEnemicsArea(float area)
+    {
+        List<GameObject> enemics = new List<GameObject>();
+        GameObject[] aux;
+
+        aux = GameObject.FindGameObjectsWithTag("Enemy");
+
+        for (int i = 0; i < aux.Length; i++)
+        {
+            float dist = Vector3.Distance(this.transform.position, aux[i].transform.position);
+
+            if (Mathf.Abs(dist) < area)
+            {
+                Debug.Log("Enemic " + aux[i].name);
+                enemics.Add(aux[i]);
+            }
+        }
+        return enemics;
+    }
+
     //Executa quan es selecciona la 'torreta'
     private void OnDrawGizmosSelected()
     {
