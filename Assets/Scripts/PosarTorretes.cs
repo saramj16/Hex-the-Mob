@@ -10,6 +10,8 @@ public class PosarTorretes : MonoBehaviour
     public GameObject UI_Missatge;
     public GameObject UI_torres;
     public GameObject inventari;
+    public GameObject UI_Upgrade;
+    public GameObject UI_RepareBridge;
 
     private bool improveWay;
     private bool improveGround;
@@ -35,11 +37,21 @@ public class PosarTorretes : MonoBehaviour
             GameObject casella = buscarCasella(position);
             GameObject way = buscarWay(position);
 
-            if(improveGround == true)
+            if (!improveGround && !improveWay)
+            {
+                UI_torres.GetComponent<UI_Torres>().guardaPosition(casella, way);
+                UI_torres.GetComponent<UI_Torres>().guardaInventari(inventari);
+                //Menu d'escollir torre
+                UI_torres.SetActive(true);
+            }
+
+            if (improveGround == true)
             {
                 //Millorar Torre
                 GameObject g = torreDeCasella(terrenyTorre);
-                Debug.Log("Millorar Torre " + g.name);
+                UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
+                UI_Upgrade.SetActive(true);
+                //Debug.Log("Millorar Torre " + g.name);
                 improveGround = false;
                 terrenyTorre = null;
             }
@@ -47,19 +59,64 @@ public class PosarTorretes : MonoBehaviour
             if(improveWay == true)
             {
                 GameObject g = torreDeCasella(terrenyTorre);
+                UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
+                UI_Upgrade.SetActive(true);
                 Debug.Log("Millorar Torre " + g.name);
                 improveWay = false;
                 terrenyTorre = null;
             }
 
-            UI_torres.GetComponent<UI_Torres>().guardaPosition(casella, way);
-            UI_torres.GetComponent<UI_Torres>().guardaInventari(inventari);
-            //Menu d'escollir torre
-            UI_torres.SetActive(true);
+        }
+
+
+        if (Input.GetKeyUp(KeyCode.G))
+        {
+
+            Vector3 position = transform.position;
+
+            position.y = 0;
+            GameObject bridge = buscaBridge(position);
+
+            //Millorar el pont X
+            Debug.Log("Millorem el pont " + bridge.name);
+            UI_RepareBridge.GetComponent<UI_RepareBridge>().OmpleBridge(bridge);
+            UI_RepareBridge.SetActive(true);
+
 
         }
 
 
+    }
+
+    public GameObject buscaBridge(Vector3 position)
+    {
+        GameObject[] ponts;
+        GameObject bridge = null;
+
+        if (GameObject.FindGameObjectsWithTag("Bridge") != null)
+        {
+            ponts = GameObject.FindGameObjectsWithTag("Bridge");
+        } else
+        {
+            ponts = null;
+        }
+            
+
+        float minDist = Mathf.Infinity;
+
+        //Debug.Log("Terreny Length" + terreny.Length);
+        for (int i = 0; i < ponts.Length; i++)
+        {
+            float dist = Vector3.Distance(ponts[i].transform.position, position);
+            if (dist < minDist)
+            {
+                    bridge = ponts[i];
+                    minDist = dist;
+             }
+
+        }
+        //Debug.Log("Caslla final " + terrenyFinal.name);
+        return bridge;
     }
 
     public GameObject buscarWay(Vector3 position)

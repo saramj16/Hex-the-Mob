@@ -189,6 +189,7 @@ public class UI_Torres : MonoBehaviour
                     GameObject go = Instantiate(torres[i].prefab, position, Quaternion.identity);
                     
                     Turret t = go.GetComponent<Turret>();
+                    t.nomTorre = torres[i].nom;
                     t.range = torres[i].range;
                     t.fireRate = torres[i].fireRate;
                     t.velRotacio = torres[i].velRotacio;

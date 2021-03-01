@@ -6,6 +6,8 @@ public class Turret : MonoBehaviour
 {
     private Transform target;
 
+    public string nomTorre;
+
     [Header("Paràmetres")]
     public float range;
     public float fireRate;
@@ -98,5 +100,13 @@ public class Turret : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+
+    public void UpgradeTorre()
+    {
+        // Aqui canviem el que sigui
+        range += 0.2f;
+
     }
 }
