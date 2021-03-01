@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb992187e0c3d8346b7bd45bf9df3035, type: 3}
   m_Name: Bear Trap
   m_EditorClassIdentifier: 
-  bala: {fileID: 11400000, guid: 8e37d36c068fc5941ad01d6c0601f50a, type: 2}
-  range: 4
+  bala: {fileID: 11400000, guid: 027eeefa36be8d745bcd256e16e1eddc, type: 2}
+  range: 2
+  areaDamage: 5
   fireRate: 1
   velRotacio: 8
   inWay: 1
@@ -25,3 +26,4 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Bear Trap
   description: Quan passen enemics per sobre, s'activa.
+  imatge: {fileID: 0}

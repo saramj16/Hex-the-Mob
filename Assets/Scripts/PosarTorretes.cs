@@ -193,14 +193,14 @@ public class PosarTorretes : MonoBehaviour
         aux.y = -2f;
         if (Physics.Raycast(aux, -g.transform.forward * 10f,  Mathf.Infinity, mask))
         {
-            Debug.DrawRay(aux, -g.transform.forward * 10f, Color.blue, 10f);
-            Debug.Log("Ha Xocat contra una torre");
+            //Debug.DrawRay(aux, -g.transform.forward * 10f, Color.blue, 10f);
+            //Debug.Log("Ha Xocat contra una torre");
             return false;
         }
         else
         {
-            Debug.DrawRay(aux, -g.transform.forward * 10f, Color.red, 10f);
-            Debug.Log("No ha xocat contra res");
+           // Debug.DrawRay(aux, -g.transform.forward * 10f, Color.red, 10f);
+           // Debug.Log("No ha xocat contra res");
             return true;
         }
        

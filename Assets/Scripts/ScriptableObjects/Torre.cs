@@ -9,6 +9,9 @@ public class Torre : ScriptableObject
     //public int vidaTorre;
     [Range(0,10)]
     public float range;
+
+    [Range(0, 10)]
+    public float areaDamage;
     
     public float fireRate;
     public float velRotacio;

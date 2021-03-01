@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala: {fileID: 11400000, guid: 027eeefa36be8d745bcd256e16e1eddc, type: 2}
   range: 5
+  areaDamage: 0
   fireRate: 3
   velRotacio: 2
   inWay: 0
@@ -25,3 +26,4 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Gatling Gun
   description: Molts dispars petits a molta velocitat.
+  imatge: {fileID: 0}

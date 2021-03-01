@@ -13,6 +13,7 @@ public class Turret : MonoBehaviour
     public float fireRate;
     private float fireCountdown = 1f;
     public float velRotacio;
+    public float areaDamage;
     public Bales bala;
 
     [Header("Configuració")]
@@ -91,7 +92,7 @@ public class Turret : MonoBehaviour
 
         if (b != null)
         {
-             b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte);
+             b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage);
         }
 
     }
@@ -100,6 +101,7 @@ public class Turret : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, areaDamage);
     }
 
 
