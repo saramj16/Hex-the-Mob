@@ -15,7 +15,8 @@ public class Bales : ScriptableObject
     public float poisonDamage;
     public float posionDuration;
     public float freezeDuration;
-
+    public bool multiBala;
+    public float minArea;
 
     [Header("Configuració")]
     public int damage;

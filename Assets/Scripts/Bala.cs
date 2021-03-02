@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bala : MonoBehaviour
 {
 
-    private tipusBala tb;
     private Transform target;
     private float velocitatBala;
     private GameObject efecteImpacte;
@@ -15,13 +14,14 @@ public class Bala : MonoBehaviour
     private float poisonDamage;
     private float poisonDuration;
     private float freezeDuration;
-
     private float areaDamage;
+    private float minArea;
+    private bool multiBala;
+
     private List<GameObject> targetsArea;
-    public void BalaInit(tipusBala _tb, float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage)
+    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, float _minArea)
     {
-        Debug.Log("Inicialitza dades");
-        tb = _tb;
+        //Debug.Log("Inicialitza dades");
         velocitatBala = _velocitatBala;
         damage = _damage;
         target = _target;
@@ -31,6 +31,8 @@ public class Bala : MonoBehaviour
         freezeDuration = _freezeDuration;
         efecteImpacte = _efecteImpacte;
         areaDamage = _areaDamage;
+        multiBala = _multiBala;
+        minArea = _minArea;
     }
     public void Target(Transform _target) 
     {
@@ -57,21 +59,36 @@ public class Bala : MonoBehaviour
         if (areaDamage > 0)
         {
             // Aqui s'activa el danyo en area
-            if (tipusBala.MultiBala == tb)
+            if (multiBala)
             {
-              /*  for (int i = 0; i < targetsArea.Count; i++)
+              //SHOTGUN
+              for (int i = 0; i < targetsArea.Count; i++)
                 {
-                    // Estem atancat a gass a les bales
+                   // Estem atancat a gass a les bales
                    // GameObject balaGO = (GameObject)Instantiate(this.gameObject.balaPrefab, puntBales.position, puntBales.rotation);
-                    //Bala b = balaGO.GetComponent<Bala>();
-                    Debug.Log("Ataquem als enemics ueueuue " + targetsArea[i].name);
-                }*/
+                   //Bala b = balaGO.GetComponent<Bala>();
+                    Debug.Log("Shotgun " + i);
+                }
             } else {
+                if (poisonDamage > 0)
+                {
+                    //VENOM
+                    Debug.Log("Bala venom");
+                } else
+                {
+                    if (minArea>0)
+                    {
+                        //MORTAR
+                        Debug.Log("Bala mortar");
+                    }
+                }
+                //BEARTRAP && FLAMETHROWER
                 // Fer efecte que toqui i dany als tagrets que hi hagi a l'area
                 for (int i = 0; i < targetsArea.Count; i++)
                 {
-                    ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
-                    e.restaVida(damage);
+                    //ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
+                    //e.restaVida(damage);
+                    Debug.Log("Beartrap o Flamethrower " + i);
                 }
             }
 
@@ -156,7 +173,7 @@ public class Bala : MonoBehaviour
             
             if (Mathf.Abs(dist) < area)
             {
-                Debug.Log("Enemic " + aux[i].name);
+                //Debug.Log("Enemic " + aux[i].name);
                 enemics.Add(aux[i]);
             }
         }

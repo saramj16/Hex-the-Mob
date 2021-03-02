@@ -52,7 +52,13 @@ public class Turret : MonoBehaviour
         //Seleccionar com a objectiu l'enemic més proper
         if (enemicProper != null && distanciaCurta <= range)
         {
-            target = enemicProper.transform;
+            if (bala.minArea > 0 && distanciaCurta < bala.minArea)
+            {
+                target = null;
+            } else
+            {
+                target = enemicProper.transform;
+            }
         }
         else
         {
@@ -87,12 +93,12 @@ public class Turret : MonoBehaviour
     {
 
         //Debug.Log("Dispara");
-        if (tipusBala.MultiBala == bala.tipusbala)
+        if (areaDamage > 0)
         {
             List<GameObject> targetArea = buscaEnemicsArea(areaDamage);
 
-            for (int i = 0; i < targetArea.Count; i++)
-            {
+            //for (int i = 0; i < targetArea.Count; i++)
+            //{
                 // Estem atancat a gass a les bales
                 // GameObject balaGO = (GameObject)Instantiate(this.gameObject.balaPrefab, puntBales.position, puntBales.rotation);
                 //Bala b = balaGO.GetComponent<Bala>();
@@ -101,9 +107,9 @@ public class Turret : MonoBehaviour
 
                 if (b != null)
                 {
-                    b.BalaInit(bala.tipusbala, bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage);
+                    b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea);
                 }
-            }
+            //}
         } else
         {
             GameObject balaGO = (GameObject)Instantiate(bala.balaPrefab, puntBales.position, puntBales.rotation);
@@ -111,7 +117,7 @@ public class Turret : MonoBehaviour
 
             if (b != null)
             {
-                b.BalaInit(bala.tipusbala, bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage);
+                b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea);
             }
         }
 
@@ -131,7 +137,7 @@ public class Turret : MonoBehaviour
 
             if (Mathf.Abs(dist) < area)
             {
-                Debug.Log("Enemic " + aux[i].name);
+                //Debug.Log("Enemic " + aux[i].name);
                 enemics.Add(aux[i]);
             }
         }
@@ -143,6 +149,10 @@ public class Turret : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, range);
         Gizmos.DrawWireSphere(transform.position, areaDamage);
+        if (bala.minArea>0)
+        {
+            Gizmos.DrawWireSphere(transform.position, bala.minArea);
+        }
     }
 
 
