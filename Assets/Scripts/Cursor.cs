@@ -12,7 +12,7 @@ public class Cursor : MonoBehaviour
 
     void Start()
     {
-        top = true;
+        top = false;
         UnityEngine.Cursor.visible = false;
     }
 

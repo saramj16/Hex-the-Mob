@@ -2,27 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CanviarCam : MonoBehaviour
+public class TopView : MonoBehaviour
 {
     public Camera cam1, cam2;
-    public Cursor cursor;
-
+    private List<Turret> turrets;
+    // Start is called before the first frame update
     void Start()
     {
         cam2 = GameObject.Find("Camera").GetComponent<Camera>();
         cam1 = GameObject.Find("Camera Top").GetComponent<Camera>();
-        cam1.enabled = false;
-        cam2.enabled = true;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (cam1.enabled)
         {
-            cursor.top = !cursor.top;
-            cam1.enabled = !cam1.enabled;
-            cam2.enabled = !cam2.enabled;
+            //Obtenir torretes
+
+            //Dibuixar range
         }
     }
-
 }
