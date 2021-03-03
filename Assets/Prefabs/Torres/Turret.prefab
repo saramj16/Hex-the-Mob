@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 6943196429370162299}
   m_Layer: 9
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Torre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,9 +282,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dd358eb552e7864a97d710a2cb94b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nomTorre: 
   range: 1
   fireRate: 1
   velRotacio: 8
+  areaDamage: 0
   bala: {fileID: 0}
   tag_enemic: Enemy
   pivotArma: {fileID: 8708444160249963063}

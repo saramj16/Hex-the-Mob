@@ -19,8 +19,15 @@ public class TopView : MonoBehaviour
         if (cam1.enabled)
         {
             //Obtenir torretes
+            GameObject[] torres = GameObject.FindGameObjectsWithTag("Torre");
 
-            //Dibuixar range
+            for (int i = 0; i < torres.Length; i++)
+            {
+                //Dibuixar range
+                //Gizmos.DrawWireSphere(torres[i].transform.position, torres[i].gameObject.GetComponent<Turret>().range);
+
+            }
+
         }
     }
 }
