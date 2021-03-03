@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb992187e0c3d8346b7bd45bf9df3035, type: 3}
   m_Name: Vortex
   m_EditorClassIdentifier: 
-  bala: {fileID: 11400000, guid: 95293a2b2a5d2a040b2e798ec3021eaa, type: 2}
+  bala: {fileID: 11400000, guid: e3273c38395415940a69692cc0143e3a, type: 2}
   range: 3
-  fireRate: 2
+  areaDamage: 0
+  fireRate: 0.3
   velRotacio: 3
   inWay: 0
   inGround: 1
@@ -26,3 +27,4 @@ MonoBehaviour:
   nom: Vortex
   description: El primer enemic que troba, l'absorbeix i el mata. Recarga extremadament
     lenta en
+  imatge: {fileID: 0}

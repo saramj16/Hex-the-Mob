@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Gun
   m_EditorClassIdentifier: 
   bala: {fileID: 11400000, guid: 027eeefa36be8d745bcd256e16e1eddc, type: 2}
-  range: 5
+  range: 3
+  areaDamage: 0
   fireRate: 3
-  velRotacio: 2
+  velRotacio: 4
   inWay: 0
   inGround: 1
   prefab: {fileID: 3801158729553809960, guid: c969bb2c2243f904f8e9fd6e893b0503, type: 3}
@@ -25,3 +26,4 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Gun
   description: "Torreta est\xE0ndard"
+  imatge: {fileID: 0}

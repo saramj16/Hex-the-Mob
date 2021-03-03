@@ -15,7 +15,7 @@ MonoBehaviour:
   bala: {fileID: 11400000, guid: 1d2750deaa2270e4480f74ea1aae8d8e, type: 2}
   range: 2
   areaDamage: 1
-  fireRate: 2
+  fireRate: 10
   velRotacio: 6
   inWay: 0
   inGround: 1

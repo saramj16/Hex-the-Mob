@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb992187e0c3d8346b7bd45bf9df3035, type: 3}
   m_Name: Golem
   m_EditorClassIdentifier: 
-  bala: {fileID: 11400000, guid: 8e37d36c068fc5941ad01d6c0601f50a, type: 2}
+  bala: {fileID: 11400000, guid: 0207dc732dab5704889c388c1f7799d5, type: 2}
   range: 4
+  areaDamage: 0
   fireRate: 1
   velRotacio: 8
   inWay: 0
@@ -25,3 +26,4 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Golem
   description: Golem que ataca fisicament de molt aprop.
+  imatge: {fileID: 0}

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala: {fileID: 11400000, guid: 95293a2b2a5d2a040b2e798ec3021eaa, type: 2}
   range: 3
-  fireRate: 2
+  areaDamage: 0
+  fireRate: 4
   velRotacio: 3
   inWay: 0
   inGround: 1
@@ -25,3 +26,4 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Push
   description: Projectils que empenyen
+  imatge: {fileID: 0}

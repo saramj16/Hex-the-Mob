@@ -19,7 +19,7 @@ MonoBehaviour:
   multiBala: 0
   minArea: 0
   flameThrower: 1
-  damage: 0
+  damage: 5
   velocitatBala: 70
   efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
     type: 3}

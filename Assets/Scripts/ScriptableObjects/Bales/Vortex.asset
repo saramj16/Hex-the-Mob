@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c096cecda9bae8c4b9a4c91bf148e632, type: 3}
-  m_Name: BalaMultibala
+  m_Name: Vortex
   m_EditorClassIdentifier: 
   pushForce: 0
   poisonDamage: 0
   posionDuration: 0
   freezeDuration: 0
-  multiBala: 1
+  multiBala: 0
   minArea: 0
   flameThrower: 0
-  damage: 20
+  damage: 50
   velocitatBala: 70
   efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
     type: 3}
-  balaPrefab: {fileID: 1109276263877937622, guid: 9b22009ec8ea6a34899be3d61bd82925,
+  balaPrefab: {fileID: 1109276263877937622, guid: 34bee99fb5955fe4fa84ab877b023e64,
     type: 3}

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c096cecda9bae8c4b9a4c91bf148e632, type: 3}
   m_Name: BalaMortar
   m_EditorClassIdentifier: 
-  tipusbala: 0
   pushForce: 0
   poisonDamage: 0
   posionDuration: 0
   freezeDuration: 0
   multiBala: 0
   minArea: 1
-  damage: 50
+  flameThrower: 0
+  damage: 60
   velocitatBala: 70
   efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
     type: 3}

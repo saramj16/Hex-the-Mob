@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c096cecda9bae8c4b9a4c91bf148e632, type: 3}
   m_Name: BalaFreeze
   m_EditorClassIdentifier: 
-  tipusbala: 0
   pushForce: 0
   poisonDamage: 0
   posionDuration: 0
-  freezeDuration: 1
+  freezeDuration: 2
+  multiBala: 0
+  minArea: 0
+  flameThrower: 0
   damage: 15
   velocitatBala: 70
   efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
