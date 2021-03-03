@@ -49,9 +49,11 @@ public class Bala : MonoBehaviour
         {
             targetsArea = buscaEnemicsArea(areaDamage, this.transform.position);
         }
-   
-            
-     
+        Debug.Log(targetsArea.Count);
+
+
+
+
     }
 
 
@@ -90,22 +92,25 @@ public class Bala : MonoBehaviour
                     {
                         //MORTAR
                         Debug.Log("Bala mortar");
-                    }
-                }
-                //BEARTRAP && FLAMETHROWER
-                // Fer efecte que toqui i dany als tagrets que hi hagi a l'area
-                for (int i = 0; i < targetsArea.Count; i++)
-                {
-                    if (flameThrower)
+                    } else
                     {
-                        Debug.Log("Bala flame");
+                        //BEARTRAP && FLAMETHROWER
+                        // Fer efecte que toqui i dany als tagrets que hi hagi a l'area
+                        for (int i = 0; i < targetsArea.Count; i++)
+                        {
+                            if (flameThrower)
+                            {
+                                Debug.Log("Bala flame");
+                            }
+                            else
+                            {
+                                Debug.Log("Beartrap");
+                            }
+                            //ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
+                            //e.restaVida(damage);
+                        }
                     }
-                    else
-                    {
-                        Debug.Log("Beartrap");
-                    }
-                    //ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
-                    //e.restaVida(damage);
+                
                 }
             }
 
