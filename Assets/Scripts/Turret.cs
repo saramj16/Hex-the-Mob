@@ -42,7 +42,8 @@ public class Turret : MonoBehaviour
         foreach(GameObject enemic in enemics)
         {
             float distanciaEnemic = Vector3.Distance(transform.position, enemic.transform.position);
-            if (distanciaEnemic < distanciaCurta)
+            //Comprobem que en cas de MORTAR, hi hagi la distància mínima
+            if ((distanciaEnemic < distanciaCurta && bala.minArea==0) || (distanciaEnemic<distanciaCurta && distanciaEnemic>bala.minArea && bala.minArea>0))
             {
                 distanciaCurta = distanciaEnemic;
                 enemicProper = enemic;
@@ -52,13 +53,9 @@ public class Turret : MonoBehaviour
         //Seleccionar com a objectiu l'enemic més proper
         if (enemicProper != null && distanciaCurta <= range)
         {
-            if (bala.minArea > 0 && distanciaCurta < bala.minArea)
-            {
-                target = null;
-            } else
-            {
-                target = enemicProper.transform;
-            }
+            
+            target = enemicProper.transform;
+            
         }
         else
         {
