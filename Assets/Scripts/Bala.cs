@@ -41,7 +41,16 @@ public class Bala : MonoBehaviour
 
     private void Start()
     {
-        targetsArea = buscaEnemicsArea(areaDamage);
+        if(areaDamage > 0 && (poisonDamage > 0 || minArea > 0))
+        {
+            targetsArea = buscaEnemicsArea(areaDamage, target.position);
+        } else
+        {
+            targetsArea = buscaEnemicsArea(areaDamage, this.transform.position);
+        }
+   
+            
+     
     }
 
 
@@ -160,7 +169,7 @@ public class Bala : MonoBehaviour
     }
 
 
-    private List<GameObject> buscaEnemicsArea(float area)
+    private List<GameObject> buscaEnemicsArea(float area, Vector3 position)
     {
         List<GameObject> enemics = new List<GameObject>();
         GameObject[] aux;
@@ -169,7 +178,7 @@ public class Bala : MonoBehaviour
 
         for(int i = 0; i < aux.Length; i++)
         {
-            float dist = Vector3.Distance(this.transform.position, aux[i].transform.position);
+            float dist = Vector3.Distance(position, aux[i].transform.position);
             
             if (Mathf.Abs(dist) < area)
             {
