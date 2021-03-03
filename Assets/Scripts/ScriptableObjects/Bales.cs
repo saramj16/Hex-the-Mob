@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum tipusBala { Freeze, Push, Poison, MultiBala };
 
 [CreateAssetMenu(fileName = "Nova Bala", menuName ="Bala")] 
 public class Bales : ScriptableObject
 {
-
-    [Header("Tipus bala")]
-    public tipusBala tipusbala;
     //Falta posar els efectes
     public float pushForce;
     public float poisonDamage;
@@ -17,6 +13,7 @@ public class Bales : ScriptableObject
     public float freezeDuration;
     public bool multiBala;
     public float minArea;
+    public bool flameThrower; 
 
     [Header("Configuració")]
     public int damage;

@@ -104,7 +104,7 @@ public class Turret : MonoBehaviour
 
                 if (b != null)
                 {
-                    b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea);
+                    b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea, bala.flameThrower);
                 }
             //}
         } else
@@ -114,7 +114,7 @@ public class Turret : MonoBehaviour
 
             if (b != null)
             {
-                b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea);
+                b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea, bala.flameThrower);
             }
         }
 

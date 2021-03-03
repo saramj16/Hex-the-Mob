@@ -17,9 +17,10 @@ public class Bala : MonoBehaviour
     private float areaDamage;
     private float minArea;
     private bool multiBala;
+    private bool flameThrower;
 
     private List<GameObject> targetsArea;
-    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, float _minArea)
+    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, float _minArea, bool flameThrower)
     {
         //Debug.Log("Inicialitza dades");
         velocitatBala = _velocitatBala;
@@ -95,9 +96,16 @@ public class Bala : MonoBehaviour
                 // Fer efecte que toqui i dany als tagrets que hi hagi a l'area
                 for (int i = 0; i < targetsArea.Count; i++)
                 {
+                    if (flameThrower)
+                    {
+                        Debug.Log("Bala flame");
+                    }
+                    else
+                    {
+                        Debug.Log("Beartrap");
+                    }
                     //ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
                     //e.restaVida(damage);
-                    Debug.Log("Beartrap o Flamethrower " + i);
                 }
             }
 
