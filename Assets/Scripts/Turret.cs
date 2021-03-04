@@ -10,6 +10,7 @@ public class Turret : MonoBehaviour
 
     [Header("Paràmetres")]
     public float range;
+    public float minRange;
     public float fireRate;
     private float fireCountdown = 1f;
     public float velRotacio;
@@ -43,7 +44,7 @@ public class Turret : MonoBehaviour
         {
             float distanciaEnemic = Vector3.Distance(transform.position, enemic.transform.position);
             //Comprobem que en cas de MORTAR, hi hagi la distància mínima
-            if ((distanciaEnemic < distanciaCurta && bala.minArea==0) || (distanciaEnemic<distanciaCurta && distanciaEnemic>bala.minArea && bala.minArea>0))
+            if ((distanciaEnemic < distanciaCurta && minRange==0) || (distanciaEnemic<distanciaCurta && distanciaEnemic> minRange && minRange > 0))
             {
                 distanciaCurta = distanciaEnemic;
                 enemicProper = enemic;
@@ -147,9 +148,9 @@ public class Turret : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position, range);
         Gizmos.DrawWireSphere(transform.position, areaDamage);
-        if (bala.minArea>0)
+        if (minRange > 0)
         {
-            Gizmos.DrawWireSphere(transform.position, bala.minArea);
+            Gizmos.DrawWireSphere(transform.position, minRange);
         }
     }
 

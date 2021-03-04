@@ -12,7 +12,7 @@ public class Bales : ScriptableObject
     public float posionDuration;
     public float freezeDuration;
     public bool multiBala;
-    public float minArea;
+    public bool minArea;
     public bool flameThrower; 
 
     [Header("Configuració")]

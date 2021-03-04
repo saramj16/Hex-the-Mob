@@ -191,6 +191,7 @@ public class UI_Torres : MonoBehaviour
                     Turret t = go.GetComponent<Turret>();
                     t.nomTorre = torres[i].nom;
                     t.range = torres[i].range;
+                    t.minRange = torres[i].minRange;
                     t.areaDamage = torres[i].areaDamage;
                     t.fireRate = torres[i].fireRate;
                     t.velRotacio = torres[i].velRotacio;

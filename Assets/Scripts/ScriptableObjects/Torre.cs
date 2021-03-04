@@ -11,6 +11,9 @@ public class Torre : ScriptableObject
     public float range;
 
     [Range(0, 10)]
+    public float minRange;
+
+    [Range(0, 10)]
     public float areaDamage;
     
     public float fireRate;

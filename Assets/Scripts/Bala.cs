@@ -15,12 +15,12 @@ public class Bala : MonoBehaviour
     private float poisonDuration;
     private float freezeDuration;
     private float areaDamage;
-    private float minArea;
+    private bool minArea;
     private bool multiBala;
     private bool flameThrower;
 
     private List<GameObject> targetsArea;
-    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, float _minArea, bool _flameThrower)
+    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, bool _minArea, bool _flameThrower)
     {
         //Debug.Log("Inicialitza dades");
         velocitatBala = _velocitatBala;
@@ -44,7 +44,7 @@ public class Bala : MonoBehaviour
     void Start()
     {
         //Debug.Log("Entra a l'Start");
-        if(areaDamage > 0 && (poisonDamage > 0 || minArea > 0))
+        if(areaDamage > 0 && (poisonDamage > 0 || minArea))
         {
             targetsArea = buscaEnemicsArea(areaDamage, target.position);
         } else
@@ -87,7 +87,7 @@ public class Bala : MonoBehaviour
                     Debug.Log("Bala venom");
                 } else
                 {
-                    if (minArea > 0)
+                    if (minArea)
                     {
                         //MORTAR
                         Debug.Log("Bala mortar");
