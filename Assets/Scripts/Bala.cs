@@ -51,7 +51,6 @@ public class Bala : MonoBehaviour
         {
             targetsArea = buscaEnemicsArea(areaDamage, this.transform.position);
         }
-        Debug.Log(targetsArea.Count);
 
     }
 
@@ -126,7 +125,6 @@ public class Bala : MonoBehaviour
             //Evitar traspassar enemic
             if (dir.magnitude <= 0.1f)
             {
-                Debug.Log("Dispara crack");
                 //Tenint la referencia de la bala apliquem els efectes definits
                 // SI es 0 no fa res
 
