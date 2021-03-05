@@ -7,7 +7,9 @@ public class CanviarCam : MonoBehaviour
     public Camera cam1, cam2;
     public Cursor cursor;
     GameObject[] torres;
-    GameObject[] ranges;
+    List <GameObject> ranges;
+    int numRanges;
+    public Material rangeMaterial, minRangeMaterial;
     void Start()
     {
         cam2 = GameObject.Find("Camera").GetComponent<Camera>();
@@ -23,37 +25,53 @@ public class CanviarCam : MonoBehaviour
             cursor.top = !cursor.top;
             cam1.enabled = !cam1.enabled;
             cam2.enabled = !cam2.enabled;
-            TopView();
+            ManageTopView();
         }
     }
 
-    void TopView()
+    void ManageTopView()
     {
         //Obtenir torretes
         torres = GameObject.FindGameObjectsWithTag("Torre");
-        
 
         if (cam1.enabled)
         {
-            ranges = new GameObject[torres.Length];
+            numRanges = torres.Length;
+            for (int i = 0; i < torres.Length; i++)
+            {
+                if (torres[i].GetComponent<Turret>().minRange>0)
+                {
+                    numRanges++;
+                }
+            }
+            ranges = new List <GameObject>();
             //Dibuixar ranges
             for (int i = 0; i < torres.Length; i++)
             {
-                Debug.Log("Torres: " +(1+i));
-                ranges[i] = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-                ranges[i].transform.position = torres[i].transform.position;
                 Turret currentTurret = torres[i].GetComponent<Turret>();
-                float currentRange = currentTurret.range;
-                Destroy(ranges[i].GetComponent<CapsuleCollider>());
-                ranges[i].transform.localScale = new Vector3(currentRange,0.1f,currentRange);
+                if (currentTurret.minRange > 0)
+                {
+                    ranges.Add(GameObject.CreatePrimitive(PrimitiveType.Cylinder));
+                    ranges[ranges.Count - 1].transform.position = new Vector3(torres[i].transform.position.x, torres[i].transform.position.y + 0.05f, torres[i].transform.position.z);
+                    Destroy(ranges[ranges.Count - 1].GetComponent<CapsuleCollider>());
+                    ranges[ranges.Count - 1].transform.localScale = new Vector3(currentTurret.minRange, 0.02f, currentTurret.minRange);
+                    ranges[ranges.Count - 1].GetComponent<MeshRenderer>().material = minRangeMaterial;
+                }
+                
+                ranges.Add(GameObject.CreatePrimitive(PrimitiveType.Cylinder));
+                ranges[ranges.Count - 1].transform.position = torres[i].transform.position;
+                Destroy(ranges[ranges.Count - 1].GetComponent<CapsuleCollider>());
+                ranges[ranges.Count - 1].transform.localScale = new Vector3(currentTurret.range, 0.02f, currentTurret.range);
+                ranges[ranges.Count - 1].GetComponent<MeshRenderer>().material = rangeMaterial;
+         
             }
+
 
         } else
         {
             //Esborrar ranges
-            for (int i = 0; i < torres.Length; i++)
+            for (int i = 0; i < numRanges; i++)
             {
-                Debug.Log("Esborrar torre: " + (1 + i));
                 Destroy(ranges[i]);
 
 
