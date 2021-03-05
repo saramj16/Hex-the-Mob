@@ -18,9 +18,9 @@ public class Bala : MonoBehaviour
     private bool minArea;
     private bool multiBala;
     private bool flameThrower;
-
+    private GameObject prefab;
     private List<GameObject> targetsArea;
-    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, bool _minArea, bool _flameThrower)
+    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, bool _minArea, bool _flameThrower, GameObject _prefab)
     {
         //Debug.Log("Inicialitza dades");
         velocitatBala = _velocitatBala;
@@ -35,6 +35,7 @@ public class Bala : MonoBehaviour
         multiBala = _multiBala;
         minArea = _minArea;
         flameThrower = _flameThrower;
+        prefab = _prefab;
     }
     public void Target(Transform _target) 
     {
@@ -75,9 +76,14 @@ public class Bala : MonoBehaviour
               for (int i = 0; i < targetsArea.Count; i++)
                 {
                    // Estem atancat a gass a les bales
-                   // GameObject balaGO = (GameObject)Instantiate(this.gameObject.balaPrefab, puntBales.position, puntBales.rotation);
-                   //Bala b = balaGO.GetComponent<Bala>();
-                    Debug.Log("Shotgun " + i);
+                   GameObject balaGO = (GameObject)Instantiate(prefab, this.transform.position, this.transform.rotation);
+                   Bala b = balaGO.GetComponent<Bala>();
+                    if (b != null)
+                    {
+                        Debug.Log("Shotgun " + i);
+                        b.BalaInit(b.velocitatBala, b.damage, targetsArea[i].transform, b.pushForce, b.poisonDamage, 0, b.freezeDuration, b.efecteImpacte, 0, false, b.minArea, b.flameThrower, b.prefab);
+                    }
+                    
                 }
             } else {
                 if (poisonDamage > 0)
@@ -119,6 +125,7 @@ public class Bala : MonoBehaviour
         } else
         {
             Vector3 dir = target.position - transform.position;
+            Debug.Log(dir);
             float distanceThisFrame = velocitatBala * Time.deltaTime;
             //Debug.Log("Dir " + dir);
 
