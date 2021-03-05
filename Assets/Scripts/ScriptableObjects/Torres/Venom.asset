@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala: {fileID: 11400000, guid: 8e37d36c068fc5941ad01d6c0601f50a, type: 2}
   range: 1
-  areaDamage: 0
+  minRange: 0
+  areaDamage: 1
   fireRate: 0.7
   velRotacio: 3
   inWay: 0

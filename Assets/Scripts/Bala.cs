@@ -45,16 +45,16 @@ public class Bala : MonoBehaviour
     void Start()
     {
         //Debug.Log("Entra a l'Start");
-        if(areaDamage > 0 && (poisonDamage > 0 || minArea))
+        if (areaDamage > 0 && (poisonDamage > 0 || minArea))
         {
             targetsArea = buscaEnemicsArea(areaDamage, target.position);
-        } else
+        }
+        else
         {
             targetsArea = buscaEnemicsArea(areaDamage, this.transform.position);
         }
 
     }
-
 
     // Update is called once per frame
     void Update()
@@ -81,7 +81,7 @@ public class Bala : MonoBehaviour
                     if (b != null)
                     {
                         Debug.Log("Shotgun " + i);
-                        b.BalaInit(b.velocitatBala, b.damage, targetsArea[i].transform, b.pushForce, b.poisonDamage, 0, b.freezeDuration, b.efecteImpacte, 0, false, b.minArea, b.flameThrower, b.prefab);
+                        b.BalaInit(velocitatBala, damage, targetsArea[i].transform, pushForce, poisonDamage, 0, freezeDuration, efecteImpacte, 0, false, minArea, flameThrower, prefab);
                     }
                     
                 }
@@ -89,7 +89,13 @@ public class Bala : MonoBehaviour
                 if (poisonDamage > 0)
                 {
                     //VENOM
-                    Debug.Log("Bala venom");
+                    for (int i = 0; i < targetsArea.Count; i++)
+                    {
+                        Debug.Log("Bala venom: "+(i+1));
+                        //Aplicar efecte VENOM
+                        //targetsArea[i].ActivarVeneno(poisonDuration, poisonDamage, e);
+                    }
+                    
                 } else
                 {
                     if (minArea)
@@ -125,7 +131,6 @@ public class Bala : MonoBehaviour
         } else
         {
             Vector3 dir = target.position - transform.position;
-            Debug.Log(dir);
             float distanceThisFrame = velocitatBala * Time.deltaTime;
             //Debug.Log("Dir " + dir);
 
