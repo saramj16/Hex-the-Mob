@@ -54,14 +54,14 @@ public class CanviarCam : MonoBehaviour
                     ranges.Add(GameObject.CreatePrimitive(PrimitiveType.Cylinder));
                     ranges[ranges.Count - 1].transform.position = new Vector3(torres[i].transform.position.x, torres[i].transform.position.y + 0.05f, torres[i].transform.position.z);
                     Destroy(ranges[ranges.Count - 1].GetComponent<CapsuleCollider>());
-                    ranges[ranges.Count - 1].transform.localScale = new Vector3(currentTurret.minRange, 0.02f, currentTurret.minRange);
+                    ranges[ranges.Count - 1].transform.localScale = new Vector3(currentTurret.minRange*2, 0.02f, currentTurret.minRange*2);
                     ranges[ranges.Count - 1].GetComponent<MeshRenderer>().material = minRangeMaterial;
                 }
                 
                 ranges.Add(GameObject.CreatePrimitive(PrimitiveType.Cylinder));
                 ranges[ranges.Count - 1].transform.position = torres[i].transform.position;
                 Destroy(ranges[ranges.Count - 1].GetComponent<CapsuleCollider>());
-                ranges[ranges.Count - 1].transform.localScale = new Vector3(currentTurret.range, 0.02f, currentTurret.range);
+                ranges[ranges.Count - 1].transform.localScale = new Vector3(currentTurret.range*2, 0.02f, currentTurret.range*2);
                 ranges[ranges.Count - 1].GetComponent<MeshRenderer>().material = rangeMaterial;
          
             }
