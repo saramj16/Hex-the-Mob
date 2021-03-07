@@ -59,7 +59,7 @@ public class MyWindow : EditorWindow
                 o = (GameObject)Instantiate(Resources.Load("CamiPrefab"), position, Quaternion.Euler(90, 0, 0));
                 GameObject[] way = GameObject.FindGameObjectsWithTag("WayEditor");
                 o.transform.SetParent(way[0].transform);
-               // Instantiate(Resources.Load("Waypoint"), position, Quaternion.identity);
+                Instantiate(Resources.Load("Waypoint"), position, Quaternion.identity);
             }
         }
 
