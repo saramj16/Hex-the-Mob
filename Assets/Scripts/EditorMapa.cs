@@ -9,6 +9,14 @@ public class MyWindow : EditorWindow
 
     static float x = 0, y = 0, z = 0;
 
+    GameObject[] ground;
+    GameObject[] way;
+
+    public void Start()
+    {
+        Debug.Log("Entra");
+        
+    }
 
     // Add menu named "My Window" to the Window menu
     [MenuItem("Window/Editor Mapa")]
@@ -16,10 +24,16 @@ public class MyWindow : EditorWindow
     {
         GetWindow<MyWindow>("Editor Mapa");
 
+
     }
 
     void OnGUI()
     {
+
+        GUILayout.Label("Posa l'objecte GROUND i WAY");
+
+ 
+
         GUILayout.Label("Posa les mesures del mapa i crea'l");
         // Caselles per posar el numero de caselles horitzontals i verticals
         h = EditorGUILayout.IntField("Horizontal", h);
@@ -33,17 +47,38 @@ public class MyWindow : EditorWindow
 
         EditorGUILayout.Space();
 
-        GUILayout.Label("Selecciona els hexagons que vulguis convertir en camí");
+        GUILayout.Label("Selecciona els hexagons que vulguis convertir en WAY");
         // Si volen convertir-los en camí
-        if (GUILayout.Button("Converteix en cami"))
+        if (GUILayout.Button("Converteix en WAY"))
         {
             GameObject[] obj = Selection.gameObjects;
             for(int i = 0; i < obj.Length; i++) {
                 Vector3 position = obj[i].gameObject.transform.position;
                 DestroyImmediate(obj[i]);
-                Instantiate(Resources.Load("CamiPrefab"), position, Quaternion.Euler(90, 0, 0));
+                GameObject o;
+                o = (GameObject)Instantiate(Resources.Load("CamiPrefab"), position, Quaternion.Euler(90, 0, 0));
+                GameObject[] way = GameObject.FindGameObjectsWithTag("WayEditor");
+                o.transform.SetParent(way[0].transform);
+               // Instantiate(Resources.Load("Waypoint"), position, Quaternion.identity);
+            }
+        }
 
-                Instantiate(Resources.Load("Waypoint"), position, Quaternion.identity);
+        GUILayout.Label("Selecciona els hexagons que vulguis convertir en GROUND");
+        // Si volen convertir-los en ground
+        if (GUILayout.Button("Converteix en GROUND"))
+        {
+            GameObject[] obj = Selection.gameObjects;
+            for (int i = 0; i < obj.Length; i++)
+            {
+                Vector3 position = obj[i].gameObject.transform.position;
+                DestroyImmediate(obj[i]);
+
+                GameObject o;
+                o = (GameObject)Instantiate(Resources.Load("Hexagon"), position, Quaternion.Euler(90, 0, 0));
+
+                GameObject[] ground = GameObject.FindGameObjectsWithTag("GroundEditor");
+                o.transform.SetParent(ground[0].transform);
+
             }
         }
 
