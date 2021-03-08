@@ -9,9 +9,6 @@ public class MyWindow : EditorWindow
 
     static float x = 0, y = 0, z = 0;
 
-    GameObject[] ground;
-    GameObject[] way;
-
     public void Start()
     {
         Debug.Log("Entra");
@@ -29,10 +26,6 @@ public class MyWindow : EditorWindow
 
     void OnGUI()
     {
-
-        GUILayout.Label("Posa l'objecte GROUND i WAY");
-
- 
 
         GUILayout.Label("Posa les mesures del mapa i crea'l");
         // Caselles per posar el numero de caselles horitzontals i verticals
@@ -105,6 +98,49 @@ public class MyWindow : EditorWindow
             Vector3 position = obj[0].gameObject.transform.position;
             Instantiate(Resources.Load("HexenturmTower"), position, Quaternion.Euler(-90, 0, 0));
 
+        }
+
+
+        EditorGUILayout.Space();
+        GUILayout.Label("Selecciona el hexagon on vulguis posar el Pont");
+        // Per posar la torre de la bruixa
+        if (GUILayout.Button("Posa el Pont"))
+        {
+            GameObject[] obj = Selection.gameObjects;
+
+            Vector3 position = obj[0].gameObject.transform.position;
+           // Instantiate(Resources.Load("HexenturmTower"), position, Quaternion.Euler(-90, 0, 0));
+
+        }
+
+
+
+        EditorGUILayout.Space();
+        GUILayout.Label("Selecciona els hexagons que vulguis moure");
+        // Si volen convertir-los en ground
+        if (GUILayout.Button("Puja els HEXAGONS SELECCIONATS"))
+        {
+            GameObject[] obj = Selection.gameObjects;
+            for (int i = 0; i < obj.Length; i++)
+            {
+                Transform t = obj[i].gameObject.transform;
+
+                obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, 0.15f, 0);
+
+            }
+        }
+
+        // Si volen convertir-los en ground
+        if (GUILayout.Button("Baixa els HEXAGONS SELECCIONATS"))
+        {
+            GameObject[] obj = Selection.gameObjects;
+            for (int i = 0; i < obj.Length; i++)
+            {
+                Transform t = obj[i].gameObject.transform;
+
+                obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, -0.15f, 0);
+
+            }
         }
 
 
