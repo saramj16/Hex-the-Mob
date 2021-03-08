@@ -64,16 +64,23 @@ public class WaveManager : MonoBehaviour
         waveNumber++;
 
         GetWaveList(waveNumber);
-        //Debug.Log("Wave Incoming!");
-        for (int i = 0; i < waveNumber; i++)
+        Debug.Log("Wave Incoming!");
+        StartCoroutine(SpawnEnemy());
+        yield return new WaitForSeconds(0.5f);
+        /*for (int i = 0; i < waveNumber; i++)
         {
-            StartCoroutine(SpawnEnemy());
+            
             yield return new WaitForSeconds(0.5f);
-        }
+        }*/
+
+        StopCoroutine(SpawnEnemy());
+        Debug.Log("Tanquem la corrutina");
     }
 
     void GetWaveList(int waveNumber)
     {
+        enemic.Clear();
+        Debug.Log("No hi ha enemics a la llista: " + enemic.Count);
         enemic = enemyWaves.ListEnemyWave(waveNumber);
     }
 
@@ -81,7 +88,7 @@ public class WaveManager : MonoBehaviour
     {
         for (int i = 0; i < enemic.Count; i++)
         {
-            //Debug.Log("Nom enemic: " + enemic[i].prefab.name);
+            Debug.Log("Nom enemic: " + enemic[i].prefab.name);
             //Fer-ho cada X temps
             Instantiate(enemic[i].prefab, spawnPoint.position, spawnPoint.rotation);
             yield return new WaitForSeconds(2f);

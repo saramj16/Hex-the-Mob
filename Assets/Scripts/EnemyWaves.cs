@@ -6,11 +6,19 @@ public class EnemyWaves : MonoBehaviour
 {
     public List<Enemic> enemic;
 
+    List<Enemic> llistaEnemicsRonda;
+
+    void Start()
+    {
+        llistaEnemicsRonda = new List<Enemic>();
+        //llistaEnemicsRonda.Clear();
+    }
     public List<Enemic> ListEnemyWave(int wave)
     {
         int dificultat = dificultatRonda(wave);
-
-         List<Enemic> llistaEnemicsRonda = new List<Enemic>();
+        Debug.Log("Wave " + wave + " Dificultat: " + dificultat);
+        llistaEnemicsRonda.Clear();
+        Debug.Log("Llista enemics " + llistaEnemicsRonda.Count);
 
         //Debug.LogError("Deixa buit el llistat " + llistaEnemicsRonda.Count);
         // Crear un gestor de waves q en funció de la wave q sigui esculli una dificultat
@@ -18,18 +26,18 @@ public class EnemyWaves : MonoBehaviour
         {
             int index = Random.Range(0, enemic.Count);
             
-            if (dificultat - enemic[index].dificultat< 0)
+            if (dificultat - enemic[index].dificultat >= 0)
             {
-                int x = dificultat - enemic[index].dificultat;
-                //Debug.Log("dificultat menor de 0" + x.ToString());
-                break;
-            } else
-            {
+                Debug.Log("Enemic: " + enemic[index].name + "Dificultat enemic: " + enemic[index].dificultat);
                 llistaEnemicsRonda.Add(enemic[index]);
                 dificultat = dificultat - enemic[index].dificultat;
-                //Debug.Log("dificultat " + dificultat);
+                Debug.Log("Dificultat que queda: " + dificultat);
+
             }
         }
+
+        Debug.Log("Llista enemics a retornar: " + llistaEnemicsRonda.Count);
+
         return llistaEnemicsRonda;
     }
 
