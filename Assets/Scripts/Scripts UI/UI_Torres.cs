@@ -168,20 +168,20 @@ public class UI_Torres : MonoBehaviour
                 // Quan tinguem les torretes definitives amb tots els pivots a baix hem d'activar això
              /*   if (torres[i].inGround)
                 {
-                    position.y = 0;
+                    position.y = 0.4f;
                 }
                 if (torres[i].inWay)
                 {
-                    position.y = -0.6f;
+                    position.y = -0.2f;
                 }*/
                
                 if (torres[i].name == "Gun")
                 {
-                    position.y = 0f;
+                    position.y = 0.4f;
                 }
                 else
                 {
-                    position.y = 0.325f;
+                    position.y = 0.727f;
                 }
 
 
