@@ -11,8 +11,8 @@ public class UI_Upgrade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-   
         titol.text = "Upgrade " + torreUpgrade.GetComponent<Turret>().nomTorre + "?";
+        Debug.Log("Titol " + titol.text);
 
     }
     // Update is called once per frame
@@ -23,8 +23,9 @@ public class UI_Upgrade : MonoBehaviour
 
     public void OmpleTorreUpgrade(GameObject torre)
     {
-        Debug.Log("Omple la torre");
+        Debug.Log("Omple la torre " + torre.name);
         torreUpgrade = torre;
+
     }
 
     public void OnClickYes()
@@ -35,6 +36,7 @@ public class UI_Upgrade : MonoBehaviour
         Debug.Log("Actualitza torre " + torreUpgrade.name);
 
         torreUpgrade.GetComponent<Turret>().UpgradeTorre();
+        this.gameObject.SetActive(false);
     }
 
     public void OnClickNo()

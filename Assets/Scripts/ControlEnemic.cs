@@ -16,7 +16,7 @@ public class ControlEnemic : MonoBehaviour
 
     public GameObject torre;
     public List<Enemic> enemic = new List<Enemic>();
-    public string name;
+    public string nomAux;
 
     private bool final;
     private bool ataquem;
@@ -28,12 +28,12 @@ public class ControlEnemic : MonoBehaviour
         ataquem = false;
         freeze = false;
         target = Waypoints.points[0];
-        name = this.gameObject.name;
+        nomAux = this.gameObject.name;
         for (int i = 0; i < enemic.Count; i++)
         {
-            name = name.Replace("(Clone)", string.Empty);
+            nomAux = nomAux.Replace("(Clone)", string.Empty);
             //Debug.Log("Nom1 " + name + " Nom2 " + enemic[i].prefab.name);
-            if (enemic[i].prefab.name == name)
+            if (enemic[i].prefab.name == nomAux)
             {
                 //Debug.Log("Mira que funcioni");
                 vida = enemic[i].vida;

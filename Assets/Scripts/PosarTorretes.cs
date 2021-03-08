@@ -190,17 +190,17 @@ public class PosarTorretes : MonoBehaviour
         LayerMask mask = LayerMask.GetMask("Torre");
 
         Vector3 aux = g.transform.position;
-        aux.y = -2f;
+        aux.y = 0f;
         if (Physics.Raycast(aux, g.transform.forward * 10f,  Mathf.Infinity, mask))
         {
-            Debug.DrawRay(aux, g.transform.forward * 10f, Color.blue, 10f);
-            Debug.Log("Ha Xocat contra una torre");
+            //Debug.DrawRay(aux, g.transform.forward * 10f, Color.blue, 10f);
+            //Debug.Log("Ha Xocat contra una torre");
             return false;
         }
         else
         {
-            Debug.DrawRay(aux, g.transform.forward * 10f, Color.red, 10f);
-            Debug.Log("No ha xocat contra res");
+            //Debug.DrawRay(aux, g.transform.forward * 10f, Color.red, 10f);
+            //Debug.Log("No ha xocat contra res");
             return true;
         }
        
@@ -215,7 +215,7 @@ public class PosarTorretes : MonoBehaviour
         Vector3 aux = casella.transform.position;
         aux.y = -2f;
         RaycastHit hit;
-        if (Physics.Raycast(aux, -casella.transform.forward * 10f, out hit, Mathf.Infinity, mask))
+        if (Physics.Raycast(aux, casella.transform.forward * 10f, out hit, Mathf.Infinity, mask))
         {
             return hit.collider.gameObject;
         }
