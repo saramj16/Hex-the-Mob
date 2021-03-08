@@ -93,21 +93,29 @@ public class Bala : MonoBehaviour
                     {
                         Debug.Log("Bala venom: "+(i+1));
                         //Aplicar efecte VENOM
-                        //targetsArea[i].ActivarVeneno(poisonDuration, poisonDamage, e);
+                        ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
+                        e.ActivarVeneno(poisonDuration, poisonDamage, e);
                     }
                     
                 } else
                 {
                     if (minArea)
                     {
-                        //MORTAR
-                        Debug.Log("Bala mortar");
+                        for (int i = 0; i < targetsArea.Count; i++)
+                        {
+                            //MORTAR
+                            Debug.Log("Bala mortar");
+                            ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
+                            e.restaVida(damage);
+                        }
                     } else
                     {
                         //BEARTRAP && FLAMETHROWER
                         // Fer efecte que toqui i dany als tagrets que hi hagi a l'area
                         for (int i = 0; i < targetsArea.Count; i++)
                         {
+                            ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
+                            e.restaVida(damage);
                             if (flameThrower)
                             {
                                 Debug.Log("Bala flame");
@@ -116,8 +124,6 @@ public class Bala : MonoBehaviour
                             {
                                 Debug.Log("Beartrap");
                             }
-                            //ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
-                            //e.restaVida(damage);
                         }
                     }
                 
