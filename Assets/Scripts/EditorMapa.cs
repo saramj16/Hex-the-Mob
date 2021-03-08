@@ -49,7 +49,7 @@ public class MyWindow : EditorWindow
                 Vector3 position = obj[i].gameObject.transform.position;
                 DestroyImmediate(obj[i]);
                 GameObject o;
-                o = (GameObject)Instantiate(Resources.Load("CamiPrefab"), position, Quaternion.Euler(90, 0, 0));
+                o = (GameObject)Instantiate(Resources.Load("CamiPrefab"), position, Quaternion.Euler(270, 0, 0));
                 GameObject[] way = GameObject.FindGameObjectsWithTag("WayEditor");
                 o.transform.SetParent(way[0].transform);
                 Instantiate(Resources.Load("Waypoint"), position, Quaternion.identity);
@@ -67,7 +67,7 @@ public class MyWindow : EditorWindow
                 DestroyImmediate(obj[i]);
 
                 GameObject o;
-                o = (GameObject)Instantiate(Resources.Load("Hexagon"), position, Quaternion.Euler(90, 0, 0));
+                o = (GameObject)Instantiate(Resources.Load("Hexagon"), position, Quaternion.Euler(270, 0, 0));
 
                 GameObject[] ground = GameObject.FindGameObjectsWithTag("GroundEditor");
                 o.transform.SetParent(ground[0].transform);
@@ -125,7 +125,8 @@ public class MyWindow : EditorWindow
             {
                 Transform t = obj[i].gameObject.transform;
 
-                obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, 0.15f, 0);
+                obj[i].gameObject.transform.localScale = obj[i].gameObject.transform.localScale + new Vector3(0, 0, 3f);
+                //obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, 0.15f, 0);
 
             }
         }
@@ -137,8 +138,8 @@ public class MyWindow : EditorWindow
             for (int i = 0; i < obj.Length; i++)
             {
                 Transform t = obj[i].gameObject.transform;
-
-                obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, -0.15f, 0);
+                obj[i].gameObject.transform.localScale = obj[i].gameObject.transform.localScale - new Vector3(0, 0, 3f);
+                //obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, -0.15f, 0);
 
             }
         }
