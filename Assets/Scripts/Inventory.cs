@@ -42,7 +42,7 @@ public class Inventory
                 return i;
             }
         }
-        Debug.Log("Element no existent");
+        //Debug.Log("Element no existent");
         return 0;
 
     }
@@ -82,20 +82,20 @@ public class Inventory
         int i = elemPos(item1);
         int j = elemPos(item2);
         //Debug.Log("Element: " + items[i].elem + "   Amount: " + items[i].amount);
-        //Debug.Log("Element: " + items[j].elem + "   Amount: " + items[j].amount);
+       // Debug.Log("Element: " + items[j].elem + "   Amount: " + items[j].amount);
         if (items[i].amount == 0 || items[j].amount == 0 || items[i].amount - q1 < 0 || items[j].amount - q2 < 0)
         {
             return false;
         } else
         {
-            //Debug.Log("Restem elements, return true");
+           // Debug.Log("Restem elements, return true");
 
             items[i].amount -= q1;
-            //Debug.Log("Element: " + items[i].elem + "   Amount: " + items[i].amount);
+          //  Debug.Log("Element: " + items[i].elem + "   Amount: " + items[i].amount);
 
 
             items[j].amount -= q2;
-            //Debug.Log("Element: " + items[j].elem + "   Amount: " + items[j].amount);
+           // Debug.Log("Element: " + items[j].elem + "   Amount: " + items[j].amount);
             return true;
         }
     }

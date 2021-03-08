@@ -78,7 +78,7 @@ public class PosarTorretes : MonoBehaviour
             GameObject bridge = buscaBridge(position);
 
             //Millorar el pont X
-            Debug.Log("Millorem el pont " + bridge.name);
+            UI_RepareBridge.GetComponent<UI_RepareBridge>().guardaInventari(inventari);
             UI_RepareBridge.GetComponent<UI_RepareBridge>().OmpleBridge(bridge);
             UI_RepareBridge.SetActive(true);
 
