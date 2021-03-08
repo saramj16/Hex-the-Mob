@@ -18,9 +18,14 @@ public class ControlEnemic : MonoBehaviour
     public List<Enemic> enemic = new List<Enemic>();
     public string name;
 
+    private bool final;
+    private bool ataquem;
+
     // Start is called before the first frame update
     void Start()
     {
+        final = false;
+        ataquem = false;
         freeze = false;
         target = Waypoints.points[0];
         name = this.gameObject.name;
@@ -44,16 +49,25 @@ public class ControlEnemic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( freeze == false)
+        if(freeze == false)
         {
-            Vector3 dir = target.position - transform.position;
-            transform.Translate(dir.normalized * velocitat * Time.deltaTime, Space.World);
-
-            if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+            if(ataquem == true)
             {
-                GetNextWaypoint();
+                AtacaTorre();
+            } else
+            {
+                Vector3 dir = target.position - transform.position;
+                transform.Translate(dir.normalized * velocitat * Time.deltaTime, Space.World);
+
+                if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+                {
+                    GetNextWaypoint();
+                }
             }
+
         }
+
+        
 
     }
 
@@ -61,11 +75,20 @@ public class ControlEnemic : MonoBehaviour
     {
         if (waypointIndex >= Waypoints.points.Length - 1)
         {
+              
+            if(final == false)
+            {
+                VesAlWayPointAtac();
+                final = true;
+            }
+       
             //Destroy(gameObject);
             //Hem d'atacar a la torre
-            //Debug.Log("Ataquem a la torre");
+
             //Ho hem de cirdar cada 5 segons
-            AtacaTorre();
+            // Buscar el seu nou waypoint
+
+
             //Invoke("AtacaTorre", 3.0f);
             return;
         }
@@ -89,6 +112,24 @@ public class ControlEnemic : MonoBehaviour
             Debug.Log("Ja estas makuina");
         }
     }*/
+
+    void ActivarAtacEnemic()
+    {
+        ataquem = true;
+    }
+
+    void VesAlWayPointAtac()
+    {
+
+        Debug.Log("Va al WayPoint");
+        GameObject[] waypointAtac = GameObject.FindGameObjectsWithTag("WayPointAtac");
+
+        int random = Random.Range(0, waypointAtac.Length);
+
+        target = waypointAtac[random].transform;
+
+        Invoke("ActivarAtacEnemic", 2f);
+    }
     public void ActivarVeneno(float poisonDuration, float poisonDamage, ControlEnemic e)
     {
         //Debug.Log("Activem corrutina");
