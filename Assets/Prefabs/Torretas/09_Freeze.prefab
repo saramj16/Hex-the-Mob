@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4657590439307746009}
   - component: {fileID: 152344199142218393}
   - component: {fileID: 2276352677326131797}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 4955950474908832639}
   - component: {fileID: 7950334367144949073}
   - component: {fileID: 7635489353896835639}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 5171642643177650806}
   - component: {fileID: 5171642643162447670}
   - component: {fileID: 5171642643162334870}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ice_Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4933,7 +4933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4634174228303544119}
   - component: {fileID: 8149076356906581578}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 09_Freeze
   m_TagString: Torre
   m_Icon: {fileID: 0}

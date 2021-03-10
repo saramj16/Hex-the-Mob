@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 707825999728403851}
   - component: {fileID: 5809507808711748223}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 02_Push
   m_TagString: Torre
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 3586459899072144747}
   - component: {fileID: 7742348177569729537}
   - component: {fileID: 6773944351978725136}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 1807695191085871720}
   - component: {fileID: 4166695169126325388}
   - component: {fileID: 1772860728034884662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 666043207194509413}
   - component: {fileID: 5440466180355850277}
   - component: {fileID: 6199888390156781801}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,6 +371,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wind_Directional
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709618694944631068, guid: 84b19f95ca762484bb18f72174574e52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709871045534693168, guid: 84b19f95ca762484bb18f72174574e52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5710172539494502518, guid: 84b19f95ca762484bb18f72174574e52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84b19f95ca762484bb18f72174574e52, type: 3}

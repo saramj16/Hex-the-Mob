@@ -16,9 +16,12 @@ public class PosarTorretes : MonoBehaviour
     private bool improveWay;
     private bool improveGround;
     private GameObject terrenyTorre;
+
+    private GameObject torreCollisionada;
     // Start is called before the first frame update
     void Start()
     {
+        torreCollisionada = null;
         improveGround = false;
         improveWay = false;
         terrenyTorre = null;
@@ -47,23 +50,37 @@ public class PosarTorretes : MonoBehaviour
 
             if (improveGround == true)
             {
-                //Millorar Torre
-                GameObject g = torreDeCasella(terrenyTorre);
-                UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
-                UI_Upgrade.SetActive(true);
-                //Debug.Log("Millorar Torre " + g.name);
-                improveGround = false;
-                terrenyTorre = null;
+                if(torreCollisionada.GetComponent<Turret>().level < 3)
+                {
+                    //Millorar Torre
+                    GameObject g = torreDeCasella(terrenyTorre);
+                    UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
+                    UI_Upgrade.SetActive(true);
+                    //Debug.Log("Millorar Torre " + g.name);
+                    improveGround = false;
+                    terrenyTorre = null;
+                } else
+                {
+                    Debug.Log("Nivell màxim de la torreta");
+                }
+
             }
 
             if(improveWay == true)
             {
-                GameObject g = torreDeCasella(terrenyTorre);
-                UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
-                UI_Upgrade.SetActive(true);
-                Debug.Log("Millorar Torre " + g.name);
-                improveWay = false;
-                terrenyTorre = null;
+                if (torreCollisionada.GetComponent<Turret>().level < 3)
+                {
+                    GameObject g = torreDeCasella(terrenyTorre);
+                    UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
+                    UI_Upgrade.SetActive(true);
+                    Debug.Log("Millorar Torre " + g.name);
+                    improveWay = false;
+                    terrenyTorre = null;
+                }
+                else
+                {
+                    Debug.Log("Nivell màxim de la torreta");
+                }
             }
 
         }
@@ -195,12 +212,15 @@ public class PosarTorretes : MonoBehaviour
 
         LayerMask mask = LayerMask.GetMask("Torre");
 
+        RaycastHit hit;
+
         Vector3 aux = g.transform.position;
-        aux.y = 0f;
-        if (Physics.Raycast(aux, g.transform.forward * 10f,  Mathf.Infinity, mask))
+        aux.y = -2f;
+        if (Physics.Raycast(aux, g.transform.forward * 10f, out hit,  Mathf.Infinity, mask))
         {
             Debug.DrawRay(aux, g.transform.forward * 10f, Color.blue, 10f);
             Debug.Log("Ha Xocat contra una torre");
+            torreCollisionada = hit.collider.gameObject;
             return false;
         }
         else

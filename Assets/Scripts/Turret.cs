@@ -16,6 +16,7 @@ public class Turret : MonoBehaviour
     public float velRotacio;
     public float areaDamage;
     public Bales bala;
+    public int level;
 
     [Header("Configuració")]
 
@@ -113,6 +114,8 @@ public class Turret : MonoBehaviour
     public void UpgradeTorre()
     {
         // Aqui canviem el que sigui
+        Debug.Log("Millorem torre");
+        level++;
         range += 0.2f;
 
     }

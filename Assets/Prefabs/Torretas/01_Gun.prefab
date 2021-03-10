@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7688563022997863300}
   - component: {fileID: 4620995705264283050}
   - component: {fileID: 5152932692348572364}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7986927455561757218}
   - component: {fileID: 3200209795019027042}
   - component: {fileID: 3594834938713324206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7943141447969953740}
   - component: {fileID: 3535161000860961153}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 01_Gun
   m_TagString: Torre
   m_Icon: {fileID: 0}
@@ -271,6 +271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Water_Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428689591200583460, guid: 42d5671ca026e254dbf6b1b1e838e23a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42d5671ca026e254dbf6b1b1e838e23a, type: 3}

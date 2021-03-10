@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7896548853898265865}
   - component: {fileID: 5304786018419230624}
   - component: {fileID: 5111915092767980518}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tapa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7046499945071658888}
   - component: {fileID: 2554697346831697864}
   - component: {fileID: 4539097623884680964}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 7398422546192778643}
   - component: {fileID: 7668807501202258147}
   - component: {fileID: -5289689644377653605}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 11_Vortex
   m_TagString: Torre
   m_Icon: {fileID: 0}
@@ -251,6 +251,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vortex_Particles
       objectReference: {fileID: 0}
+    - target: {fileID: 2633554100531833129, guid: 590ca540f657eb74daf896c238eb1fcd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2633554100531833134, guid: 590ca540f657eb74daf896c238eb1fcd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -305,6 +310,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7759948945842229811, guid: 590ca540f657eb74daf896c238eb1fcd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760206794025028639, guid: 590ca540f657eb74daf896c238eb1fcd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760502790158281561, guid: 590ca540f657eb74daf896c238eb1fcd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 590ca540f657eb74daf896c238eb1fcd, type: 3}

@@ -196,6 +196,7 @@ public class UI_Torres : MonoBehaviour
                     t.fireRate = torres[i].fireRate;
                     t.velRotacio = torres[i].velRotacio;
                     t.bala = torres[i].bala;
+                    t.level = torres[i].level;
                     
                 }
                 cursor.top = false;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 93348885425354589}
   - component: {fileID: 93348885425354590}
   - component: {fileID: 1963897075587427383}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 04_BearTrap
   m_TagString: Torre
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6664951621791321928}
   - component: {fileID: 3702325100392595756}
   - component: {fileID: 8832413899309980162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 1741366573205261606}
   - component: {fileID: 158012661089850129}
   - component: {fileID: 2203729639475845710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 9086971979996761363}
   - component: {fileID: 9086971979996761365}
   - component: {fileID: 9086971979996761364}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trap_Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

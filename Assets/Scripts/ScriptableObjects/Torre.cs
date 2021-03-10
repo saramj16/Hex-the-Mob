@@ -37,6 +37,7 @@ public class Torre : ScriptableObject
     public string nom;
     public string description;
     public Sprite imatge;
+    public int level;
 
 
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 589005098412854219}
   - component: {fileID: 589005098397650571}
   - component: {fileID: 589005098397693739}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire_Cauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4774,7 +4774,7 @@ GameObject:
   - component: {fileID: 6550654625774902424}
   - component: {fileID: 1753782906495573208}
   - component: {fileID: 422413452492674068}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4855,7 +4855,7 @@ GameObject:
   - component: {fileID: 4259158985370454199}
   - component: {fileID: 5936340435418597931}
   - component: {fileID: 629800817558067362}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4935,7 +4935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6486424362729208182}
   - component: {fileID: -3736854100742108499}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 03_Shotgun
   m_TagString: Torre
   m_Icon: {fileID: 0}
@@ -4982,7 +4982,7 @@ GameObject:
   - component: {fileID: 6741556495201605917}
   - component: {fileID: 6741556495201605922}
   - component: {fileID: 6741556495201605923}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TorchBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5061,7 +5061,7 @@ GameObject:
   - component: {fileID: 6741556496641179581}
   - component: {fileID: 6741556496641179586}
   - component: {fileID: 6741556496641179587}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BaseFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5140,7 +5140,7 @@ GameObject:
   - component: {fileID: 8146101605612168594}
   - component: {fileID: 8146101605631566034}
   - component: {fileID: 8146101605631596914}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire_Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}

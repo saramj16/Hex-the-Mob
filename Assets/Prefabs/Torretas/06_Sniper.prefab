@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9052008853407027319}
   - component: {fileID: 6272778014969034329}
   - component: {fileID: 5813748793720895807}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 935930020285498650}
   - component: {fileID: 1030564658761911438}
   - component: {fileID: 1024428000862789734}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SubEmitter death spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4887,7 +4887,7 @@ GameObject:
   - component: {fileID: 928502909225211820}
   - component: {fileID: 1023450878587097456}
   - component: {fileID: 1023226533259005264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lightning_Particle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9644,7 +9644,7 @@ GameObject:
   - component: {fileID: 1023248875429737506}
   - component: {fileID: 1024111101646794278}
   - component: {fileID: 965143595979584126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle attractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14404,7 +14404,7 @@ GameObject:
   - component: {fileID: 928355702702098620}
   - component: {fileID: 903542445283708258}
   - component: {fileID: 909742320515875242}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: target Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14483,7 +14483,7 @@ GameObject:
   - component: {fileID: 928337659575936430}
   - component: {fileID: 1022457969089791662}
   - component: {fileID: 1024241474455278562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SubEmitter death spark cross
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19295,7 +19295,7 @@ GameObject:
   - component: {fileID: 3318023243520709668}
   - component: {fileID: 583428801026146567}
   - component: {fileID: 1743000539645347878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19375,7 +19375,7 @@ GameObject:
   - component: {fileID: 8789677881122576849}
   - component: {fileID: 4270851263998744977}
   - component: {fileID: 2796482576583381341}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19454,7 +19454,7 @@ GameObject:
   - component: {fileID: 7743186100143656169}
   - component: {fileID: 4073318573234054593}
   - component: {fileID: 8429833685117554900}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Discos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19532,7 +19532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8725658638835235903}
   - component: {fileID: -5350948037130374396}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 06_Sniper
   m_TagString: Torre
   m_Icon: {fileID: 0}
