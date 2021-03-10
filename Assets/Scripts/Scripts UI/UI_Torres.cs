@@ -166,39 +166,29 @@ public class UI_Torres : MonoBehaviour
 
 
                 // Quan tinguem les torretes definitives amb tots els pivots a baix hem d'activar això
-             /*   if (torres[i].inGround)
+               if (torres[i].inGround)
                 {
                     position.y = 0.4f;
                 }
                 if (torres[i].inWay)
                 {
-                    position.y = -0.2f;
-                }*/
-               
-                if (torres[i].name == "Gun")
-                {
-                    position.y = 0.4f;
+                    position.y = 0.23f;
                 }
-                else
-                {
-                    position.y = 0.727f;
-                }
-
-
+  
                 //Hem de restar els recurosos, i en cas que no tingui els suficients no posar la torreta
                 //La torreta ha de tenir els Items q gasta
                 bool error = inventari.spendResources(torres[i].element1, torres[i].quantiatElement1, torres[i].element2, torres[i].quantitatElement2);
 
-                if (error == false)
+                if (error == true)
                 {
                    //Debug.Log("Hi ha hagut un error");
-                } else
-                {
                     //Debug.Log("Posem la torre");
                     inventory.RefreshInventoryItems();
                     GameObject go = Instantiate(torres[i].prefab, position, Quaternion.identity);
-                    
-                    Turret t = go.GetComponent<Turret>();
+
+                    Turret t = go.AddComponent<Turret>();
+                    t = go.GetComponent<Turret>();
+                   
                     t.nomTorre = torres[i].nom;
                     t.range = torres[i].range;
                     t.minRange = torres[i].minRange;

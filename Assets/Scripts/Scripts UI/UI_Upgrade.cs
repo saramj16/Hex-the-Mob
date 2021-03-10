@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UI_Upgrade : MonoBehaviour
 {
 
-    GameObject torreUpgrade = null;
+    GameObject torreUpgrade;
     public Text titol;
     // Start is called before the first frame update
     void Start()

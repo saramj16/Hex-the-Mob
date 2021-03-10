@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala: {fileID: 11400000, guid: 3f39e31ffdcb9b64c93503e7446d4843, type: 2}
   range: 1
+  minRange: 0
   areaDamage: 1
   fireRate: 0.5
   velRotacio: 6
   inWay: 0
   inGround: 1
-  prefab: {fileID: 8708444162131765717, guid: 22f4f67df87d8c241ba97bfd8a1b50a0, type: 3}
+  prefab: {fileID: 5859104207941510092, guid: 7e1058ddeddbf6747ad4e69f3bdcd13a, type: 3}
   element1: 2
   quantiatElement1: 1
   element2: 2

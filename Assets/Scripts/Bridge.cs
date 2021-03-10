@@ -13,6 +13,8 @@ public class Bridge : MonoBehaviour
     public Item.Element element2;
     public int quantitat2;
 
+    public bool arreglat = false;
+
     // Start is called before the first frame update
 
     public void ReparaPont(Inventory inventari)
@@ -30,5 +32,10 @@ public class Bridge : MonoBehaviour
         }
         
 
+    }
+
+    public void PontArreglat()
+    {
+        arreglat = true;
     }
 }

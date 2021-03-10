@@ -16,6 +16,11 @@ public class UI_RepareBridge : MonoBehaviour
         titol.text = "Repare " + bridge.name + "?"; ;
     }
 
+    public void CanviaNom(string nom)
+    {
+        titol.text = "Repare " + nom + "?"; ;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -39,6 +44,7 @@ public class UI_RepareBridge : MonoBehaviour
       //  Debug.Log("Ha clickat yes");
       
         bridge.GetComponent<Bridge>().ReparaPont(inventari);
+        bridge.GetComponent<Bridge>().PontArreglat();
 
         // Actualitza el q sigui i close
       //  Debug.Log("Repara bridge " + bridge.name);

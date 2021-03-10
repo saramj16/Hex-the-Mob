@@ -76,13 +76,13 @@ public class PosarTorretes : MonoBehaviour
 
             position.y = 0;
             GameObject bridge = buscaBridge(position);
-
-            //Millorar el pont X
-            UI_RepareBridge.GetComponent<UI_RepareBridge>().guardaInventari(inventari);
-            UI_RepareBridge.GetComponent<UI_RepareBridge>().OmpleBridge(bridge);
-            UI_RepareBridge.SetActive(true);
-
-
+            if(bridge.GetComponent<Bridge>().arreglat == false)
+            {
+                //Millorar el pont X
+                UI_RepareBridge.GetComponent<UI_RepareBridge>().guardaInventari(inventari);
+                UI_RepareBridge.GetComponent<UI_RepareBridge>().OmpleBridge(bridge);
+                UI_RepareBridge.SetActive(true);
+            }
         }
 
 
@@ -96,22 +96,28 @@ public class PosarTorretes : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("Bridge") != null)
         {
             ponts = GameObject.FindGameObjectsWithTag("Bridge");
+            Debug.Log("Hi ha " + ponts.Length + " ponts");
         } else
         {
             ponts = null;
         }
             
 
+
         float minDist = Mathf.Infinity;
 
         //Debug.Log("Terreny Length" + terreny.Length);
         for (int i = 0; i < ponts.Length; i++)
         {
-            float dist = Vector3.Distance(ponts[i].transform.position, position);
+            float dist = Vector3.Distance(ponts[i].transform.GetChild(0).transform.position, position);
+            dist = Mathf.Abs(dist);
+            Debug.Log("DISTANCIA: " + dist);
             if (dist < minDist)
             {
+                    Debug.Log("Entra aqui, DISTANCIA: " + dist);
                     bridge = ponts[i];
                     minDist = dist;
+                    UI_RepareBridge.GetComponent<UI_RepareBridge>().CanviaNom(ponts[i].name);
              }
 
         }
@@ -193,14 +199,14 @@ public class PosarTorretes : MonoBehaviour
         aux.y = 0f;
         if (Physics.Raycast(aux, g.transform.forward * 10f,  Mathf.Infinity, mask))
         {
-            //Debug.DrawRay(aux, g.transform.forward * 10f, Color.blue, 10f);
-            //Debug.Log("Ha Xocat contra una torre");
+            Debug.DrawRay(aux, g.transform.forward * 10f, Color.blue, 10f);
+            Debug.Log("Ha Xocat contra una torre");
             return false;
         }
         else
         {
-            //Debug.DrawRay(aux, g.transform.forward * 10f, Color.red, 10f);
-            //Debug.Log("No ha xocat contra res");
+            Debug.DrawRay(aux, g.transform.forward * 10f, Color.red, 10f);
+            Debug.Log("No ha xocat contra res");
             return true;
         }
        
