@@ -29,3 +29,4 @@ MonoBehaviour:
   description: No pot disparar molt aprop seu.oba, l'absorbeix i el mata. Recarga
     extremadament lenta en
   imatge: {fileID: 0}
+  level: 1

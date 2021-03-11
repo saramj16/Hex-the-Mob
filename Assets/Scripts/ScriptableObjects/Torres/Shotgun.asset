@@ -28,3 +28,4 @@ MonoBehaviour:
   nom: Shotgun
   description: "Diversos projectils a poca dist\xE0ncia"
   imatge: {fileID: 0}
+  level: 1

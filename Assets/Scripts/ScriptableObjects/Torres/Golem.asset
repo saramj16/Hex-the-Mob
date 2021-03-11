@@ -28,3 +28,4 @@ MonoBehaviour:
   nom: Golem
   description: Golem que ataca fisicament de molt aprop.
   imatge: {fileID: 0}
+  level: 1

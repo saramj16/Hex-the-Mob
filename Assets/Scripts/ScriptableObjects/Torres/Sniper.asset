@@ -29,3 +29,4 @@ MonoBehaviour:
   description: Un dispar que atravessa a multiples enemics.oba, l'absorbeix i el
     mata. Recarga extremadament lenta en
   imatge: {fileID: 0}
+  level: 1

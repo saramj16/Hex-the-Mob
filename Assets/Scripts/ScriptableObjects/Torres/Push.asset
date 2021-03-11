@@ -28,3 +28,4 @@ MonoBehaviour:
   nom: Push
   description: Projectils que empenyen
   imatge: {fileID: 0}
+  level: 1

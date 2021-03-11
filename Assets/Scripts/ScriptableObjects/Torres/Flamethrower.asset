@@ -28,3 +28,4 @@ MonoBehaviour:
   nom: Flamethrower
   description: "Fa mal constant als enemics que te a l'abast de les flamesa dist\xE0ncia"
   imatge: {fileID: 0}
+  level: 1

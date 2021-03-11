@@ -28,3 +28,4 @@ MonoBehaviour:
   nom: Gun
   description: "Torreta est\xE0ndard"
   imatge: {fileID: 0}
+  level: 1

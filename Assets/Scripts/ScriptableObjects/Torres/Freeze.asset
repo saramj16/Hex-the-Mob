@@ -29,3 +29,4 @@ MonoBehaviour:
   description: Congela temporalment a un enemic.ba, l'absorbeix i el mata. Recarga
     extremadament lenta en
   imatge: {fileID: 0}
+  level: 1

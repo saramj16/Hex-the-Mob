@@ -29,3 +29,4 @@ MonoBehaviour:
   description: "Va treient vida despr\xE9s d'impactar.a, l'absorbeix i el mata. Recarga
     extremadament lenta en"
   imatge: {fileID: 0}
+  level: 1

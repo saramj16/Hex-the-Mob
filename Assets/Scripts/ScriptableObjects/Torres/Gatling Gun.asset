@@ -28,3 +28,4 @@ MonoBehaviour:
   nom: Gatling Gun
   description: Molts dispars petits a molta velocitat.
   imatge: {fileID: 0}
+  level: 1
