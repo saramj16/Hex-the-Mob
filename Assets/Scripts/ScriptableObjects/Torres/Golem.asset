@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Golem
   m_EditorClassIdentifier: 
   bala: {fileID: 11400000, guid: 0207dc732dab5704889c388c1f7799d5, type: 2}
-  range: 4
+  range: 1
   minRange: 0
   areaDamage: 0
   fireRate: 1
   velRotacio: 8
-  inWay: 0
-  inGround: 1
+  inWay: 1
+  inGround: 0
   prefab: {fileID: 8088610021868220025, guid: 3c78c5ccea5eebc489d8856fe7d9433c, type: 3}
   element1: 3
   quantiatElement1: 1
