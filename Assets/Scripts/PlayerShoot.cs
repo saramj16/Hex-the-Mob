@@ -11,6 +11,15 @@ public class PlayerShoot : MonoBehaviour
 
     public Inventory inventari;
     public UI_Inventory inventory;
+
+    [SerializeField]
+    [Range(0.5f, 1.5f)]
+    private float fireRate=1;
+    private float timer;
+
+    [SerializeField]
+    private Transform firePoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,41 +32,42 @@ public class PlayerShoot : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-
     {
-        //Debug.DrawRay(cam.transform.position, cam.transform.forward, Color.yellow);
-        if (Input.GetKeyUp(KeyCode.H))
+        timer += Time.deltaTime;
+        if (timer > fireRate)
         {
-            /**
-             Debug.Log("Ha disparat");
-             target = cam.transform.forward;
-             Debug.DrawRay(transform.position, target, Color.yellow, 5f);
-             int layerMask = 1 << 30;
-             layerMask = ~layerMask;
-             RaycastHit hit;
-             //LayerMask.GetMask("HitTest")
-             if (Physics.Raycast(transform.position, target, out hit, Mathf.Infinity, layerMask))
-             {
-                 var localHit = transform.InverseTransformPoint(hit.point);
-                 Debug.DrawLine(cam.transform.position, localHit, Color.red, 5f);
-                 Debug.Log("Did Hit");
-             }
-            **/
-            //Debug.Log("Ha disparat");
-            RaycastHit hit;
-            var ray = new Ray(cam.transform.position, cam.transform.forward);
-            if (Physics.Raycast(ray, out hit))
+            if (Input.GetKeyUp(KeyCode.H))
             {
-                if (hit.collider != null)
+                timer = 0f;
+                bruixaDispara();
+                /**
+         
+                
+                //Debug.Log("Ha disparat");
+                RaycastHit hit;
+                var ray = new Ray(cam.transform.position, cam.transform.forward);
+                if (Physics.Raycast(ray, out hit))
                 {
-                    Debug.DrawLine(transform.position, hit.point, Color.red, 5f);
-                    Dispara(hit.point);
+                    if (hit.collider != null)
+                    {
+                        Debug.DrawLine(transform.position, hit.point, Color.red, 5f);
+                        Dispara(hit.point);
+                    }
                 }
+                **/
             }
-
+        }
+        
+    }
+    private void bruixaDispara()
+    {
+        Ray ray = cam.ViewportPointToRay(Vector3.one*0.5f);
+        RaycastHit hitInfo;
+        if (Physics.Raycast(ray, out hitInfo, 100))
+        {
+            Destroy(hitInfo.collider.gameObject);
         }
     }
-
     void Dispara(Vector3 punt)
     {
         
