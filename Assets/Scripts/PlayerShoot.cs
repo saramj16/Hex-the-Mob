@@ -7,7 +7,7 @@ public class PlayerShoot : MonoBehaviour
     public Camera cam;
     //public Collider collider;
     float bulletSpeed;
-    public Rigidbody bullet;
+    public GameObject bullet;
 
     public Inventory inventari;
     public UI_Inventory inventory;
@@ -65,19 +65,10 @@ public class PlayerShoot : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, 100))
         {
-            Destroy(hitInfo.collider.gameObject);
+            //Destroy(hitInfo.collider.gameObject);
+            GameObject bulletClone = Instantiate(bullet, firePoint.position, firePoint.rotation);
+            bulletClone.GetComponent<BalaBruixa>().setTargetDirection(hitInfo.point - firePoint.position);
         }
     }
-    void Dispara(Vector3 punt)
-    {
-        
-        if (inventari.spendResourcesDisparo())
-        {
-            Rigidbody bulletClone = (Rigidbody)Instantiate(bullet, transform.position, transform.rotation);
-            Vector3 dir = punt - transform.position;
-            bulletClone.velocity = dir.normalized * bulletSpeed;
-            inventory.RefreshInventoryItems();
-        }
-        
-    }
+
 }
