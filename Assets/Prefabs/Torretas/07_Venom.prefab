@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1136764508757609992}
   - component: {fileID: 2806060090270034620}
+  - component: {fileID: 4940725689332988650}
   m_Layer: 9
   m_Name: 07_Venom
   m_TagString: Untagged
@@ -30,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 1092800724141091814}
   - {fileID: 4142520810613460417}
+  - {fileID: 149588590680625155}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,6 +48,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21587086, y: 0.23596644, z: 0.21225977}
   m_Center: {x: 0.0032458305, y: 0.095504284, z: -0.0013401508}
+--- !u!114 &4940725689332988650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327999577971266738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd358eb552e7864a97d710a2cb94b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomTorre: 
+  range: 0
+  minRange: 0
+  fireRate: 0
+  velRotacio: 0
+  areaDamage: 0
+  bala: {fileID: 0}
+  level: 0
+  tag_enemic: Enemy
+  pivotArma: {fileID: 4142520810613460417}
+  puntBales: {fileID: 149588590680625155}
 --- !u!1 &836378808165009701
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,6 +150,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &4056811266049397424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 149588590680625155}
+  m_Layer: 0
+  m_Name: PuntBales
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &149588590680625155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4056811266049397424}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.07139969, y: 0.1443, z: -0.0033082962}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1136764508757609992}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4443929572959907493
 GameObject:
   m_ObjectHideFlags: 0

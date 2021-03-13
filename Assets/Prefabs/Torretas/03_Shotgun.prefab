@@ -4773,6 +4773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3316433659470481249}
   - component: {fileID: 7859491390269420134}
+  - component: {fileID: 8348944718810424184}
   m_Layer: 9
   m_Name: 03_Shotgun
   m_TagString: Untagged
@@ -4809,6 +4810,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.19093847, y: 0.2485587, z: 0.19806981}
   m_Center: {x: 0.0019123554, y: 0.10115555, z: 0.0042003393}
+--- !u!114 &8348944718810424184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687952415639166427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd358eb552e7864a97d710a2cb94b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomTorre: 
+  range: 0
+  minRange: 0
+  fireRate: 0
+  velRotacio: 0
+  areaDamage: 0
+  bala: {fileID: 0}
+  level: 0
+  tag_enemic: Enemy
+  pivotArma: {fileID: 5699776774378993312}
+  puntBales: {fileID: 364503501692885893}
 --- !u!1 &2994031368478704087
 GameObject:
   m_ObjectHideFlags: 0

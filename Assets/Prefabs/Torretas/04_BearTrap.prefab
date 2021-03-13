@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2081501979175346874}
   - component: {fileID: 2081501979175346873}
   - component: {fileID: 7079936883603357469}
+  - component: {fileID: 2340945692316451898}
   m_Layer: 9
   m_Name: 04_BearTrap
   m_TagString: Untagged
@@ -82,6 +83,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.27304626, y: 0.20526892, z: 0.28555465}
   m_Center: {x: 0.0020295382, y: -0.051830262, z: -0.00010943413}
+--- !u!114 &2340945692316451898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081501979175346875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd358eb552e7864a97d710a2cb94b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomTorre: 
+  range: 0
+  minRange: 0
+  fireRate: 0
+  velRotacio: 0
+  areaDamage: 0
+  bala: {fileID: 0}
+  level: 0
+  tag_enemic: Enemy
+  pivotArma: {fileID: 0}
+  puntBales: {fileID: 0}
 --- !u!1 &3749966448324841156
 GameObject:
   m_ObjectHideFlags: 0

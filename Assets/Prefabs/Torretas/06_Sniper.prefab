@@ -19532,6 +19532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5575688823109133095}
   - component: {fileID: 1269279410129566372}
+  - component: {fileID: -962367162382495829}
   m_Layer: 9
   m_Name: 06_Sniper
   m_TagString: Untagged
@@ -19568,3 +19569,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.16427135, y: 0.27325785, z: 0.23454332}
   m_Center: {x: 0.0017609596, y: 0.12456614, z: 0.0014321804}
+--- !u!114 &-962367162382495829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056139258221918621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd358eb552e7864a97d710a2cb94b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomTorre: 
+  range: 0
+  minRange: 0
+  fireRate: 0
+  velRotacio: 0
+  areaDamage: 0
+  bala: {fileID: 0}
+  level: 0
+  tag_enemic: Enemy
+  pivotArma: {fileID: 1908659496701659964}
+  puntBales: {fileID: 4077344557318506676}

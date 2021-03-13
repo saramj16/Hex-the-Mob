@@ -5221,6 +5221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3524534397336052653}
   - component: {fileID: 7726825370904976617}
+  - component: {fileID: -2190319785575584178}
   m_Layer: 9
   m_Name: 10_Golem
   m_TagString: Untagged
@@ -5258,6 +5259,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.37080073, y: 0.40091467, z: 0.2235403}
   m_Center: {x: -0.39894998, y: 0.11573231, z: 0.13956547}
+--- !u!114 &-2190319785575584178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3524534397336052651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd358eb552e7864a97d710a2cb94b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nomTorre: 
+  range: 0
+  minRange: 0
+  fireRate: 0
+  velRotacio: 0
+  areaDamage: 0
+  bala: {fileID: 0}
+  level: 0
+  tag_enemic: Enemy
+  pivotArma: {fileID: 0}
+  puntBales: {fileID: 0}
 --- !u!1 &3672275548824002474
 GameObject:
   m_ObjectHideFlags: 0

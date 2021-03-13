@@ -156,7 +156,7 @@ public class UI_Torres : MonoBehaviour
             //Debug.DrawRay(aux, -g.transform.forward * 1000f, Color.blue, 10f);
             
             altura = hit.point.y;
-            Debug.Log("Altura: " + altura);
+           // Debug.Log("Altura: " + altura);
         }
 
             return altura;
