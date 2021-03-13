@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 177143246698977853}
-  m_Layer: 0
+  - component: {fileID: 585188114680969052}
+  m_Layer: 9
   m_Name: 12_Flamethrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &585188114680969052
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666117630883152007}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12675571, y: 0.21215564, z: 0.14949417}
+  m_Center: {x: 0.0013985634, y: 0.09372786, z: -0.011302948}
 --- !u!1 &2611506508031842575
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +57,7 @@ GameObject:
   - component: {fileID: 2611506508031842570}
   - component: {fileID: 2611506508031842569}
   - component: {fileID: 2611506508031842568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire_Torch_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4806,7 +4820,7 @@ GameObject:
   - component: {fileID: 2611506508142783351}
   - component: {fileID: 2611506508142783350}
   - component: {fileID: 2611506508142783349}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire_Torch_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9569,7 +9583,7 @@ GameObject:
   - component: {fileID: 2611506508901939108}
   - component: {fileID: 2611506508901939131}
   - component: {fileID: 2611506508901939130}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire_Cauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14332,7 +14346,7 @@ GameObject:
   - component: {fileID: 7163728135431171068}
   - component: {fileID: 725959577762933088}
   - component: {fileID: 5822238214533905385}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14413,7 +14427,7 @@ GameObject:
   - component: {fileID: 187365455473082323}
   - component: {fileID: 4622819732056309651}
   - component: {fileID: 6750201514047829855}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

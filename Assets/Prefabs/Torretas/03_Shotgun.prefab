@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 364503501692885893}
   - component: {fileID: 364503501677682373}
   - component: {fileID: 364503501677782885}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire_Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4772,7 +4772,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3316433659470481249}
-  m_Layer: 0
+  - component: {fileID: 7859491390269420134}
+  m_Layer: 9
   m_Name: 03_Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4795,6 +4796,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7859491390269420134
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687952415639166427}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19093847, y: 0.2485587, z: 0.19806981}
+  m_Center: {x: 0.0019123554, y: 0.10115555, z: 0.0042003393}
 --- !u!1 &2994031368478704087
 GameObject:
   m_ObjectHideFlags: 0
@@ -4806,7 +4820,7 @@ GameObject:
   - component: {fileID: 2994031368478704042}
   - component: {fileID: 2994031368478704085}
   - component: {fileID: 2994031368478704084}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BaseFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4885,7 +4899,7 @@ GameObject:
   - component: {fileID: 2994031369789826826}
   - component: {fileID: 2994031369789826869}
   - component: {fileID: 2994031369789826868}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TorchBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4964,7 +4978,7 @@ GameObject:
   - component: {fileID: 8948282219961529820}
   - component: {fileID: 8948282219980927132}
   - component: {fileID: 8948282219981015356}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire_Cauldron
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9727,7 +9741,7 @@ GameObject:
   - component: {fileID: 3380699103097774735}
   - component: {fileID: 7806020193411982031}
   - component: {fileID: 8205145710206052867}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9808,7 +9822,7 @@ GameObject:
   - component: {fileID: 5699776774378993312}
   - component: {fileID: 2765245821411865660}
   - component: {fileID: 8989113118647281333}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}

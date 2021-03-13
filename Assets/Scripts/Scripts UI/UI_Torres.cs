@@ -142,6 +142,27 @@ public class UI_Torres : MonoBehaviour
         UnityEngine.Cursor.visible = false;
     }
 
+    public float positionYMesh(GameObject g)
+    {
+        float altura = 0;
+
+        LayerMask mask = LayerMask.GetMask("Terra");
+
+        RaycastHit hit;
+        Vector3 aux = g.transform.position;
+        aux.y = 300f;
+        if (Physics.Raycast(aux, -g.transform.forward * 1000f, out hit, Mathf.Infinity, mask))
+        {
+            //Debug.DrawRay(aux, -g.transform.forward * 1000f, Color.blue, 10f);
+            
+            altura = hit.point.y;
+            Debug.Log("Altura: " + altura);
+        }
+
+            return altura;
+    }
+
+
     public void OnClikButtonTorre(GameObject gameObject)
     {
         //Debug.Log("Li fa click al button");
@@ -166,13 +187,19 @@ public class UI_Torres : MonoBehaviour
 
 
                 // Quan tinguem les torretes definitives amb tots els pivots a baix hem d'activar això
+
+                
+
+
                if (torres[i].inGround)
                 {
-                    position.y = 0.4f;
+                    position.y = positionYMesh(casella);
+                    //position.y = 0.4f;
                 }
                 if (torres[i].inWay)
                 {
-                    position.y = 0.23f;
+                    position.y = positionYMesh(cami);
+                    //position.y = 0.23f;
                 }
   
                 //Hem de restar els recurosos, i en cas que no tingui els suficients no posar la torreta

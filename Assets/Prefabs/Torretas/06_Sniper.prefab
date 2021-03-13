@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5587878942153754313}
   - component: {fileID: 1094950462428464777}
   - component: {fileID: 1348842562794606149}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 6846110833711289329}
   - component: {fileID: 932318332294757081}
   - component: {fileID: 4651055331983708108}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Discos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 1908659496701659964}
   - component: {fileID: 4354935051364589087}
   - component: {fileID: 3190649693646264126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 5325547429798006639}
   - component: {fileID: 7168170824598645057}
   - component: {fileID: 7266982985768396327}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 4077228446879242148}
   - component: {fileID: 4106456221932917370}
   - component: {fileID: 4095771997162938034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: target Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 4077175013222562486}
   - component: {fileID: 4199491372878911926}
   - component: {fileID: 4197848591709998330}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SubEmitter death spark cross
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5221,7 +5221,7 @@ GameObject:
   - component: {fileID: 4077344557318506676}
   - component: {fileID: 4198216984172711528}
   - component: {fileID: 4198529268687753800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lightning_Particle_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9978,7 +9978,7 @@ GameObject:
   - component: {fileID: 4198577862234614586}
   - component: {fileID: 4197716191137919294}
   - component: {fileID: 4112903292936629606}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle attractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14738,7 +14738,7 @@ GameObject:
   - component: {fileID: 4074069196657613314}
   - component: {fileID: 4195765115713082262}
   - component: {fileID: 4197470209121812350}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SubEmitter death spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19531,7 +19531,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5575688823109133095}
-  m_Layer: 0
+  - component: {fileID: 1269279410129566372}
+  m_Layer: 9
   m_Name: 06_Sniper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19554,3 +19555,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1269279410129566372
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056139258221918621}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16427135, y: 0.27325785, z: 0.23454332}
+  m_Center: {x: 0.0017609596, y: 0.12456614, z: 0.0014321804}

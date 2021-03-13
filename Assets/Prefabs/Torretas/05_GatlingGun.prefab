@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 766528929635866784}
   - component: {fileID: 766528929621712352}
   - component: {fileID: 766528929621615680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Water_Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4772,7 +4772,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3148377974787090174}
-  m_Layer: 0
+  - component: {fileID: 8092412251984554743}
+  m_Layer: 9
   m_Name: 05_GatlingGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4795,6 +4796,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8092412251984554743
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2376380781014121540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18185449, y: 0.19475573, z: 0.17649126}
+  m_Center: {x: 0.000061392784, y: 0.07455972, z: 0.0005118847}
 --- !u!1 &5807488244072418036
 GameObject:
   m_ObjectHideFlags: 0
@@ -4806,7 +4820,7 @@ GameObject:
   - component: {fileID: 3402961329979050678}
   - component: {fileID: 408682999246580888}
   - component: {fileID: 146394350418945022}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4885,7 +4899,7 @@ GameObject:
   - component: {fileID: 3124856223781208848}
   - component: {fileID: 7630102463720375120}
   - component: {fileID: 8388402138981387164}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -57,13 +57,13 @@ public class PosarTorretes : MonoBehaviour
                     UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
                     UI_Upgrade.SetActive(true);
                     //Debug.Log("Millorar Torre " + g.name);
-                    improveGround = false;
-                    terrenyTorre = null;
+                    
                 } else
                 {
                     Debug.Log("Nivell màxim de la torreta");
                 }
-
+                improveGround = false;
+                terrenyTorre = null;
             }
 
             if(improveWay == true)
@@ -74,13 +74,14 @@ public class PosarTorretes : MonoBehaviour
                     UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
                     UI_Upgrade.SetActive(true);
                     Debug.Log("Millorar Torre " + g.name);
-                    improveWay = false;
-                    terrenyTorre = null;
+
                 }
                 else
                 {
                     Debug.Log("Nivell màxim de la torreta");
                 }
+                improveWay = false;
+                terrenyTorre = null;
             }
 
         }
@@ -96,9 +97,13 @@ public class PosarTorretes : MonoBehaviour
             if(bridge.GetComponent<Bridge>().arreglat == false)
             {
                 //Millorar el pont X
-                UI_RepareBridge.GetComponent<UI_RepareBridge>().guardaInventari(inventari);
-                UI_RepareBridge.GetComponent<UI_RepareBridge>().OmpleBridge(bridge);
-                UI_RepareBridge.SetActive(true);
+                float dist = Vector3.Distance(bridge.gameObject.transform.position, transform.position);
+                if (dist < 1f)
+                {
+                    UI_RepareBridge.GetComponent<UI_RepareBridge>().guardaInventari(inventari);
+                    UI_RepareBridge.GetComponent<UI_RepareBridge>().OmpleBridge(bridge);
+                    UI_RepareBridge.SetActive(true);
+                }
             }
         }
 
@@ -113,7 +118,7 @@ public class PosarTorretes : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("Bridge") != null)
         {
             ponts = GameObject.FindGameObjectsWithTag("Bridge");
-            Debug.Log("Hi ha " + ponts.Length + " ponts");
+            //Debug.Log("Hi ha " + ponts.Length + " ponts");
         } else
         {
             ponts = null;
@@ -207,6 +212,7 @@ public class PosarTorretes : MonoBehaviour
         return terrenyFinal;
     }
 
+
     public bool hihaTorre(GameObject g)
     {
 
@@ -215,18 +221,19 @@ public class PosarTorretes : MonoBehaviour
         RaycastHit hit;
 
         Vector3 aux = g.transform.position;
-        aux.y = -2f;
+
+        aux.y = -2f; 
         if (Physics.Raycast(aux, g.transform.forward * 10f, out hit,  Mathf.Infinity, mask))
         {
             Debug.DrawRay(aux, g.transform.forward * 10f, Color.blue, 10f);
-            Debug.Log("Ha Xocat contra una torre");
+            //Debug.Log("Ha Xocat contra una torre");
             torreCollisionada = hit.collider.gameObject;
             return false;
         }
         else
         {
             Debug.DrawRay(aux, g.transform.forward * 10f, Color.red, 10f);
-            Debug.Log("No ha xocat contra res");
+           // Debug.Log("No ha xocat contra res");
             return true;
         }
        

@@ -20,7 +20,7 @@ MonoBehaviour:
   velRotacio: 3
   inWay: 0
   inGround: 1
-  prefab: {fileID: 5405502923641529741, guid: e99eb7c4191d28540964e4aacbc68bf8, type: 3}
+  prefab: {fileID: 3928403761973779757, guid: 9ee0dd289bcfd664c981953f550f5eec, type: 3}
   element1: 0
   quantiatElement1: 1
   element2: 1

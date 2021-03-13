@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 271319826171941774}
-  m_Layer: 0
+  - component: {fileID: 4225286853886611831}
+  m_Layer: 9
   m_Name: 08_Mortar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4225286853886611831
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614806621260843316}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25485134, y: 0.22517753, z: 0.24077559}
+  m_Center: {x: -0.0038638115, y: 0.08095157, z: -0.0005772114}
 --- !u!1 &5620140828412754667
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +57,7 @@ GameObject:
   - component: {fileID: 5620140828412454603}
   - component: {fileID: 5620140828394103691}
   - component: {fileID: 5620140828394002987}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lava_Particles_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4824,7 +4838,7 @@ GameObject:
   - component: {fileID: 229431563019040352}
   - component: {fileID: 4724613715197179424}
   - component: {fileID: 6636957482968825580}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4904,7 +4918,7 @@ GameObject:
   - component: {fileID: 525546403396337606}
   - component: {fileID: 3303757436144556520}
   - component: {fileID: 3060963428521645710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

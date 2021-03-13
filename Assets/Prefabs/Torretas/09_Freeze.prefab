@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4453970717430581143}
-  m_Layer: 0
+  - component: {fileID: 5553291413800115950}
+  m_Layer: 9
   m_Name: 09_Freeze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5553291413800115950
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3928403761973779757}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.24351215, y: 0.26693678, z: 0.21739101}
+  m_Center: {x: 0.0066714287, y: 0.110541224, z: 0.019841433}
 --- !u!1 &4198788314400448246
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +57,7 @@ GameObject:
   - component: {fileID: 4198788314400146134}
   - component: {fileID: 4198788314415351702}
   - component: {fileID: 4198788314415267382}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ice_Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4806,7 +4820,7 @@ GameObject:
   - component: {fileID: 4127365020887739359}
   - component: {fileID: 1429058177923370481}
   - component: {fileID: 1474646511587443351}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4886,7 +4900,7 @@ GameObject:
   - component: {fileID: 4405470410545422969}
   - component: {fileID: 9195635831229571641}
   - component: {fileID: 7068241971046050549}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

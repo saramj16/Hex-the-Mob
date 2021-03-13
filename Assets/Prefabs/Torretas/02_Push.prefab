@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3950127111617329931}
   - component: {fileID: 7811028798611657313}
   - component: {fileID: 6419287072422707568}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1064734162104040427}
-  m_Layer: 0
+  - component: {fileID: 7354478384497899168}
+  m_Layer: 9
   m_Name: 02_Push
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,6 +114,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7354478384497899168
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400084487857201489}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15947676, y: 0.3099466, z: 0.16203976}
+  m_Center: {x: 0.00025486946, y: 0.12061915, z: -0.029527903}
 --- !u!1 &2273885271004389975
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +139,7 @@ GameObject:
   - component: {fileID: 2162353278068534280}
   - component: {fileID: 4523604990046733036}
   - component: {fileID: 2273885271004389974}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +237,7 @@ GameObject:
   - component: {fileID: 2542026882399307403}
   - component: {fileID: 2417094094774821809}
   - component: {fileID: 2416591008715251549}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wind_Directional
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4980,7 +4994,7 @@ GameObject:
   - component: {fileID: 2416716692282799439}
   - component: {fileID: 2417133029675073805}
   - component: {fileID: 2512998312975181097}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle attractor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9640,7 +9654,7 @@ GameObject:
   - component: {fileID: 2546962427238065719}
   - component: {fileID: 2539420603996822343}
   - component: {fileID: 2530176288895197363}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: target Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9719,7 +9733,7 @@ GameObject:
   - component: {fileID: 1020702138807082501}
   - component: {fileID: 5518152824226373189}
   - component: {fileID: 5845228453513320073}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 1704941939032635393}
   - component: {fileID: 2081501979175346874}
   - component: {fileID: 2081501979175346873}
-  m_Layer: 0
+  - component: {fileID: 7079936883603357469}
+  m_Layer: 9
   m_Name: 04_BearTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,6 +69,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   at: {fileID: 2081501979175346874}
   dust: {fileID: 7183865423338838258}
+--- !u!65 &7079936883603357469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081501979175346875}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27304626, y: 0.20526892, z: 0.28555465}
+  m_Center: {x: 0.0020295382, y: -0.051830262, z: -0.00010943413}
 --- !u!1 &3749966448324841156
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,7 +93,7 @@ GameObject:
   - component: {fileID: 4744530544484227759}
   - component: {fileID: 3370964407107048651}
   - component: {fileID: 7438353330703175653}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +172,7 @@ GameObject:
   - component: {fileID: 7183865423338838260}
   - component: {fileID: 7183865423338838258}
   - component: {fileID: 7183865423338838259}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trap_Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4921,7 +4935,7 @@ GameObject:
   - component: {fileID: 397386560151197889}
   - component: {fileID: 2276570681379800822}
   - component: {fileID: 233174783314169769}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
