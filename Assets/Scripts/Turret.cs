@@ -25,6 +25,8 @@ public class Turret : MonoBehaviour
     public Transform pivotArma;
     public Transform puntBales;
 
+    public GameObject efecte;
+
 
 
     // Start is called before the first frame update
@@ -34,6 +36,16 @@ public class Turret : MonoBehaviour
         InvokeRepeating("BuscaEnemics", 0f, 0.5f);
     }
 
+    public void activaEfecte()
+    {
+        efecte.GetComponent<ParticleSystem>().startLifetime = 5f;
+        Invoke("DesacvitaEfecte", 2f);
+    }
+
+    void DesacvitaEfecte()
+    {
+        efecte.GetComponent<ParticleSystem>().startLifetime = 1f;
+    }
     void BuscaEnemics()
     {
         //Buscar si hi ha enemics a l'escena
@@ -95,7 +107,7 @@ public class Turret : MonoBehaviour
 
         if (b != null)
         {
-            b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea, bala.flameThrower, bala.balaPrefab);
+            b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea, bala.flameThrower, bala.balaPrefab, gameObject);
         }
     }
 

@@ -19,8 +19,9 @@ public class Bala : MonoBehaviour
     private bool multiBala;
     private bool flameThrower;
     private GameObject prefab;
+    private GameObject torre;
     private List<GameObject> targetsArea;
-    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, bool _minArea, bool _flameThrower, GameObject _prefab)
+    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, bool _minArea, bool _flameThrower, GameObject _prefab, GameObject _torre)
     {
         //Debug.Log("Inicialitza dades");
         velocitatBala = _velocitatBala;
@@ -36,6 +37,7 @@ public class Bala : MonoBehaviour
         minArea = _minArea;
         flameThrower = _flameThrower;
         prefab = _prefab;
+        torre = _torre;
     }
     public void Target(Transform _target) 
     {
@@ -81,7 +83,7 @@ public class Bala : MonoBehaviour
                     if (b != null)
                     {
                         Debug.Log("Shotgun " + i);
-                        b.BalaInit(velocitatBala, damage, targetsArea[i].transform, pushForce, poisonDamage, 0, freezeDuration, efecteImpacte, 0, false, minArea, flameThrower, prefab);
+                        b.BalaInit(velocitatBala, damage, targetsArea[i].transform, pushForce, poisonDamage, 0, freezeDuration, efecteImpacte, 0, false, minArea, flameThrower, prefab, torre);
                     }
                     
                 }
@@ -112,18 +114,20 @@ public class Bala : MonoBehaviour
                     {
                         //BEARTRAP && FLAMETHROWER
                         // Fer efecte que toqui i dany als tagrets que hi hagi a l'area
+
+                        if (flameThrower)
+                        {
+                            Debug.Log("Bala flame");
+                        }
+                        else
+                        {
+                            torre.GetComponent<BearTrapTrigger>().ActivaTorre();
+
+                        }
                         for (int i = 0; i < targetsArea.Count; i++)
                         {
                             ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
                             e.restaVida(damage);
-                            if (flameThrower)
-                            {
-                                Debug.Log("Bala flame");
-                            }
-                            else
-                            {
-                                Debug.Log("Beartrap");
-                            }
                         }
                     }
                 
@@ -158,7 +162,7 @@ public class Bala : MonoBehaviour
                     //Hem de moure l'enemic endarrere
 
                     //Debug.Log("Direcció " + e.transform.forward);
-
+                    torre.GetComponent<Turret>().activaEfecte();
                     e.gameObject.GetComponent<Rigidbody>().AddForce(e.transform.forward * -pushForce, ForceMode.Impulse);
                 }
 

@@ -67,6 +67,7 @@ public class PlayerShoot : MonoBehaviour
         {
             //Destroy(hitInfo.collider.gameObject);
             GameObject bulletClone = Instantiate(bullet, firePoint.position, firePoint.rotation);
+            Debug.DrawRay(firePoint.position, hitInfo.point - firePoint.position, Color.blue, 3f);
             bulletClone.GetComponent<BalaBruixa>().setTargetDirection(hitInfo.point - firePoint.position);
         }
     }

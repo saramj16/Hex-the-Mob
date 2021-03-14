@@ -12,14 +12,20 @@ public class BearTrapTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) { ///////////////IF de PROBA per ferr TESTS
+      /*  if (Input.GetKeyDown(KeyCode.P)) { ///////////////IF de PROBA per ferr TESTS
 
             at.SetTrigger("BiteNow"); // Funcio que activa l'animacio de mossegar, per quan s'activi la trampa
 
-        }
+        }*/
     }
 
     void DustTrigger() { //Funcio que s'activa durant l'animacio per treure l'efecte de pols
         dust.Play(); 
+    }
+
+    public void ActivaTorre()
+    {
+        Debug.Log("Activem torre");
+        at.SetTrigger("BiteNow");
     }
 }

@@ -26,7 +26,9 @@ public class BalaBruixa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(targetDir * Time.deltaTime*5);
+        Debug.DrawRay(transform.position, targetDir, Color.red, 3f);
+        //transform.Translate(targetDir * Time.deltaTime * 5f, Space.World);
+        transform.transform.position += (targetDir * Time.deltaTime * 5f);
     }
 
     public void setTargetDirection(Vector3 direction)

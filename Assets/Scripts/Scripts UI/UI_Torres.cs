@@ -90,9 +90,14 @@ public class UI_Torres : MonoBehaviour
             }
         }
 
-        //quantitatElements.transform.GetChild(0).GetComponent<Text>().text = "";
+       // quantitatElements.transform.GetChild(0).GetComponent<Text>().text = inventari.elemPos;
 
 
+    }
+
+    public void SetInventory(Inventory i)
+    {
+        inventari = i;
     }
     private Sprite retornaElement(Item.Element e)
     {

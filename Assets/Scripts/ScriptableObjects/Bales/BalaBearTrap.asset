@@ -21,7 +21,6 @@ MonoBehaviour:
   flameThrower: 0
   damage: 40
   velocitatBala: 70
-  efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
-    type: 3}
-  balaPrefab: {fileID: 1109276263877937622, guid: 34bee99fb5955fe4fa84ab877b023e64,
+  efecteImpacte: {fileID: 0}
+  balaPrefab: {fileID: 1109276263877937622, guid: 086d35a719b75134eb23ddc900e975e8,
     type: 3}
