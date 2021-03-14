@@ -13,6 +13,7 @@ public class Bridge : MonoBehaviour
     public Item.Element element2;
     public int quantitat2;
 
+    public GameObject colliderPont;
     public bool arreglat = false;
 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class Bridge : MonoBehaviour
             runa1.gameObject.SetActive(false);
             runa2.gameObject.SetActive(false);
             pont.gameObject.SetActive(true);
+            colliderPont.SetActive(false);
         } else
         {
           //  Debug.Log("No hem pogut arreglar el pont");

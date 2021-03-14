@@ -97,7 +97,8 @@ public class PosarTorretes : MonoBehaviour
             if(bridge.GetComponent<Bridge>().arreglat == false)
             {
                 //Millorar el pont X
-                float dist = Vector3.Distance(bridge.gameObject.transform.position, transform.position);
+                float dist = Vector3.Distance(bridge.transform.GetChild(0).transform.position, transform.position);
+                Debug.Log("Distancia: " + dist);
                 if (dist < 1f)
                 {
                     UI_RepareBridge.GetComponent<UI_RepareBridge>().guardaInventari(inventari);
@@ -133,7 +134,7 @@ public class PosarTorretes : MonoBehaviour
         {
             float dist = Vector3.Distance(ponts[i].transform.GetChild(0).transform.position, position);
             dist = Mathf.Abs(dist);
-            Debug.Log("DISTANCIA: " + dist);
+            //Debug.Log("DISTANCIA: " + dist);
             if (dist < minDist)
             {
                     Debug.Log("Entra aqui, DISTANCIA: " + dist);

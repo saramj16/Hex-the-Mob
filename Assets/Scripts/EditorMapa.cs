@@ -123,9 +123,9 @@ public class MyWindow : EditorWindow
             GameObject[] obj = Selection.gameObjects;
             for (int i = 0; i < obj.Length; i++)
             {
-                Transform t = obj[i].gameObject.transform;
+ 
 
-                obj[i].gameObject.transform.localScale = obj[i].gameObject.transform.localScale + new Vector3(0, 0, 3f);
+                obj[i].gameObject.transform.localScale = obj[i].gameObject.transform.localScale + new Vector3(0, 0, 1.5f);
                 //obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, 0.15f, 0);
 
             }
@@ -137,8 +137,23 @@ public class MyWindow : EditorWindow
             GameObject[] obj = Selection.gameObjects;
             for (int i = 0; i < obj.Length; i++)
             {
-                Transform t = obj[i].gameObject.transform;
-                obj[i].gameObject.transform.localScale = obj[i].gameObject.transform.localScale - new Vector3(0, 0, 3f);
+                obj[i].gameObject.transform.localScale = obj[i].gameObject.transform.localScale - new Vector3(0, 0, 1.5f);
+                //obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, -0.15f, 0);
+
+            }
+        }
+
+        EditorGUILayout.Space();
+        // Si volen convertir-los en ground
+        if (GUILayout.Button("Baixa els HEXAGONS a la MEITAT"))
+        {
+            GameObject[] obj = Selection.gameObjects;
+            for (int i = 0; i < obj.Length; i++)
+            {
+                float x = obj[i].gameObject.transform.localScale.x;
+                float y = obj[i].gameObject.transform.localScale.y;
+                float z = obj[i].gameObject.transform.localScale.z/2f;
+                obj[i].gameObject.transform.localScale = new Vector3(x, y, z);
                 //obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, -0.15f, 0);
 
             }
