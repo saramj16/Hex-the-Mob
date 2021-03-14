@@ -38,6 +38,7 @@ public class Turret : MonoBehaviour
 
     public void activaEfecte()
     {
+        Debug.Log("Activa efecte");
         efecte.GetComponent<ParticleSystem>().startLifetime = 5f;
         Invoke("DesacvitaEfecte", 2f);
     }
@@ -92,7 +93,7 @@ public class Turret : MonoBehaviour
 
         if(fireCountdown <= 0)
         {
-            //Debug.Log("Dispara");
+            Debug.Log("Dispara");
             Dispara();
             fireCountdown = 1f / fireRate;
         }
@@ -107,7 +108,7 @@ public class Turret : MonoBehaviour
 
         if (b != null)
         {
-            b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea, bala.flameThrower, bala.balaPrefab, gameObject);
+            b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea, bala.flameThrower, bala.isGolem, bala.balaPrefab, gameObject);
         }
     }
 

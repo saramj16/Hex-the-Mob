@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c096cecda9bae8c4b9a4c91bf148e632, type: 3}
   m_Name: BalaVenom
   m_EditorClassIdentifier: 
-  tipusbala: 1
   pushForce: 0
   poisonDamage: 1
   posionDuration: 6
   freezeDuration: 0
+  multiBala: 0
+  minArea: 0
+  flameThrower: 0
   damage: 0
-  velocitatBala: 70
-  efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
+  velocitatBala: 40
+  efecteImpacte: {fileID: 202892425295020840, guid: 935c5f83aafa59546a32d9bdc76a5276,
     type: 3}
-  balaPrefab: {fileID: 1109276263877937622, guid: 34bee99fb5955fe4fa84ab877b023e64,
+  balaPrefab: {fileID: 1109276263877937622, guid: e8e889510aaaf64469f58d130f373b91,
     type: 3}

@@ -143,7 +143,7 @@ public class ControlEnemic : MonoBehaviour
 
         while (duration < poisonDuration)
         {
-            //Debug.Log("Poison");
+            Debug.Log("Poison");
             e.restaVida(poisonDamage);
             duration++;
             yield return new WaitForSeconds(1f);

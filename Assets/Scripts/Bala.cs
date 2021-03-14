@@ -18,12 +18,13 @@ public class Bala : MonoBehaviour
     private bool minArea;
     private bool multiBala;
     private bool flameThrower;
+    private bool isGolem;
     private GameObject prefab;
     private GameObject torre;
     private List<GameObject> targetsArea;
-    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, bool _minArea, bool _flameThrower, GameObject _prefab, GameObject _torre)
+    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, bool _minArea, bool _flameThrower, bool _isGolem, GameObject _prefab, GameObject _torre)
     {
-        //Debug.Log("Inicialitza dades");
+        Debug.Log("Inicialitza dades");
         velocitatBala = _velocitatBala;
         damage = _damage;
         target = _target;
@@ -36,6 +37,7 @@ public class Bala : MonoBehaviour
         multiBala = _multiBala;
         minArea = _minArea;
         flameThrower = _flameThrower;
+        isGolem = _isGolem;
         prefab = _prefab;
         torre = _torre;
     }
@@ -65,8 +67,8 @@ public class Bala : MonoBehaviour
         //Debug.Log("Target " + target);
         if (target == null)
         {
-            Destroy(gameObject);
-            return;
+            //Destroy(gameObject);
+            //return;
         }
 
         if (areaDamage > 0)
@@ -83,59 +85,74 @@ public class Bala : MonoBehaviour
                     if (b != null)
                     {
                         Debug.Log("Shotgun " + i);
-                        b.BalaInit(velocitatBala, damage, targetsArea[i].transform, pushForce, poisonDamage, 0, freezeDuration, efecteImpacte, 0, false, minArea, flameThrower, prefab, torre);
+                        b.BalaInit(velocitatBala, damage, targetsArea[i].transform, pushForce, poisonDamage, 0, freezeDuration, efecteImpacte, 0, false, minArea, flameThrower, isGolem, prefab, torre);
                     }
                     
                 }
             } else {
-                if (poisonDamage > 0)
+
+                Vector3 dir = targetsArea[0].transform.position - transform.position;
+                float distanceThisFrame = velocitatBala * Time.deltaTime;
+                Debug.Log("Dir " + dir);
+
+                //Evitar traspassar enemic
+                if (dir.magnitude <= 0.1f)
                 {
-                    //VENOM
-                    for (int i = 0; i < targetsArea.Count; i++)
+                    if (poisonDamage > 0)
                     {
-                        Debug.Log("Bala venom: "+(i+1));
-                        //Aplicar efecte VENOM
-                        ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
-                        e.ActivarVeneno(poisonDuration, poisonDamage, e);
-                    }
-                    
-                } else
-                {
-                    if (minArea)
-                    {
+                        //VENOM
                         for (int i = 0; i < targetsArea.Count; i++)
                         {
-                            //MORTAR
-                            Debug.Log("Bala mortar");
+                            Debug.Log("Bala venom: " + (i + 1));
+                            //Aplicar efecte VENOM
                             ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
-                            e.restaVida(damage);
+                            e.ActivarVeneno(poisonDuration, poisonDamage, e);
                         }
-                    } else
-                    {
-                        //BEARTRAP && FLAMETHROWER
-                        // Fer efecte que toqui i dany als tagrets que hi hagi a l'area
 
-                        if (flameThrower)
+                    }
+                    else
+                    {
+                        if (minArea)
                         {
-                            Debug.Log("Bala flame");
+                            for (int i = 0; i < targetsArea.Count; i++)
+                            {
+                                //MORTAR
+                                Debug.Log("Bala mortar");
+                                ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
+                                e.restaVida(damage);
+                            }
                         }
                         else
                         {
-                            torre.GetComponent<BearTrapTrigger>().ActivaTorre();
+                            //BEARTRAP && FLAMETHROWER
+                            // Fer efecte que toqui i dany als tagrets que hi hagi a l'area
 
+                            if (flameThrower)
+                            {
+                                Debug.Log("Bala flame");
+                                //torre.GetComponent<Turret>().activaEfecte();
+                            }
+                            else
+                            {
+                                torre.GetComponent<BearTrapTrigger>().ActivaTorre();
+
+                            }
+                            for (int i = 0; i < targetsArea.Count; i++)
+                            {
+                                ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
+                                e.restaVida(damage);
+                            }
                         }
-                        for (int i = 0; i < targetsArea.Count; i++)
-                        {
-                            ControlEnemic e = targetsArea[i].GetComponent<ControlEnemic>();
-                            e.restaVida(damage);
-                        }
+
                     }
-                
+                    Destroy(gameObject);
                 }
+
+                Debug.Log("Mou bala");
+                transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+
             }
-
-
-            Destroy(gameObject);
+                    
 
 
         } else
@@ -175,14 +192,21 @@ public class Bala : MonoBehaviour
 
                 }
 
+                if (isGolem)
+                {
+                    Debug.Log("El gole ataca crack");
+                    torre.transform.GetChild(0).gameObject.GetComponent<GolemTrigger>().ActivaAnimacio();
+                    //torre.GetCh.GetComponent<BearTrapTrigger>().ActivaTorre();
+                }
+
                 // Bala venom
-                if (poisonDamage > 0)
+               /* if (poisonDamage > 0)
                 {
                     //e.PoisonDamage(poisonDuration, poisonDamage, e);
                     e.ActivarVeneno(poisonDuration, poisonDamage, e);
                     //StartCoroutine(e.PoisonDamage(poisonDuration, poisonDamage, e));
 
-                }
+                }*/
 
                 // Bala normal
                 if (damage > 0)

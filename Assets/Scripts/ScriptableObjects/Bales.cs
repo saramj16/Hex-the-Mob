@@ -14,6 +14,7 @@ public class Bales : ScriptableObject
     public bool multiBala;
     public bool minArea;
     public bool flameThrower; 
+    public bool isGolem; 
 
     [Header("Configuració")]
     public int damage;

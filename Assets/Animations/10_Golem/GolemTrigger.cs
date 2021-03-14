@@ -22,4 +22,9 @@ public class GolemTrigger : MonoBehaviour
     { //Funcio que s'activa durant l'animacio per treure l'efecte de pols
         dust.Play();
     }
+
+    public void ActivaAnimacio()
+    {
+        at.SetTrigger("DoPunch"); // Funcio que activa l'animacio de cop de puny, per quan s'activi el golem
+    }
 }
