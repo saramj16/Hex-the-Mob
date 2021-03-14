@@ -70,7 +70,9 @@ public class UI_Torres : MonoBehaviour
                 {
                     panelAux.transform.GetChild(3).GetComponent<Image>().sprite = null;
                 } else {
+                
                     panelAux.transform.GetChild(3).GetComponent<Image>().sprite = retornaElement(torres[j].element2);
+                            
                 }
 
                 //panelAux.transform.GetChild(4).GetComponent<Image>().sprite = torres[j].imatge;

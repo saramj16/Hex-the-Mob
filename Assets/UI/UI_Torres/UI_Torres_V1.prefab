@@ -382,6 +382,7 @@ MonoBehaviour:
   imatgeAir: {fileID: 21300000, guid: 6eb6b6f900fa05d4795afd9da8e296aa, type: 3}
   imatgeFire: {fileID: 21300000, guid: 525b88c5c36daae41952d9bac6ad4322, type: 3}
   imatgeNull: {fileID: 21300000, guid: e4c748b7e47b052408fd6f51a9267482, type: 3}
+  quantitatElements: {fileID: 0}
 --- !u!1 &3310518995291534725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1366,7 @@ PrefabInstance:
     - target: {fileID: 11236226903972071, guid: 0eda88419a37e424e82d0a5fe5fb81a2,
         type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2645301241718633192, guid: 0eda88419a37e424e82d0a5fe5fb81a2,
         type: 3}
@@ -1798,7 +1799,7 @@ PrefabInstance:
     - target: {fileID: 11236226903972071, guid: 68384db7a2aee8344be0830861a6a0f3,
         type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2645301241718633192, guid: 68384db7a2aee8344be0830861a6a0f3,
         type: 3}
@@ -2090,7 +2091,7 @@ PrefabInstance:
     - target: {fileID: 11236226903972071, guid: a298449e0af4e25428f85cbf4c99d74e,
         type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2645301241718633192, guid: a298449e0af4e25428f85cbf4c99d74e,
         type: 3}
@@ -2382,7 +2383,7 @@ PrefabInstance:
     - target: {fileID: 11236226903972071, guid: 0521382744cd6cb4f97d735d24e34ec3,
         type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2645301241718633192, guid: 0521382744cd6cb4f97d735d24e34ec3,
         type: 3}
