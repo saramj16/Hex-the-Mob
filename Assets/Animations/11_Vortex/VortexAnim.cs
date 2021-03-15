@@ -6,21 +6,6 @@ public class VortexAnim : MonoBehaviour
 {
     public Animator at; //animador del prefab
 
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M)) { //IF per fer probes/////////////////////
-
-
-            changeState(); //Crida funcio de obrir/tencar caixa
-
-
-        }
-
-
-    }
-
     //Funcio per canviar d'estat l'animacio de la caixa
     public void changeState() {
         at.SetTrigger("changeState"); //Trigger que canvia l'estat de la caixa
@@ -29,5 +14,9 @@ public class VortexAnim : MonoBehaviour
                                                                          // depenent de si el baul s'obre o es tenca
     }
 
+    public void ActivaAnimacio()
+    {
+        changeState();
+    }
 
 }

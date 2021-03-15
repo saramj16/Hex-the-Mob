@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8889293408787357863}
   - component: {fileID: 829690722615298495}
   - component: {fileID: 4552477980432197068}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bala MultiBala
   m_TagString: Bullet
   m_Icon: {fileID: 0}

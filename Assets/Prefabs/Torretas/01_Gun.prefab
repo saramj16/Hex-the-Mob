@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -6045768067316743315}
   m_Layer: 9
   m_Name: 01_Gun
-  m_TagString: Untagged
+  m_TagString: Torre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,6 +71,7 @@ MonoBehaviour:
   tag_enemic: Enemy
   pivotArma: {fileID: 7956077462542722001}
   puntBales: {fileID: 8090368865847468528}
+  efecte: {fileID: 0}
 --- !u!1 &489970934196900752
 GameObject:
   m_ObjectHideFlags: 0

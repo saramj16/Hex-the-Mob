@@ -4837,7 +4837,7 @@ GameObject:
   - component: {fileID: -5646910260771240329}
   m_Layer: 9
   m_Name: 05_GatlingGun
-  m_TagString: Untagged
+  m_TagString: Torre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

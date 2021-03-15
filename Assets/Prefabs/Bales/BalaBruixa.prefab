@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7203249995772572947}
   - component: {fileID: 6823389582062823377}
   - component: {fileID: -5981736395108727316}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: BalaBruixa
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ SphereCollider:
   m_GameObject: {fileID: 8186591524660789050}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

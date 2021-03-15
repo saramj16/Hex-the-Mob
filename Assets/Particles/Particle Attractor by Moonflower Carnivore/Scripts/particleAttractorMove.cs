@@ -22,4 +22,5 @@ public class particleAttractorMove : MonoBehaviour {
 		}
 		ps.SetParticles(m_Particles, numParticlesAlive);
 	}
+
 }

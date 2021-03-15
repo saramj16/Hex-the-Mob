@@ -36,7 +36,7 @@ public class PlayerShoot : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > fireRate)
         {
-            if (Input.GetKeyUp(KeyCode.H))
+            if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 timer = 0f;
                 bruixaDispara();

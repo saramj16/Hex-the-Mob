@@ -67,8 +67,8 @@ public class Bala : MonoBehaviour
         //Debug.Log("Target " + target);
         if (target == null)
         {
-            //Destroy(gameObject);
-            //return;
+            Destroy(gameObject);
+            return;
         }
 
         if (areaDamage > 0)
@@ -90,10 +90,14 @@ public class Bala : MonoBehaviour
                     
                 }
             } else {
-
+                if (targetsArea.Count==0)
+                {
+                    Destroy(gameObject);
+                    return;
+                }
                 Vector3 dir = targetsArea[0].transform.position - transform.position;
                 float distanceThisFrame = velocitatBala * Time.deltaTime;
-                Debug.Log("Dir " + dir);
+                //Debug.Log("Dir " + dir);
 
                 //Evitar traspassar enemic
                 if (dir.magnitude <= 0.1f)
@@ -130,7 +134,7 @@ public class Bala : MonoBehaviour
                             if (flameThrower)
                             {
                                 Debug.Log("Bala flame");
-                                //torre.GetComponent<Turret>().activaEfecte();
+                                torre.GetComponent<Turret>().activaEfecte();
                             }
                             else
                             {
@@ -148,7 +152,7 @@ public class Bala : MonoBehaviour
                     Destroy(gameObject);
                 }
 
-                Debug.Log("Mou bala");
+                //Debug.Log("Mou bala");
                 transform.Translate(dir.normalized * distanceThisFrame, Space.World);
 
             }
@@ -157,6 +161,11 @@ public class Bala : MonoBehaviour
 
         } else
         {
+            if (target == null)
+            {
+                Destroy(gameObject);
+                return;
+            }
             Vector3 dir = target.position - transform.position;
             float distanceThisFrame = velocitatBala * Time.deltaTime;
             //Debug.Log("Dir " + dir);
@@ -168,7 +177,11 @@ public class Bala : MonoBehaviour
                 // SI es 0 no fa res
 
                 // Efecte impacte
-                GameObject particulesImpacte = Instantiate(efecteImpacte, transform.position, transform.rotation);
+                GameObject particulesImpacte = null;
+                if (efecteImpacte != null)
+                {
+                    particulesImpacte = Instantiate(efecteImpacte, transform.position, transform.rotation);
+                }
 
                 ControlEnemic e = target.GetComponent<ControlEnemic>();
 
@@ -194,9 +207,15 @@ public class Bala : MonoBehaviour
 
                 if (isGolem)
                 {
-                    Debug.Log("El gole ataca crack");
-                    torre.transform.GetChild(0).gameObject.GetComponent<GolemTrigger>().ActivaAnimacio();
+                    Debug.Log("El golem ataca crack");
+                    torre.transform.GetChild(0).GetComponent<GolemTrigger>().ActivaAnimacio();
                     //torre.GetCh.GetComponent<BearTrapTrigger>().ActivaTorre();
+                }
+
+                if (damage == 999)
+                {
+                    Debug.Log("VORTEX");
+                    torre.GetComponent<VortexAnim>().ActivaAnimacio();
                 }
 
                 // Bala venom

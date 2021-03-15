@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8348944718810424184}
   m_Layer: 9
   m_Name: 03_Shotgun
-  m_TagString: Untagged
+  m_TagString: Torre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
