@@ -19,10 +19,12 @@ public class Bala : MonoBehaviour
     private bool multiBala;
     private bool flameThrower;
     private bool isGolem;
+    private bool isSniper;
     private GameObject prefab;
     private GameObject torre;
     private List<GameObject> targetsArea;
-    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, bool _minArea, bool _flameThrower, bool _isGolem, GameObject _prefab, GameObject _torre)
+    public GameObject bullet;
+    public void BalaInit(float _velocitatBala, float _damage, Transform _target, float _pushForce, float _posionDamage, float _posionDuration, float _freezeDuration, GameObject _efecteImpacte, float _areaDamage, bool _multiBala, bool _minArea, bool _flameThrower, bool _isGolem, bool _isSniper, GameObject _prefab, GameObject _torre)
     {
         Debug.Log("Inicialitza dades");
         velocitatBala = _velocitatBala;
@@ -38,6 +40,7 @@ public class Bala : MonoBehaviour
         minArea = _minArea;
         flameThrower = _flameThrower;
         isGolem = _isGolem;
+        isSniper = _isSniper;
         prefab = _prefab;
         torre = _torre;
     }
@@ -85,7 +88,7 @@ public class Bala : MonoBehaviour
                     if (b != null)
                     {
                         Debug.Log("Shotgun " + i);
-                        b.BalaInit(velocitatBala, damage, targetsArea[i].transform, pushForce, poisonDamage, 0, freezeDuration, efecteImpacte, 0, false, minArea, flameThrower, isGolem, prefab, torre);
+                        b.BalaInit(velocitatBala, damage, targetsArea[i].transform, pushForce, poisonDamage, 0, freezeDuration, efecteImpacte, 0, false, minArea, flameThrower, isGolem, isSniper, prefab, torre);
                     }
                     
                 }
@@ -210,6 +213,13 @@ public class Bala : MonoBehaviour
                     Debug.Log("El golem ataca crack");
                     torre.transform.GetChild(0).GetComponent<GolemTrigger>().ActivaAnimacio();
                     //torre.GetCh.GetComponent<BearTrapTrigger>().ActivaTorre();
+                }
+
+                if (isSniper)
+                {
+                    Debug.Log("Sniper");
+                    bullet = (GameObject)Instantiate(Resources.Load("BalaBruixa"), transform.position, transform.rotation);
+                    bullet.GetComponent<BalaBruixa>().setTargetDirection(dir);
                 }
 
                 if (damage == 999)

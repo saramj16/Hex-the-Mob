@@ -19,6 +19,8 @@ MonoBehaviour:
   multiBala: 0
   minArea: 0
   flameThrower: 0
+  isGolem: 0
+  isSniper: 1
   damage: 40
   velocitatBala: 70
   efecteImpacte: {fileID: 5671306285928796330, guid: 25dacebb8fd87624db8b26f2135fefc4,
