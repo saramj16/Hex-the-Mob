@@ -23,7 +23,7 @@ public class ItemPickup : MonoBehaviour
     {
 
         Inventory.instance.pickUp(item);
-        UI_Inventory.instance.RefreshInventoryItems();
+        UI_InGame.instance.RefreshInventoryItems();
         Destroy(this.gameObject);
     }
 

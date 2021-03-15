@@ -10,7 +10,8 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bullet;
 
     public Inventory inventari;
-    public UI_Inventory inventory;
+   // public UI_Inventory inventory;
+    public UI_InGame inventory;
 
     [SerializeField]
     [Range(0.5f, 1.5f)]

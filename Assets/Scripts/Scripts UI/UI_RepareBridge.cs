@@ -35,7 +35,7 @@ public class UI_RepareBridge : MonoBehaviour
 
     public void guardaInventari(GameObject i)
     {
-        inventari = i.GetComponent<UI_Inventory>().GetInventory();
+        inventari = i.GetComponent<UI_InGame>().GetInventory();
        // Debug.Log("Inventari guarda't " + inventari);
     }
 

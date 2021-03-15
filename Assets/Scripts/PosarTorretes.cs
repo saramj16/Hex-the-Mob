@@ -30,6 +30,8 @@ public class PosarTorretes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // Per posar torretes
         if (Input.GetKeyUp(KeyCode.F))
         {
             
@@ -40,53 +42,56 @@ public class PosarTorretes : MonoBehaviour
             GameObject casella = buscarCasella(position);
             GameObject way = buscarWay(position);
 
+
+
             if (!improveGround && !improveWay)
             {
                 UI_torres.GetComponent<UI_Torres>().guardaPosition(casella, way);
                 UI_torres.GetComponent<UI_Torres>().guardaInventari(inventari);
                 //Menu d'escollir torre
                 UI_torres.SetActive(true);
-            }
-
-            if (improveGround == true)
+            } else
             {
-                if(torreCollisionada.GetComponent<Turret>().level < 3)
+                if (improveGround == true)
                 {
-                    //Millorar Torre
-                    GameObject g = torreDeCasella(terrenyTorre);
-                    UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
-                    UI_Upgrade.SetActive(true);
-                    //Debug.Log("Millorar Torre " + g.name);
-                    
-                } else
-                {
-                    Debug.Log("Nivell màxim de la torreta");
+                    if (torreCollisionada.GetComponent<Turret>().level < 3)
+                    {
+                        //Millorar Torre
+                        GameObject g = torreDeCasella(terrenyTorre);
+                        UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
+                        UI_Upgrade.SetActive(true);
+                        //Debug.Log("Millorar Torre " + g.name);
+
+                    }
+                    else
+                    {
+                        Debug.Log("Nivell màxim de la torreta");
+                    }
+                    improveGround = false;
+                    terrenyTorre = null;
                 }
-                improveGround = false;
-                terrenyTorre = null;
+
+                if (improveWay == true)
+                {
+                    if (torreCollisionada.GetComponent<Turret>().level < 3)
+                    {
+                        GameObject g = torreDeCasella(terrenyTorre);
+                        UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
+                        UI_Upgrade.SetActive(true);
+                        Debug.Log("Millorar Torre " + g.name);
+
+                    }
+                    else
+                    {
+                        Debug.Log("Nivell màxim de la torreta");
+                    }
+                    improveWay = false;
+                    terrenyTorre = null;
+                }
             }
-
-            if(improveWay == true)
-            {
-                if (torreCollisionada.GetComponent<Turret>().level < 3)
-                {
-                    GameObject g = torreDeCasella(terrenyTorre);
-                    UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
-                    UI_Upgrade.SetActive(true);
-                    Debug.Log("Millorar Torre " + g.name);
-
-                }
-                else
-                {
-                    Debug.Log("Nivell màxim de la torreta");
-                }
-                improveWay = false;
-                terrenyTorre = null;
-            }
-
         }
 
-
+        // Per posar ponts
         if (Input.GetKeyUp(KeyCode.G))
         {
 
@@ -124,9 +129,7 @@ public class PosarTorretes : MonoBehaviour
         {
             ponts = null;
         }
-            
-
-
+           
         float minDist = Mathf.Infinity;
 
         //Debug.Log("Terreny Length" + terreny.Length);

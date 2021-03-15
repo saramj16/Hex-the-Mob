@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private UI_Inventory uiInventory;
+    [SerializeField] private UI_InGame uI_InGame;
     public UI_Torres uiTorres;
 
     private Inventory inventory;
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
     {
         inventory = new Inventory();
         uiInventory.SetInventory(inventory);
+        uI_InGame.SetInventory(inventory);
         uiTorres.SetInventory(inventory);
     }
 

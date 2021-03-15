@@ -12,7 +12,8 @@ public class UI_Torres : MonoBehaviour
     public GameObject casella;
     public GameObject cami;
     public Inventory inventari;
-    public UI_Inventory inventory;
+   // public UI_Inventory inventory;
+    public UI_InGame inventory;
     public Cursor cursor;
 
     public GameObject earth;
@@ -90,8 +91,10 @@ public class UI_Torres : MonoBehaviour
             }
         }
 
-       // quantitatElements.transform.GetChild(0).GetComponent<Text>().text = inventari.elemPos;
-
+        quantitatElements.transform.GetChild(0).GetComponent<Text>().text = inventari.items[0].amount.ToString();
+        quantitatElements.transform.GetChild(1).GetComponent<Text>().text = inventari.items[1].amount.ToString();
+        quantitatElements.transform.GetChild(2).GetComponent<Text>().text = inventari.items[2].amount.ToString();
+        quantitatElements.transform.GetChild(3).GetComponent<Text>().text = inventari.items[3].amount.ToString();
 
     }
 
@@ -121,6 +124,10 @@ public class UI_Torres : MonoBehaviour
     {
         if(this.enabled)
         {
+            quantitatElements.transform.GetChild(0).GetComponent<Text>().text = inventari.items[0].amount.ToString();
+            quantitatElements.transform.GetChild(1).GetComponent<Text>().text = inventari.items[1].amount.ToString();
+            quantitatElements.transform.GetChild(2).GetComponent<Text>().text = inventari.items[2].amount.ToString();
+            quantitatElements.transform.GetChild(3).GetComponent<Text>().text = inventari.items[3].amount.ToString();
             cursor.top = true;
             
             UnityEngine.Cursor.visible = true;
@@ -131,7 +138,7 @@ public class UI_Torres : MonoBehaviour
     }
     public void guardaInventari(GameObject i)
     {
-        inventari = i.GetComponent<UI_Inventory>().GetInventory();
+        inventari = i.GetComponent<UI_InGame>().GetInventory();
     }
  
 
@@ -218,6 +225,7 @@ public class UI_Torres : MonoBehaviour
                    //Debug.Log("Hi ha hagut un error");
                     //Debug.Log("Posem la torre");
                     inventory.RefreshInventoryItems();
+                    
                     GameObject go = Instantiate(torres[i].prefab, position, Quaternion.identity);
 
                     Turret t = go.AddComponent<Turret>();

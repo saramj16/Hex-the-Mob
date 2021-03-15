@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Hexentrum : MonoBehaviour
 {
-    private float vida = 10000f;
+    public float vida = 10000f;
 
     public void restaVida(float dany)
     {
