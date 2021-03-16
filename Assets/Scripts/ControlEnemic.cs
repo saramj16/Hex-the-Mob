@@ -14,16 +14,20 @@ public class ControlEnemic : MonoBehaviour
 
     public bool freeze;
 
+    public Animator anim;
+
     public GameObject torre;
     public List<Enemic> enemic = new List<Enemic>();
     public string nomAux;
 
     private bool final;
     private bool ataquem;
+    private bool death;
 
     // Start is called before the first frame update
     void Start()
     {
+        death = false;
         final = false;
         ataquem = false;
         freeze = false;
@@ -42,8 +46,9 @@ public class ControlEnemic : MonoBehaviour
             }
         }
 
+        anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
         //Debug.Log("Torre"+ GameObject.Find("Hexentrum"));
-       
+
     }
 
     // Update is called once per frame
@@ -53,16 +58,30 @@ public class ControlEnemic : MonoBehaviour
         {
             if(ataquem == true)
             {
+                Debug.Log("Walking FALSE:  " + gameObject.name);
+                anim.SetBool("Walking", false);
                 AtacaTorre();
             } else
             {
-                Vector3 dir = target.position - transform.position;
-                transform.Translate(dir.normalized * velocitat * Time.deltaTime, Space.World);
-
-                if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+                if (!death)
                 {
-                    GetNextWaypoint();
+                    anim.SetBool("Walking", true);
+                    Vector3 dir = target.position - transform.position;
+                    transform.Translate(dir.normalized * velocitat * Time.deltaTime, Space.World);
+
+                    Quaternion rotation = Quaternion.LookRotation(dir, Vector3.up);
+                    transform.rotation = rotation;
+                    // transform.Rotate()
+
+                    //Debug.Log("Walking TRUE:  " + gameObject.name);
+
+
+                    if (Vector3.Distance(transform.position, target.position) <= 0.4f)
+                    {
+                        GetNextWaypoint();
+                    }
                 }
+
             }
 
         }
@@ -121,7 +140,7 @@ public class ControlEnemic : MonoBehaviour
     void VesAlWayPointAtac()
     {
 
-        Debug.Log("Va al WayPoint");
+        //Debug.Log("Va al WayPoint");
         GameObject[] waypointAtac = GameObject.FindGameObjectsWithTag("WayPointAtac");
 
         int random = Random.Range(0, waypointAtac.Length);
@@ -165,9 +184,14 @@ public class ControlEnemic : MonoBehaviour
 
     void AtacaTorre()
     {
-        torre = GameObject.Find("Hexentrum");
+        torre = GameObject.Find("HexenturmTower");
         if(torre != null)
         {
+            Vector3 dir = torre.transform.position - transform.position;
+            Quaternion rotation = Quaternion.LookRotation(dir, Vector3.up);
+            transform.rotation = rotation;
+            Debug.Log("Ataquem torre");
+            anim.SetBool("Atac", true);
             torre.gameObject.GetComponent<Hexentrum>().restaVida(atac);
             //Invoke("AtacaTorre", 3.0f);
         }
@@ -181,9 +205,14 @@ public class ControlEnemic : MonoBehaviour
         if (vida <= 0)
         {
             Debug.Log("Enemic mort" + vida);
-            Destroy(gameObject);
+            anim.SetBool("Death", true);
+            death = true;
+            Invoke("DestrueixGameObject", 6f);
         }
     }
 
-
+    public void DestrueixGameObject()
+    {
+        Destroy(gameObject);
+    }
 }
