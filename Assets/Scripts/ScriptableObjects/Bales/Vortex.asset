@@ -20,8 +20,9 @@ MonoBehaviour:
   minArea: 0
   flameThrower: 0
   isGolem: 0
+  isSniper: 0
   damage: 999
   velocitatBala: 70
   efecteImpacte: {fileID: 0}
-  balaPrefab: {fileID: 1109276263877937622, guid: 086d35a719b75134eb23ddc900e975e8,
+  balaPrefab: {fileID: 1109276263877937622, guid: acbdab8d6a9cc4140ae28aee719ff6fd,
     type: 3}

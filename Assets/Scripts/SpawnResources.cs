@@ -53,6 +53,8 @@ public class SpawnResources : MonoBehaviour
                         element = 4;
                         break;
                 }
+
+                // Calculem si la zona del recurs ja esta activa i li diem la posicio
                 Instantiate(resource[element].prefab, resourcePosition, Quaternion.identity);
             }
             countdown = timeToSpawn;

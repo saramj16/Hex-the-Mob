@@ -14,6 +14,9 @@ public class Menu : MonoBehaviour
 
     public Slider sliderMusic;
     public Slider sliderEffects;
+
+    private string musicVolumePrefsName;
+    private string effectsVolumePrefsName;
     // Start is called before the first frame update
     public void OnClickPlay()
     {
@@ -44,15 +47,17 @@ public class Menu : MonoBehaviour
 
     public void ModifcarAudioMusic()
     {
-       // Debug.Log("Volum musica a: " + sliderMusic.value);
-       float volum = sliderMusic.value;
+        Debug.Log("Volum musica a: " + sliderMusic.value);
+        float volum1 = sliderMusic.value;
+        PlayerPrefs.SetFloat("volumMusica", volum1);
     }
 
 
     public void ModifcarAudioEffects()
     {
-       // Debug.Log("Volum efectes a: " + sliderEffects.value);
-        float volum = sliderEffects.value;
+        Debug.Log("Volum efectes a: " + sliderEffects.value);
+        float volum2 = sliderEffects.value;
+        PlayerPrefs.SetFloat("volumEfectes", volum2);
     }
     public void OnClickExit()
     {
@@ -61,6 +66,8 @@ public class Menu : MonoBehaviour
 
     public void Mapa1()
     {
+        PlayerPrefs.SetFloat("volumMusica", sliderMusic.value);
+        PlayerPrefs.SetFloat("volumEfectes", sliderEffects.value);
         SceneManager.LoadScene("SampleScene");
     }
 
