@@ -36,7 +36,7 @@ public class BalaBruixa : MonoBehaviour
         targetDir =  direction.normalized;
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("COLLISION");
         if (other.gameObject.tag == "Enemy")
