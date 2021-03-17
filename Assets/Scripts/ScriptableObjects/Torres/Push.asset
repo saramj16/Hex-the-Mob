@@ -16,7 +16,7 @@ MonoBehaviour:
   range: 3
   minRange: 0
   areaDamage: 0
-  fireRate: 4
+  fireRate: 0.2
   velRotacio: 3
   inWay: 0
   inGround: 1

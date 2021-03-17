@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class SpawnResources : MonoBehaviour
 {
-    public Transform ground;
+    Transform ground;
+    public Transform fire;
+    public Transform water;
+    public Transform earth;
+    public Transform air;
+
+    bool isFireActive;
+    bool isEarthActive;
+    bool isWaterActive;
+    bool isAirActive;
     public float countdown;
     public float timeToSpawn;
     public int element;
@@ -32,29 +41,34 @@ public class SpawnResources : MonoBehaviour
             for (int i = 0; i < numSpawners; i++)
             {
                 //Debug.Log("NOU RECURS");
-                resourcePosition = calculateResourcePosition();
+                
                 element = Random.Range(1, 4);
                 switch (element)
                 {
                     case 1:
-                        //Aire
+                        //Terra
+                        ground = earth;
                         element = 1;
                         break;
                     case 2:
-                        //Terra
+                        //Aire
+                        ground = fire;
                         element = 2;
                         break;
                     case 3:
-                        //Foc
+                        //Aigu
+                        ground = water;
                         element = 3;
                         break;
                     case 4:
-                        //Aigua
+                        //Foc
+                        ground = air;
                         element = 4;
                         break;
                 }
-
                 // Calculem si la zona del recurs ja esta activa i li diem la posicio
+
+                resourcePosition = calculateResourcePosition();
                 Instantiate(resource[element].prefab, resourcePosition, Quaternion.identity);
             }
             countdown = timeToSpawn;
