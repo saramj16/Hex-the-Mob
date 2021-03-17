@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af013822a3822d4b8f35b8317a33d8a, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6623266713297128406, guid: c341c591cda2b66499f5170735b78d99, type: 3}
+  prefab: {fileID: 8802728059755374458, guid: ddff73c789ee33945807ef47714f5e6a, type: 3}
   picked: 0
   type: 0
