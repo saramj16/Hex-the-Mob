@@ -91,7 +91,7 @@ public class SpawnResources : MonoBehaviour
         float x_coord = ground.GetChild(num).position.x;
         float y_coord = positionYMesh(ground.GetChild(num).gameObject);
         float z_coord = ground.GetChild(num).position.z;
-        Vector3 pos = new Vector3(x_coord,y_coord+0.1f,z_coord);
+        Vector3 pos = new Vector3(x_coord,y_coord+0.2f,z_coord);
         return pos;
     }
 
@@ -109,7 +109,7 @@ public class SpawnResources : MonoBehaviour
             //Debug.DrawRay(aux, -g.transform.forward * 1000f, Color.blue, 10f);
 
             altura = hit.point.y;
-            // Debug.Log("Altura: " + altura);
+            Debug.Log("Altura: " + altura);
         }
 
         return altura;

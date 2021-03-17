@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2af013822a3822d4b8f35b8317a33d8a, type: 3}
   m_Name: Earth
   m_EditorClassIdentifier: 
-  prefab: {fileID: 396310928270462003, guid: 2c29fca031dfa0445961cd17c9a58b09, type: 3}
+  prefab: {fileID: 1288177042316719546, guid: 6a6820d5c15a2c14f88c962c35c9c183, type: 3}
   picked: 0
   type: 0
