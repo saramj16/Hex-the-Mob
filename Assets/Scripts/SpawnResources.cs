@@ -72,7 +72,7 @@ public class SpawnResources : MonoBehaviour
 
                 if(Mathf.Abs(dist) < 4f)
                 {
-                    Debug.Log("Posa recurs: " + resource[element].prefab.name);
+                    //Debug.Log("Posa recurs: " + resource[element].prefab.name);
                     Instantiate(resource[element].prefab, resourcePosition, Quaternion.identity);
                     countdown = timeToSpawn;
                 } else

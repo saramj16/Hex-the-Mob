@@ -67,9 +67,14 @@ public class PlayerShoot : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, 100))
         {
             //Destroy(hitInfo.collider.gameObject);
-            GameObject bulletClone = Instantiate(bullet, firePoint.position, firePoint.rotation);
-            Debug.DrawRay(firePoint.position, hitInfo.point - firePoint.position, Color.blue, 3f);
-            bulletClone.GetComponent<BalaBruixa>().setTargetDirection(hitInfo.point - firePoint.position);
+            if (inventari.spendResourcesDisparo())
+            {
+                GameObject bulletClone = Instantiate(bullet, firePoint.position, firePoint.rotation);
+                Debug.DrawRay(firePoint.position, hitInfo.point - firePoint.position, Color.blue, 3f);
+                bulletClone.GetComponent<BalaBruixa>().setTargetDirection(hitInfo.point - firePoint.position);
+                inventory.RefreshInventoryItems();
+            }
+
         }
     }
 
