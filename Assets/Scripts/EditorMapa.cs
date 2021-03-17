@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 public class MyWindow : EditorWindow
 {
 
@@ -125,7 +126,7 @@ public class MyWindow : EditorWindow
             {
  
 
-                obj[i].gameObject.transform.localScale = obj[i].gameObject.transform.localScale + new Vector3(0, 0, 1.5f);
+                obj[i].gameObject.transform.localScale = obj[i].gameObject.transform.localScale + new Vector3(0, 0, 0.2f);
                 //obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, 0.15f, 0);
 
             }
@@ -137,7 +138,7 @@ public class MyWindow : EditorWindow
             GameObject[] obj = Selection.gameObjects;
             for (int i = 0; i < obj.Length; i++)
             {
-                obj[i].gameObject.transform.localScale = obj[i].gameObject.transform.localScale - new Vector3(0, 0, 1.5f);
+                obj[i].gameObject.transform.localScale = obj[i].gameObject.transform.localScale - new Vector3(0, 0, 0.2f);
                 //obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, -0.15f, 0);
 
             }
@@ -189,3 +190,4 @@ public class MyWindow : EditorWindow
 
 
 }
+#endif

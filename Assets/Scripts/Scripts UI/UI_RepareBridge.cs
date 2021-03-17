@@ -7,6 +7,12 @@ public class UI_RepareBridge : MonoBehaviour
 {
     GameObject bridge = null;
     public Text titol;
+    public Text cost;
+    public Image recurs;
+    public Sprite aigua;
+    public Sprite foc;
+    public Sprite aire;
+    public Sprite terra;
     public Inventory inventari;
 
     // Start is called before the first frame update
@@ -19,6 +25,8 @@ public class UI_RepareBridge : MonoBehaviour
     public void CanviaNom(string nom)
     {
         titol.text = "Repare " + nom + "?"; ;
+
+        
     }
 
     // Update is called once per frame
@@ -31,6 +39,23 @@ public class UI_RepareBridge : MonoBehaviour
     {
       //  Debug.Log("Omple el bridge");
         bridge = b;
+
+        cost.text = b.GetComponent<Bridge>().quantitat1.ToString();
+
+        switch (b.GetComponent<Bridge>().element1){
+            case Item.Element.Air:
+                recurs.sprite = aire;
+                break;
+            case Item.Element.Water:
+                recurs.sprite = aigua;
+                break;
+            case Item.Element.Earth:
+                recurs.sprite = terra;
+                break;
+            case Item.Element.Fire:
+                recurs.sprite = foc;
+                break;
+        }
     }
 
     public void guardaInventari(GameObject i)
