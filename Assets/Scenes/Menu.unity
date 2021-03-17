@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -513,7 +513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.059819367, y: 0.013800526}
   m_AnchorMax: {x: 0.52472264, y: 0.97}
-  m_AnchoredPosition: {x: 0, y: -3}
+  m_AnchoredPosition: {x: 0, y: -3.0000153}
   m_SizeDelta: {x: 56, y: -6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &268838289
@@ -1918,8 +1918,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 1543298735}
-  options: {fileID: 0}
-  credits: {fileID: 0}
+  options: {fileID: 615377899}
+  credits: {fileID: 903179821}
   selectMap: {fileID: 1835376790}
   sliderMusic: {fileID: 1383610039}
   sliderEffects: {fileID: 1967439118}
@@ -3582,7 +3582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.059819367, y: 0.013800526}
   m_AnchorMax: {x: 0.52472264, y: 0.97}
-  m_AnchoredPosition: {x: 0, y: -3}
+  m_AnchoredPosition: {x: 0, y: -3.0000153}
   m_SizeDelta: {x: 56, y: -6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1155042112
@@ -6059,7 +6059,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.27036512, y: 0.286892}
   m_AnchorMax: {x: 0.383501, y: 0.35500002}
-  m_AnchoredPosition: {x: 83.41, y: 0.4000244}
+  m_AnchoredPosition: {x: 83.409996, y: 0.40003967}
   m_SizeDelta: {x: 103, y: 17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003414442
@@ -6188,7 +6188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.059819367, y: 0.013800526}
   m_AnchorMax: {x: 0.52472264, y: 0.97}
-  m_AnchoredPosition: {x: 0, y: -3}
+  m_AnchoredPosition: {x: 0, y: -3.0000153}
   m_SizeDelta: {x: 56, y: -6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2104481564
