@@ -35,7 +35,8 @@ public class musicController : MonoBehaviour
         }
     }
 
-    void changeMusic() { //Funcio per canviar de musica
+    public void changeMusic() { //Funcio per canviar de musica
+        Debug.Log("CANVIANT MUSICA");
         anim.SetTrigger("ChangeState"); //Trigger per activar transicio
         musicChanging = true; //Avisa que esta en un estat de transicio
     }

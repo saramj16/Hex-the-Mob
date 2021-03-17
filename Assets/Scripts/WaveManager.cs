@@ -6,7 +6,7 @@ public class WaveManager : MonoBehaviour
 {
     public Light sol;
     public Color32 dia, nit, ColorSol;
-
+    public musicController musicController;
     public bool esDia = true;
 
     public float tempsDia = 10f;
@@ -27,7 +27,7 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
-        
+        musicController = musicController.GetComponent<musicController>();
         sol = GameObject.Find("Sol").GetComponent<Light>();
         HiHaEnemics = false;
         sol.color = ColorSol;
@@ -97,6 +97,7 @@ public class WaveManager : MonoBehaviour
     }
     void SetNit()
     {
+        musicController.changeMusic();
         LightTransitionDiaTime = 1f;
         esDia = false;
         nNit++;
@@ -115,6 +116,7 @@ public class WaveManager : MonoBehaviour
 
     void SetDia()
     {
+        musicController.changeMusic();
         LightTransitionDiaTime = 1f;
         nDia++;
         //Debug.Log("Dia num: " + (nDia));
