@@ -36,12 +36,13 @@ public class BalaBruixa : MonoBehaviour
         targetDir =  direction.normalized;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
+        Debug.Log("COLLISION");
         if (other.gameObject.tag == "Enemy")
         {
             //Treure vida a l'enemic
-            Debug.Log("Collisiona amb l'enemic");
+            Debug.Log("Enemic tocat!");
             other.gameObject.GetComponent<ControlEnemic>().restaVida(dany);
 
         }
