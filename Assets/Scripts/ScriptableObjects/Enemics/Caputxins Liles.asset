@@ -17,4 +17,4 @@ MonoBehaviour:
   vida: 150
   atac: 30
   dificultat: 4
-  prefab: {fileID: 7241863359413747400, guid: da54dc8593504784bad7e9690c992cfc, type: 3}
+  prefab: {fileID: 1747226929150225957, guid: 65ff6e971a91dee4e8ec182e4f129a30, type: 3}

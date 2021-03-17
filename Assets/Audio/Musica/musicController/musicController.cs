@@ -24,10 +24,7 @@ public class musicController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I)) { ///////////////////////////////IF PER FER PROBES //////////////////////////////
-            changeMusic(); //Crida de la funcio pel canvi de 
-        }
-
+  
 
         if (musicChanging) { //Ajustem el volum de la musica durant les transicions, per ferles continues
             dia.volume = volumeDay * musicVolume;
