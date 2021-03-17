@@ -76,7 +76,7 @@ public class UI_Torres : MonoBehaviour
                             
                 }
 
-                //panelAux.transform.GetChild(4).GetComponent<Image>().sprite = torres[j].imatge;
+                panelAux.transform.GetChild(4).GetComponent<Image>().sprite = torres[j].imatge;
 
                 panelAux.transform.GetChild(5).GetComponent<Text>().text = torres[j].quantiatElement1.ToString();
                 if(torres[j].quantitatElement2 == 0)

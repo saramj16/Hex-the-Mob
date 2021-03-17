@@ -37,8 +37,8 @@ public class WaveManager : MonoBehaviour
         //Hexa: A4A3FF
         nit = new Color32(163, 162, 255, 255);
         countdown = tempsDia;
-        //Comprovar si hi ha enemics començant al segon 1, cada 5 segons
-        InvokeRepeating("CheckForEnemies", 1f, 5f);
+        //Comprovar si hi ha enemics començant al segon 1, cada 1 segons
+        InvokeRepeating("CheckForEnemies", 1f, 1f);
     }
 
     private void Update()

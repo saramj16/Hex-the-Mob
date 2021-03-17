@@ -535,6 +535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1747226929150225956}
   - component: {fileID: -5158648744250864479}
+  - component: {fileID: 1766120138231149885}
   m_Layer: 8
   m_Name: CaputxiVerd
   m_TagString: Enemy
@@ -577,6 +578,19 @@ MonoBehaviour:
   torre: {fileID: 0}
   enemic: []
   nomAux: 
+--- !u!65 &1766120138231149885
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747226929150225957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14052486, y: 0.42887002, z: 0.10623026}
+  m_Center: {x: -0.0018601418, y: 0.19910493, z: -0.005384207}
 --- !u!1 &2299412850192539913
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,7 +1815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7201267893409251844}
   m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.006782435, z: -2.2971543e-25}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1.1161001, y: 1.1161001, z: 1.1161001}
   m_Children: []
   m_Father: {fileID: 7922296747573153393}
@@ -1999,8 +2013,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7402358982417110219}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002146721, y: 0, z: -0.0063169003}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
   m_Children:
   - {fileID: 8149872831934944204}
   - {fileID: 2423486519883525861}

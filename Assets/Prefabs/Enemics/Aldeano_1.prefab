@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 106728865739597932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
   m_Children:
   - {fileID: 5071245829580149314}
   - {fileID: 4039465832116862402}
@@ -717,6 +717,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8232451311203448308}
   - component: {fileID: -1324947394375502098}
+  - component: {fileID: 2027373139744403762}
   m_Layer: 8
   m_Name: Aldeano_1
   m_TagString: Enemy
@@ -759,6 +760,19 @@ MonoBehaviour:
   torre: {fileID: 0}
   enemic: []
   nomAux: 
+--- !u!65 &2027373139744403762
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3027677080229016741}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.07493961, y: 0.41101608, z: 0.06368533}
+  m_Center: {x: -0.00067563355, y: 0.19477586, z: -0.0016658753}
 --- !u!1 &3036180249035888432
 GameObject:
   m_ObjectHideFlags: 0
