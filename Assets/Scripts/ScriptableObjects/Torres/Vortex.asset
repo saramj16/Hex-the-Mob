@@ -28,5 +28,5 @@ MonoBehaviour:
   nom: Vortex
   description: El primer enemic que troba, l'absorbeix i el mata. Recarga extremadament
     lenta en
-  imatge: {fileID: 0}
+  imatge: {fileID: 21300000, guid: 83cde77607b90884a93c2d5b4faf89aa, type: 3}
   level: 1

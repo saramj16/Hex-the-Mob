@@ -27,5 +27,5 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Golem
   description: Golem que ataca fisicament de molt aprop.
-  imatge: {fileID: 0}
+  imatge: {fileID: 21300000, guid: 8d371339eb2e51044bc8bd85a975cfa4, type: 3}
   level: 1

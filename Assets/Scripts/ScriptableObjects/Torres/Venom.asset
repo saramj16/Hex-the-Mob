@@ -28,5 +28,5 @@ MonoBehaviour:
   nom: Venom
   description: "Va treient vida despr\xE9s d'impactar.a, l'absorbeix i el mata. Recarga
     extremadament lenta en"
-  imatge: {fileID: 0}
+  imatge: {fileID: 21300000, guid: 895170be188a55d479827f75be09d83e, type: 3}
   level: 1

@@ -27,5 +27,5 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Push
   description: Projectils que empenyen
-  imatge: {fileID: 0}
+  imatge: {fileID: 21300000, guid: ddc4d08637ace5746b761656302737a2, type: 3}
   level: 1

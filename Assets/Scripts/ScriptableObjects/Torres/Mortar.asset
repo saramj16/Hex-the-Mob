@@ -28,5 +28,5 @@ MonoBehaviour:
   nom: Mortar
   description: No pot disparar molt aprop seu.oba, l'absorbeix i el mata. Recarga
     extremadament lenta en
-  imatge: {fileID: 0}
+  imatge: {fileID: 21300000, guid: c6f3081780926ab4389ca25e1be81a73, type: 3}
   level: 1

@@ -28,5 +28,5 @@ MonoBehaviour:
   nom: Sniper
   description: Un dispar que atravessa a multiples enemics.oba, l'absorbeix i el
     mata. Recarga extremadament lenta en
-  imatge: {fileID: 0}
+  imatge: {fileID: 21300000, guid: d5247025652ac6a4793f6f63b621ba8c, type: 3}
   level: 1

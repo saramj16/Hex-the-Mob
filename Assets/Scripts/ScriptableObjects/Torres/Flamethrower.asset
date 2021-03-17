@@ -27,5 +27,5 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Flamethrower
   description: "Fa mal constant als enemics que te a l'abast de les flamesa dist\xE0ncia"
-  imatge: {fileID: 0}
+  imatge: {fileID: 21300000, guid: e39f00e2ef1b85f40ab3b2abb4b8627a, type: 3}
   level: 1

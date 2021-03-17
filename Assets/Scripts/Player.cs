@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         inventory = new Inventory();
-        uiInventory.SetInventory(inventory);
+       // uiInventory.SetInventory(inventory);
         uI_InGame.SetInventory(inventory);
         uiTorres.SetInventory(inventory);
     }

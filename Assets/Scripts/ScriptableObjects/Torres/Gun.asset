@@ -27,5 +27,5 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Gun
   description: "Torreta est\xE0ndard"
-  imatge: {fileID: 0}
+  imatge: {fileID: 21300000, guid: b7d8b8f6d2826bb4e8b7ace882837978, type: 3}
   level: 1

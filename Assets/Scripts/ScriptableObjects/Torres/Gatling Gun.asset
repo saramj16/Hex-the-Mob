@@ -27,5 +27,5 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Gatling Gun
   description: Molts dispars petits a molta velocitat.
-  imatge: {fileID: 0}
+  imatge: {fileID: 21300000, guid: 0fceb9a3019f10c4d9d7d06cb7f1bc33, type: 3}
   level: 1

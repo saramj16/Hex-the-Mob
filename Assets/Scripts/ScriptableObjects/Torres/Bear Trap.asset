@@ -27,5 +27,5 @@ MonoBehaviour:
   quantitatElement2: 0
   nom: Bear Trap
   description: Quan passen enemics per sobre, s'activa.
-  imatge: {fileID: 0}
+  imatge: {fileID: 21300000, guid: 2a283a0872ebfd4499d1783d40296360, type: 3}
   level: 1
