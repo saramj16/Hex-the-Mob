@@ -8,9 +8,9 @@ public class Moviment_personatge : MonoBehaviour
     public CharacterController controller;
     public Camera cam;
 
-    public float velocitat_base = 1.5f;
-    public float velocitat_running = 3f;
-    public float velocitat = 0f;
+    public float velocitat_base = 0.8f;
+    public float velocitat_running = 1.5f;
+    public float velocitat = 0.8f;
     public float gravetat = 20f;
 
     public float temps_rotacio = 0.1f;
