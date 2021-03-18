@@ -15,6 +15,9 @@ public class PlayerShoot : MonoBehaviour
    // public UI_Inventory inventory;
     public UI_InGame inventory;
 
+
+    public bool potDisparar;
+
     [SerializeField]
     [Range(0.5f, 1.5f)]
     private float fireRate=1;
@@ -26,6 +29,7 @@ public class PlayerShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        potDisparar = true;
         bulletSpeed = 10f;
         cam = GameObject.Find("Camera").GetComponent<Camera>();
         //int layerMask = 1 << 30;
@@ -65,11 +69,18 @@ public class PlayerShoot : MonoBehaviour
 
     public void DesactivaCursor()
     {
+        potDisparar = false;
         UnityEngine.Cursor.visible = true;
         cursor.SetActive(false);
     }
+
+    public void ActivaPotDispara()
+    {
+        potDisparar = true;
+    }
     public void ActivaCursor()
     {
+        Invoke("ActivaPotDispara", 1f);
         UnityEngine.Cursor.visible = false;
         cursor.SetActive(true);
     }
@@ -80,7 +91,7 @@ public class PlayerShoot : MonoBehaviour
         if (Physics.Raycast(ray, out hitInfo, 100))
         {
             //Destroy(hitInfo.collider.gameObject);
-            if (inventari.spendResourcesDisparo())
+            if (inventari.spendResourcesDisparo() && potDisparar)
             {
                 GameObject bulletClone = Instantiate(bullet, firePoint.position, firePoint.rotation);
                 Debug.DrawRay(firePoint.position, hitInfo.point - firePoint.position, Color.blue, 3f);

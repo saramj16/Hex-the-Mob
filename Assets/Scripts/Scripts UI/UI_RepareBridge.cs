@@ -14,6 +14,7 @@ public class UI_RepareBridge : MonoBehaviour
     public Sprite aire;
     public Sprite terra;
     public Inventory inventari;
+    public UI_InGame inventory;
 
     GameObject personatge;
 
@@ -79,8 +80,9 @@ public class UI_RepareBridge : MonoBehaviour
 
         if (error)
         {
-            Debug.Log("Hem pogut arreglar el pont");
+            //Debug.Log("Hem pogut arreglar el pont");
             bridge.GetComponent<Bridge>().PontArreglat();
+            inventory.RefreshInventoryItems();
         }
         
 

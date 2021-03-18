@@ -10,6 +10,9 @@ public class UI_Upgrade : MonoBehaviour
     public Text titol;
 
     GameObject personatge;
+
+    public Inventory inventari;
+    public UI_InGame inventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,11 @@ public class UI_Upgrade : MonoBehaviour
         personatge = g;
 
     }
+    public void guardaInventari(GameObject i)
+    {
+        inventari = i.GetComponent<UI_InGame>().GetInventory();
+        // Debug.Log("Inventari guarda't " + inventari);
+    }
 
     public void OnClickYes()
     {
@@ -44,6 +52,7 @@ public class UI_Upgrade : MonoBehaviour
         Debug.Log("Actualitza torre " + torreUpgrade.name);
 
         torreUpgrade.GetComponent<Turret>().UpgradeTorre();
+        inventory.RefreshInventoryItems();
         UnityEngine.Cursor.visible = false;
         this.gameObject.SetActive(false);
         personatge.GetComponent<PlayerShoot>().ActivaCursor();
