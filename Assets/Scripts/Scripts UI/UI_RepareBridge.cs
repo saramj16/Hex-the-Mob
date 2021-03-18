@@ -15,10 +15,11 @@ public class UI_RepareBridge : MonoBehaviour
     public Sprite terra;
     public Inventory inventari;
 
+    GameObject personatge;
+
     // Start is called before the first frame update
     void Start()
     {
-        UnityEngine.Cursor.visible = true;
         titol.text = "Repare " + bridge.name + "?"; ;
     }
 
@@ -29,10 +30,16 @@ public class UI_RepareBridge : MonoBehaviour
         
     }
 
+    public void OmplePersonatge(GameObject g)
+    {
+        personatge = g;
+
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        UnityEngine.Cursor.visible = true;
     }
 
     public void OmpleBridge(GameObject b)
@@ -68,12 +75,19 @@ public class UI_RepareBridge : MonoBehaviour
     {
       //  Debug.Log("Ha clickat yes");
       
-        bridge.GetComponent<Bridge>().ReparaPont(inventari);
-        bridge.GetComponent<Bridge>().PontArreglat();
+        bool error = bridge.GetComponent<Bridge>().ReparaPont(inventari);
+
+        if (error)
+        {
+            Debug.Log("Hem pogut arreglar el pont");
+            bridge.GetComponent<Bridge>().PontArreglat();
+        }
+        
 
         // Actualitza el q sigui i close
       //  Debug.Log("Repara bridge " + bridge.name);
         UnityEngine.Cursor.visible = false;
+        personatge.GetComponent<PlayerShoot>().ActivaCursor();
         this.gameObject.SetActive(false);
     }
 
@@ -81,6 +95,7 @@ public class UI_RepareBridge : MonoBehaviour
     {
        // Debug.Log("Ha clickat no");
         this.gameObject.SetActive(false);
+        personatge.GetComponent<PlayerShoot>().ActivaCursor();
         UnityEngine.Cursor.visible = false;
     }
 }

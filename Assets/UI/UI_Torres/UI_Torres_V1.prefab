@@ -202,7 +202,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1 &781682062869338045
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +383,7 @@ MonoBehaviour:
   imatgeFire: {fileID: 21300000, guid: 525b88c5c36daae41952d9bac6ad4322, type: 3}
   imatgeNull: {fileID: 21300000, guid: e4c748b7e47b052408fd6f51a9267482, type: 3}
   quantitatElements: {fileID: 0}
+  personatge: {fileID: 0}
 --- !u!1 &3310518995291534725
 GameObject:
   m_ObjectHideFlags: 0

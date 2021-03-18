@@ -14,7 +14,7 @@ public class UI_Torres : MonoBehaviour
     public Inventory inventari;
    // public UI_Inventory inventory;
     public UI_InGame inventory;
-    public Cursor cursor;
+    public GameObject cursor;
 
     public GameObject earth;
     public GameObject water;
@@ -28,8 +28,14 @@ public class UI_Torres : MonoBehaviour
     public Sprite imatgeNull;
 
     public GameObject quantitatElements;
+    public GameObject personatge;
 
 
+    public void OmplePersonatge(GameObject g)
+    {
+        personatge = g;
+
+    }
     public void Start()
     {
     
@@ -128,8 +134,8 @@ public class UI_Torres : MonoBehaviour
             quantitatElements.transform.GetChild(1).GetComponent<Text>().text = inventari.items[1].amount.ToString();
             quantitatElements.transform.GetChild(2).GetComponent<Text>().text = inventari.items[2].amount.ToString();
             quantitatElements.transform.GetChild(3).GetComponent<Text>().text = inventari.items[3].amount.ToString();
-            cursor.top = true;
-            
+            //cursor.top = true;
+            cursor.SetActive(false);
             UnityEngine.Cursor.visible = true;
 
             inventory.gameObject.SetActive(false);
@@ -150,10 +156,11 @@ public class UI_Torres : MonoBehaviour
     }
     public void OnClickButtonClose()
     {
+        Debug.Log("Tanca");
         inventory.gameObject.SetActive(true);
-        this.gameObject.SetActive(false);
-        cursor.top = false;
+        cursor.SetActive(true);
         UnityEngine.Cursor.visible = false;
+        this.gameObject.SetActive(false);
     }
 
     public float positionYMesh(GameObject g)
@@ -199,12 +206,6 @@ public class UI_Torres : MonoBehaviour
                     position = cami.gameObject.transform.position;
                 }
 
-
-                // Quan tinguem les torretes definitives amb tots els pivots a baix hem d'activar això
-
-                
-
-
                if (torres[i].inGround)
                 {
                     position.y = positionYMesh(casella);
@@ -241,7 +242,8 @@ public class UI_Torres : MonoBehaviour
                     t.level = torres[i].level;
                     
                 }
-                cursor.top = false;
+                Debug.Log("Arriba aqui");
+                cursor.SetActive(true);
                 UnityEngine.Cursor.visible = false;
                 break;
 

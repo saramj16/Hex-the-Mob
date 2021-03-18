@@ -10,6 +10,8 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bullet;
 
     public Inventory inventari;
+
+    public GameObject cursor;
    // public UI_Inventory inventory;
     public UI_InGame inventory;
 
@@ -59,6 +61,17 @@ public class PlayerShoot : MonoBehaviour
             }
         }
         
+    }
+
+    public void DesactivaCursor()
+    {
+        UnityEngine.Cursor.visible = true;
+        cursor.SetActive(false);
+    }
+    public void ActivaCursor()
+    {
+        UnityEngine.Cursor.visible = false;
+        cursor.SetActive(true);
     }
     private void bruixaDispara()
     {

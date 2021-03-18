@@ -18,7 +18,7 @@ public class Bridge : MonoBehaviour
 
     // Start is called before the first frame update
 
-    public void ReparaPont(Inventory inventari)
+    public bool ReparaPont(Inventory inventari)
     {
         bool error = inventari.spendResources(element1, quantitat1, element2, quantitat2);
         if (error)
@@ -30,9 +30,10 @@ public class Bridge : MonoBehaviour
             colliderPont.SetActive(false);
         } else
         {
-          //  Debug.Log("No hem pogut arreglar el pont");
+           Debug.Log("No hem pogut arreglar el pont " + error);
         }
-        
+
+        return error;
 
     }
 

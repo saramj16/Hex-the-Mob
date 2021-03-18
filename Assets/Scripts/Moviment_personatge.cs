@@ -8,12 +8,14 @@ public class Moviment_personatge : MonoBehaviour
     public CharacterController controller;
     public Camera cam;
 
-    public float velocitat = 3f;
+    public float velocitat_base = 1.5f;
+    public float velocitat_running = 3f;
+    public float velocitat = 0f;
     public float gravetat = 20f;
 
     public float temps_rotacio = 0.1f;
     public float vel_rotacio;
-    public float jump = 3f;
+    public float jump = 3.5f;
     public Vector3 moveDirection = Vector3.zero;
     public Animator anim;
 
@@ -133,14 +135,14 @@ public class Moviment_personatge : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             //Debug.Log("Running");
-            velocitat = 3.5f;
+            velocitat = velocitat_running;
             anim.SetBool("isRunning", true);
         }
         // Control animacions caminar
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             //Debug.Log("ja no està running");
-            velocitat = 2f;
+            velocitat = velocitat_base;
             anim.SetBool("isRunning", false);
         }
     }

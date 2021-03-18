@@ -48,8 +48,10 @@ public class PosarTorretes : MonoBehaviour
             {
                 UI_torres.GetComponent<UI_Torres>().guardaPosition(casella, way);
                 UI_torres.GetComponent<UI_Torres>().guardaInventari(inventari);
+                UI_torres.GetComponent<UI_Torres>().OmplePersonatge(this.gameObject);
                 //Menu d'escollir torre
                 UI_torres.SetActive(true);
+                this.gameObject.GetComponent<PlayerShoot>().DesactivaCursor();
             } else
             {
                 if (improveGround == true)
@@ -59,7 +61,9 @@ public class PosarTorretes : MonoBehaviour
                         //Millorar Torre
                         GameObject g = torreDeCasella(terrenyTorre);
                         UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
+                        UI_Upgrade.GetComponent<UI_Upgrade>().OmplePersonatge(this.gameObject);
                         UI_Upgrade.SetActive(true);
+                        this.gameObject.GetComponent<PlayerShoot>().DesactivaCursor();
                         //Debug.Log("Millorar Torre " + g.name);
 
                     }
@@ -77,7 +81,9 @@ public class PosarTorretes : MonoBehaviour
                     {
                         GameObject g = torreDeCasella(terrenyTorre);
                         UI_Upgrade.GetComponent<UI_Upgrade>().OmpleTorreUpgrade(g);
+                        UI_Upgrade.GetComponent<UI_Upgrade>().OmplePersonatge(this.gameObject);
                         UI_Upgrade.SetActive(true);
+                        this.gameObject.GetComponent<PlayerShoot>().DesactivaCursor();
                         Debug.Log("Millorar Torre " + g.name);
 
                     }
@@ -108,7 +114,9 @@ public class PosarTorretes : MonoBehaviour
                 {
                     UI_RepareBridge.GetComponent<UI_RepareBridge>().guardaInventari(inventari);
                     UI_RepareBridge.GetComponent<UI_RepareBridge>().OmpleBridge(bridge);
+                    UI_RepareBridge.GetComponent<UI_RepareBridge>().OmplePersonatge(this.gameObject);
                     UI_RepareBridge.SetActive(true);
+                    this.gameObject.GetComponent<PlayerShoot>().DesactivaCursor();
                 }
             }
         }

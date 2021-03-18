@@ -8,6 +8,8 @@ public class UI_Upgrade : MonoBehaviour
 
     GameObject torreUpgrade;
     public Text titol;
+
+    GameObject personatge;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +20,19 @@ public class UI_Upgrade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UnityEngine.Cursor.visible = true;
     }
 
     public void OmpleTorreUpgrade(GameObject torre)
     {
         Debug.Log("Omple la torre " + torre.name);
         torreUpgrade = torre;
+
+    }
+
+    public void OmplePersonatge(GameObject g)
+    {
+        personatge = g;
 
     }
 
@@ -36,12 +44,16 @@ public class UI_Upgrade : MonoBehaviour
         Debug.Log("Actualitza torre " + torreUpgrade.name);
 
         torreUpgrade.GetComponent<Turret>().UpgradeTorre();
+        UnityEngine.Cursor.visible = false;
         this.gameObject.SetActive(false);
+        personatge.GetComponent<PlayerShoot>().ActivaCursor();
     }
 
     public void OnClickNo()
     {
         Debug.Log("Ha clickat no");
+        UnityEngine.Cursor.visible = false;
         this.gameObject.SetActive(false);
+        personatge.GetComponent<PlayerShoot>().ActivaCursor();
     }
 }
