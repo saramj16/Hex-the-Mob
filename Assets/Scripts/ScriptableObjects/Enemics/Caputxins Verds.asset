@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Caputxins Verds
   m_EditorClassIdentifier: 
   tipus: 
-  velocitat: 4
+  velocitat: 6
   vida: 150
   atac: 30
   dificultat: 2
-  prefab: {fileID: 1747226929150225957, guid: 65ff6e971a91dee4e8ec182e4f129a30, type: 3}
+  prefab: {fileID: 1747226929150225957, guid: 09a3fea205bee6f478423d9b5c85c58f, type: 3}

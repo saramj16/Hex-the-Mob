@@ -38,30 +38,32 @@ public class SpawnResources : MonoBehaviour
         {
             for (int i = 0; i < numSpawners; i++)
             {
-                //Debug.Log("NOU RECURS");
                 
-                element = Random.Range(1, 4);
+                
+                element = Random.Range(1, 5);
+
+                //Debug.Log("NOU RECURS" + element);
                 switch (element)
                 {
                     case 1:
                         //Terra
+                        ground = air;
+                        element = 0;
+                        break;
+                    case 2:
+                        //Foc
                         ground = earth;
                         element = 1;
                         break;
-                    case 2:
-                        //Aire
+                    case 3:
+                        //Aigua
                         ground = fire;
                         element = 2;
                         break;
-                    case 3:
-                        //Aigu
+                    case 4:
+                        //Aire
                         ground = water;
                         element = 3;
-                        break;
-                    case 4:
-                        //Foc
-                        ground = air;
-                        element = 4;
                         break;
                 }
                 // Calculem si la zona del recurs ja esta activa i li diem la posicio
@@ -70,9 +72,9 @@ public class SpawnResources : MonoBehaviour
 
                 float dist = Vector3.Distance(resourcePosition, bruixa.transform.position);
 
-                if(Mathf.Abs(dist) < 4f)
+                if(Mathf.Abs(dist) < 3f)
                 {
-                    //Debug.Log("Posa recurs: " + resource[element].prefab.name);
+                    Debug.Log("Posa recurs: " + resource[element].prefab.name);
                     Instantiate(resource[element].prefab, resourcePosition, Quaternion.identity);
                     countdown = timeToSpawn;
                 } else
