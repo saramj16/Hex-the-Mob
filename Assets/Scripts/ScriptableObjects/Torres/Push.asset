@@ -22,7 +22,7 @@ MonoBehaviour:
   inGround: 1
   prefab: {fileID: 400084487857201489, guid: 3fdcc81c6d2e19343850198be43c2b85, type: 3}
   element1: 1
-  quantiatElement1: 1
+  quantiatElement1: 3
   element2: 1
   quantitatElement2: 0
   nom: Push

@@ -22,7 +22,7 @@ MonoBehaviour:
   inGround: 1
   prefab: {fileID: 237339707633909292, guid: d9b0b66028ccddb4e829081742b12c47, type: 3}
   element1: 0
-  quantiatElement1: 1
+  quantiatElement1: 3
   element2: 0
   quantitatElement2: 0
   nom: Gun

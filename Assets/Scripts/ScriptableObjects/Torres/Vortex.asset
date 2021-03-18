@@ -22,7 +22,7 @@ MonoBehaviour:
   inGround: 1
   prefab: {fileID: 6248637888969492871, guid: 506ec9ddccf12e6449f61f9945bbfc21, type: 3}
   element1: 1
-  quantiatElement1: 1
+  quantiatElement1: 5
   element2: 1
   quantitatElement2: 0
   nom: Vortex

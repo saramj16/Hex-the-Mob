@@ -22,7 +22,7 @@ MonoBehaviour:
   inGround: 1
   prefab: {fileID: 666117630883152007, guid: d9edd8ae882575349a1b67c1712f49bd, type: 3}
   element1: 2
-  quantiatElement1: 1
+  quantiatElement1: 5
   element2: 2
   quantitatElement2: 0
   nom: Flamethrower

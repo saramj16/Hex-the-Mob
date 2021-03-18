@@ -22,7 +22,7 @@ MonoBehaviour:
   inGround: 1
   prefab: {fileID: 2687952415639166427, guid: 763c0a491cc9257438894772860b3666, type: 3}
   element1: 2
-  quantiatElement1: 1
+  quantiatElement1: 3
   element2: 2
   quantitatElement2: 0
   nom: Shotgun

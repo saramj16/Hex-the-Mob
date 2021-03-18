@@ -22,7 +22,7 @@ MonoBehaviour:
   inGround: 0
   prefab: {fileID: 2081501979175346875, guid: 318bd996b2947b64a8eaca688e997914, type: 3}
   element1: 3
-  quantiatElement1: 1
+  quantiatElement1: 3
   element2: 3
   quantitatElement2: 0
   nom: Bear Trap

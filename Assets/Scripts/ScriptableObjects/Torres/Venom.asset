@@ -22,9 +22,9 @@ MonoBehaviour:
   inGround: 1
   prefab: {fileID: 327999577971266738, guid: a04d0b0e3e2dda8498278f17c171b6f9, type: 3}
   element1: 3
-  quantiatElement1: 1
+  quantiatElement1: 4
   element2: 0
-  quantitatElement2: 1
+  quantitatElement2: 4
   nom: Venom
   description: "Va treient vida despr\xE9s d'impactar.a, l'absorbeix i el mata. Recarga
     extremadament lenta en"

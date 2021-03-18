@@ -22,9 +22,9 @@ MonoBehaviour:
   inGround: 1
   prefab: {fileID: 614806621260843316, guid: 41735c8664d93da47b8bfba79bcf623b, type: 3}
   element1: 2
-  quantiatElement1: 1
+  quantiatElement1: 4
   element2: 3
-  quantitatElement2: 1
+  quantitatElement2: 4
   nom: Mortar
   description: No pot disparar molt aprop seu.oba, l'absorbeix i el mata. Recarga
     extremadament lenta en

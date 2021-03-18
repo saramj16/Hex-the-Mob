@@ -22,7 +22,7 @@ MonoBehaviour:
   inGround: 1
   prefab: {fileID: 2376380781014121540, guid: fcd5353945c2cf749952e8fbf90884d0, type: 3}
   element1: 0
-  quantiatElement1: 1
+  quantiatElement1: 5
   element2: 0
   quantitatElement2: 0
   nom: Gatling Gun

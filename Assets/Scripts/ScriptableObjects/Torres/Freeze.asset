@@ -22,9 +22,9 @@ MonoBehaviour:
   inGround: 1
   prefab: {fileID: 3928403761973779757, guid: 9ee0dd289bcfd664c981953f550f5eec, type: 3}
   element1: 0
-  quantiatElement1: 1
+  quantiatElement1: 4
   element2: 1
-  quantitatElement2: 1
+  quantitatElement2: 4
   nom: Freeze
   description: Congela temporalment a un enemic.ba, l'absorbeix i el mata. Recarga
     extremadament lenta en

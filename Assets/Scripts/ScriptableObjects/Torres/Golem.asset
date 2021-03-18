@@ -22,7 +22,7 @@ MonoBehaviour:
   inGround: 0
   prefab: {fileID: 3524534397336052651, guid: cdcbc8b58c67c3844badd638266574d4, type: 3}
   element1: 3
-  quantiatElement1: 1
+  quantiatElement1: 5
   element2: 3
   quantitatElement2: 0
   nom: Golem
