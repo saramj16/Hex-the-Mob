@@ -160,6 +160,7 @@ public class UI_Torres : MonoBehaviour
         inventory.gameObject.SetActive(true);
         cursor.SetActive(true);
         UnityEngine.Cursor.visible = false;
+        personatge.GetComponent<PlayerShoot>().ActivaCursor();
         this.gameObject.SetActive(false);
     }
 
@@ -242,9 +243,10 @@ public class UI_Torres : MonoBehaviour
                     t.level = torres[i].level;
                     
                 }
-                Debug.Log("Arriba aqui");
+                //Debug.Log("Arriba aqui");
                 cursor.SetActive(true);
                 UnityEngine.Cursor.visible = false;
+                personatge.GetComponent<PlayerShoot>().ActivaCursor();
                 break;
 
             }
