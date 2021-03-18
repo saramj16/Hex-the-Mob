@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Caputxins Liles
   m_EditorClassIdentifier: 
   tipus: 
-  velocitat: 6
+  velocitat: 18
   vida: 150
-  atac: 30
+  atac: 50
   dificultat: 4
   prefab: {fileID: 1747226929150225957, guid: 9be49c87bb32a464da1358f86c8c0c8d, type: 3}
