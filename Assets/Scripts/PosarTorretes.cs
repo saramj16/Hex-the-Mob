@@ -44,17 +44,17 @@ public class PosarTorretes : MonoBehaviour
 
 
 
-            if (!improveGround && !improveWay)
-            {
+          //  if (!improveGround && !improveWay)
+           // {
                 UI_torres.GetComponent<UI_Torres>().guardaPosition(casella, way);
                 UI_torres.GetComponent<UI_Torres>().guardaInventari(inventari);
                 UI_torres.GetComponent<UI_Torres>().OmplePersonatge(this.gameObject);
                 //Menu d'escollir torre
                 UI_torres.SetActive(true);
                 this.gameObject.GetComponent<PlayerShoot>().DesactivaCursor();
-            } else
-            {
-                if (improveGround == true)
+           // } else
+           // {
+             /*   if (improveGround == true)
                 {
                     if (torreCollisionada.GetComponent<Turret>().level < 3)
                     {
@@ -73,9 +73,9 @@ public class PosarTorretes : MonoBehaviour
                     }
                     improveGround = false;
                     terrenyTorre = null;
-                }
+                }*/
 
-                if (improveWay == true)
+              /*  if (improveWay == true)
                 {
                     if (torreCollisionada.GetComponent<Turret>().level < 3)
                     {
@@ -93,8 +93,8 @@ public class PosarTorretes : MonoBehaviour
                     }
                     improveWay = false;
                     terrenyTorre = null;
-                }
-            }
+                }*/
+           // }
         }
 
         // Per posar ponts
@@ -109,7 +109,7 @@ public class PosarTorretes : MonoBehaviour
             {
                 //Millorar el pont X
                 float dist = Vector3.Distance(bridge.transform.GetChild(0).transform.position, transform.position);
-                //Debug.Log("Distancia: " + dist);
+                Debug.Log("Distancia: " + dist);
                 if (dist < 1f)
                 {
                     UI_RepareBridge.GetComponent<UI_RepareBridge>().guardaInventari(inventari);
@@ -148,7 +148,7 @@ public class PosarTorretes : MonoBehaviour
             //Debug.Log("DISTANCIA: " + dist);
             if (dist < minDist)
             {
-                    //Debug.Log("Entra aqui, DISTANCIA: " + dist);
+                    Debug.Log("Entra aqui, DISTANCIA: " + dist);
                     bridge = ponts[i];
                     minDist = dist;
                     UI_RepareBridge.GetComponent<UI_RepareBridge>().CanviaNom(ponts[i].name);

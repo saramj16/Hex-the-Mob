@@ -80,14 +80,15 @@ public class UI_RepareBridge : MonoBehaviour
 
         if (error)
         {
+            Debug.Log("Hem pogut arreglar el pont");
             //Debug.Log("Hem pogut arreglar el pont");
             bridge.GetComponent<Bridge>().PontArreglat();
             inventory.RefreshInventoryItems();
         }
-        
+
 
         // Actualitza el q sigui i close
-      //  Debug.Log("Repara bridge " + bridge.name);
+        //  Debug.Log("Repara bridge " + bridge.name);
         UnityEngine.Cursor.visible = false;
         personatge.GetComponent<PlayerShoot>().ActivaCursor();
         this.gameObject.SetActive(false);

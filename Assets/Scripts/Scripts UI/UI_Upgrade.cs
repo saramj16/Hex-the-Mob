@@ -10,9 +10,10 @@ public class UI_Upgrade : MonoBehaviour
     public Text titol;
 
     GameObject personatge;
-
     public Inventory inventari;
     public UI_InGame inventory;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,7 @@ public class UI_Upgrade : MonoBehaviour
         personatge = g;
 
     }
+
     public void guardaInventari(GameObject i)
     {
         inventari = i.GetComponent<UI_InGame>().GetInventory();

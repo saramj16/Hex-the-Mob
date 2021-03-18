@@ -38,7 +38,7 @@ public class BalaBruixa : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("COLLISION");
+        //Debug.Log("COLLISION");
         if (other.gameObject.tag == "Enemy")
         {
             //Treure vida a l'enemic

@@ -15,7 +15,6 @@ public class PlayerShoot : MonoBehaviour
    // public UI_Inventory inventory;
     public UI_InGame inventory;
 
-
     public bool potDisparar;
 
     [SerializeField]
@@ -47,6 +46,8 @@ public class PlayerShoot : MonoBehaviour
             {
                 timer = 0f;
                 bruixaDispara();
+
+                inventory.RefreshInventoryItems();
                 /**
          
                 
