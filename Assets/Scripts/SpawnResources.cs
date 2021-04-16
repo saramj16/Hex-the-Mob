@@ -21,9 +21,16 @@ public class SpawnResources : MonoBehaviour
 
     GameObject GameMaster;
     WaveManager waveManager;
+
+    public bool zonaFoc;
+    public bool zonaAire;
+    public bool zonaAigua;
+    public bool zonaTerra;
+    private bool zonaBlock;
     // Start is called before the first frame update
     void Start()    
     {
+        zonaBlock = false;
         GameMaster = GameObject.Find("GameMaster");
         numSpawners = 2;
         timeToSpawn = 5f;
@@ -38,41 +45,41 @@ public class SpawnResources : MonoBehaviour
         {
             for (int i = 0; i < numSpawners; i++)
             {
-                
-                
                 element = Random.Range(1, 5);
 
                 //Debug.Log("NOU RECURS" + element);
                 switch (element)
                 {
                     case 1:
-                        //Terra
+                        //Aire
                         ground = air;
                         element = 0;
+                        zonaBlock = zonaAire;
                         break;
                     case 2:
-                        //Foc
+                        //Terra
                         ground = earth;
                         element = 1;
+                        zonaBlock = zonaTerra;
                         break;
                     case 3:
-                        //Aigua
+                        //Foc
                         ground = fire;
                         element = 2;
+                        zonaBlock = zonaFoc;
                         break;
                     case 4:
-                        //Aire
+                        //Aigua
                         ground = water;
                         element = 3;
+                        zonaBlock = zonaAigua;
                         break;
                 }
                 // Calculem si la zona del recurs ja esta activa i li diem la posicio
 
                 resourcePosition = calculateResourcePosition();
 
-                float dist = Vector3.Distance(resourcePosition, bruixa.transform.position);
-
-                if(Mathf.Abs(dist) < 3f)
+                if (zonaBlock)
                 {
                     Debug.Log("Posa recurs: " + resource[element].prefab.name);
                     Instantiate(resource[element].prefab, resourcePosition, Quaternion.identity);
@@ -81,6 +88,8 @@ public class SpawnResources : MonoBehaviour
                 {
                     countdown = 0;
                 }
+
+                
             }
             
         }

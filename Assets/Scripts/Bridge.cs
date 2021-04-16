@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bridge : MonoBehaviour
 {
-
+    public SpawnResources spawnResources;
     public GameObject runa1;
     public GameObject runa2;
     public GameObject pont;
@@ -15,6 +15,8 @@ public class Bridge : MonoBehaviour
 
     public GameObject colliderPont;
     public bool arreglat = false;
+
+    public Item.Element zonaDesbloquejada;
 
     // Start is called before the first frame update
 
@@ -40,5 +42,24 @@ public class Bridge : MonoBehaviour
     public void PontArreglat()
     {
         arreglat = true;
+
+        switch (zonaDesbloquejada)
+        {
+            case Item.Element.Air:
+                spawnResources.zonaAire = true;
+                break;
+            case Item.Element.Water:
+                spawnResources.zonaAigua = true;
+                break;
+            case Item.Element.Earth:
+                spawnResources.zonaTerra = true;
+                break;
+            case Item.Element.Fire:
+                spawnResources.zonaFoc = true;
+                break;
+        }
+
+ 
+
     }
 }
