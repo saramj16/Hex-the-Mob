@@ -2,7 +2,7 @@
 using UnityEditor;
 
 #if UNITY_EDITOR
-public class MyWindow : EditorWindow
+public class EditorMapa : EditorWindow
 {
 
     int h = 0;
@@ -20,9 +20,7 @@ public class MyWindow : EditorWindow
     [MenuItem("Window/Editor Mapa")]
     public static void ShowWindow()
     {
-        GetWindow<MyWindow>("Editor Mapa");
-
-
+        GetWindow<EditorMapa>("Editor Mapa");
     }
 
     void OnGUI()
@@ -156,7 +154,6 @@ public class MyWindow : EditorWindow
                 float z = obj[i].gameObject.transform.localScale.z/2f;
                 obj[i].gameObject.transform.localScale = new Vector3(x, y, z);
                 //obj[i].gameObject.transform.position = obj[i].gameObject.transform.position + new Vector3(0, -0.15f, 0);
-
             }
         }
 
