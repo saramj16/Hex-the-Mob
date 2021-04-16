@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControlEnemic : MonoBehaviour
 {
-    public float velocitat = 0.1f;
+    public float velocitat = 6f;
 
     private Transform target;
     private int waypointIndex = 0;
@@ -23,6 +23,8 @@ public class ControlEnemic : MonoBehaviour
     private bool final;
     private bool ataquem;
     private bool death;
+
+    public float comptadorAtacTorre = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +62,15 @@ public class ControlEnemic : MonoBehaviour
             {
                 Debug.Log("Walking FALSE:  " + gameObject.name);
                 anim.SetBool("Walking", false);
-                AtacaTorre();
+
+                if (comptadorAtacTorre <= 0)
+                {
+                    AtacaTorre();
+                    comptadorAtacTorre = 2;
+                }
+
+                comptadorAtacTorre -= Time.deltaTime;
+                
             } else
             {
                 if (!death)
@@ -193,7 +203,7 @@ public class ControlEnemic : MonoBehaviour
             Debug.Log("Ataquem torre");
             anim.SetBool("Atac", true);
             torre.gameObject.GetComponent<Hexentrum>().restaVida(atac);
-            //Invoke("AtacaTorre", 3.0f);
+
         }
     }
 

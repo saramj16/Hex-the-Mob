@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Caputxins Blaus
   m_EditorClassIdentifier: 
   tipus: 
-  velocitat: 18
+  velocitat: 30
   vida: 150
   atac: 35
   dificultat: 3

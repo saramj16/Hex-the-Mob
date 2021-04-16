@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Vortex
   m_EditorClassIdentifier: 
   bala: {fileID: 11400000, guid: e3273c38395415940a69692cc0143e3a, type: 2}
-  range: 3
+  range: 1
   minRange: 0
   areaDamage: 0
   fireRate: 0.2

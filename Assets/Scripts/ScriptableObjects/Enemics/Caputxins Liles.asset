@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Caputxins Liles
   m_EditorClassIdentifier: 
   tipus: 
-  velocitat: 18
+  velocitat: 30
   vida: 150
   atac: 50
   dificultat: 4

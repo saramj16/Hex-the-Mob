@@ -70,6 +70,7 @@ public class PlayerShoot : MonoBehaviour
 
     public void DesactivaCursor()
     {
+        Debug.Log("Desactivem Cursor");
         potDisparar = false;
         UnityEngine.Cursor.visible = true;
         cursor.SetActive(false);
@@ -77,11 +78,13 @@ public class PlayerShoot : MonoBehaviour
 
     public void ActivaPotDispara()
     {
+        Debug.Log("Pot disparar la putilla");
         potDisparar = true;
     }
     public void ActivaCursor()
     {
-        Invoke("ActivaPotDispara", 1f);
+        Debug.Log("Activem Cursor");
+        Invoke("ActivaPotDispara", 1.5f);
         UnityEngine.Cursor.visible = false;
         cursor.SetActive(true);
     }
@@ -91,13 +94,16 @@ public class PlayerShoot : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, 100))
         {
-            //Destroy(hitInfo.collider.gameObject);
-            if (inventari.spendResourcesDisparo() && potDisparar)
+            Debug.Log("Pot disparar la bruixa: " + potDisparar);
+            if (potDisparar)
             {
-                GameObject bulletClone = Instantiate(bullet, firePoint.position, firePoint.rotation);
-                Debug.DrawRay(firePoint.position, hitInfo.point - firePoint.position, Color.blue, 3f);
-                bulletClone.GetComponent<BalaBruixa>().setTargetDirection(hitInfo.point - firePoint.position);
-                inventory.RefreshInventoryItems();
+                if (inventari.spendResourcesDisparo())
+                {
+                    GameObject bulletClone = Instantiate(bullet, firePoint.position, firePoint.rotation);
+                    Debug.DrawRay(firePoint.position, hitInfo.point - firePoint.position, Color.blue, 3f);
+                    bulletClone.GetComponent<BalaBruixa>().setTargetDirection(hitInfo.point - firePoint.position);
+                    inventory.RefreshInventoryItems();
+                }
             }
 
         }

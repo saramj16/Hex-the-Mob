@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Caputxins Taronjes
   m_EditorClassIdentifier: 
   tipus: 
-  velocitat: 18
+  velocitat: 30
   vida: 150
   atac: 40
   dificultat: 5
