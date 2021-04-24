@@ -39,24 +39,33 @@ public class WaveManager : MonoBehaviour
         countdown = tempsDia;
         //Comprovar si hi ha enemics començant al segon 1, cada 1 segons
         InvokeRepeating("CheckForEnemies", 1f, 1f);
+
+        
     }
 
     private void Update()
     {
-        if (countdown <= 0 && esDia)
+        if(this.gameObject.GetComponent<Tutorial>().tutorial == false)
         {
-            StartCoroutine(SpawnWave());
-            SetNit();
-            
-        }
-        if (!HiHaEnemics && !esDia)
-        {
-            SetDia();
-        }
+            if (countdown <= 0 && esDia)
+            {
+                StartCoroutine(SpawnWave());
+                SetNit();
 
-        sol.color = ColorSol;
-        countdown -= Time.deltaTime;
-        LightTransitionDiaTime -= Time.deltaTime;
+            }
+            if (!HiHaEnemics && !esDia)
+            {
+                SetDia();
+            }
+
+            
+            countdown -= Time.deltaTime;
+            LightTransitionDiaTime -= Time.deltaTime;
+        } else
+        {
+            
+            sol.color = ColorSol;
+        }
     }
 
     public IEnumerator SpawnWave()

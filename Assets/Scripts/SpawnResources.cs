@@ -41,59 +41,60 @@ public class SpawnResources : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (countdown <= 0 && waveManager.esDia)
+        if (this.gameObject.GetComponent<Tutorial>().tutorial == false)
         {
-            for (int i = 0; i < numSpawners; i++)
+            if (countdown <= 0 && waveManager.esDia)
             {
-                element = Random.Range(1, 5);
-
-                //Debug.Log("NOU RECURS" + element);
-                switch (element)
+                for (int i = 0; i < numSpawners; i++)
                 {
-                    case 1:
-                        //Aire
-                        ground = air;
-                        element = 0;
-                        zonaBlock = zonaAire;
-                        break;
-                    case 2:
-                        //Terra
-                        ground = earth;
-                        element = 1;
-                        zonaBlock = zonaTerra;
-                        break;
-                    case 3:
-                        //Foc
-                        ground = fire;
-                        element = 2;
-                        zonaBlock = zonaFoc;
-                        break;
-                    case 4:
-                        //Aigua
-                        ground = water;
-                        element = 3;
-                        zonaBlock = zonaAigua;
-                        break;
+                    element = Random.Range(1, 5);
+
+                    //Debug.Log("NOU RECURS" + element);
+                    switch (element)
+                    {
+                        case 1:
+                            //Aire
+                            ground = air;
+                            element = 0;
+                            zonaBlock = zonaAire;
+                            break;
+                        case 2:
+                            //Terra
+                            ground = earth;
+                            element = 1;
+                            zonaBlock = zonaTerra;
+                            break;
+                        case 3:
+                            //Foc
+                            ground = fire;
+                            element = 2;
+                            zonaBlock = zonaFoc;
+                            break;
+                        case 4:
+                            //Aigua
+                            ground = water;
+                            element = 3;
+                            zonaBlock = zonaAigua;
+                            break;
+                    }
+                    // Calculem si la zona del recurs ja esta activa i li diem la posicio
+
+                    resourcePosition = calculateResourcePosition();
+
+                    if (zonaBlock)
+                    {
+                        Debug.Log("Posa recurs: " + resource[element].prefab.name);
+                        Instantiate(resource[element].prefab, resourcePosition, Quaternion.identity);
+                        countdown = timeToSpawn;
+                    }
+                    else
+                    {
+                        countdown = 0;
+                    }
                 }
-                // Calculem si la zona del recurs ja esta activa i li diem la posicio
-
-                resourcePosition = calculateResourcePosition();
-
-                if (zonaBlock)
-                {
-                    Debug.Log("Posa recurs: " + resource[element].prefab.name);
-                    Instantiate(resource[element].prefab, resourcePosition, Quaternion.identity);
-                    countdown = timeToSpawn;
-                } else
-                {
-                    countdown = 0;
-                }
-
-                
             }
-            
-        }
-        countdown -= Time.deltaTime;
+            countdown -= Time.deltaTime;
+        }       
     }
 
     Vector3 calculateResourcePosition()
