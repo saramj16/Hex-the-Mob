@@ -14,6 +14,9 @@ public class UI_InGame : MonoBehaviour
     public Text dies;
     public Text vida;
 
+    public Image vidaTorre;
+    public Image tempsDia;
+
     public static UI_InGame instance;
     // Start is called before the first frame update
     public void SetInventory(Inventory inventory)
@@ -36,7 +39,9 @@ public class UI_InGame : MonoBehaviour
     private void Update()
     {
         dies.text = gameManager.GetComponent<WaveManager>().nDia.ToString();
-        vida.text = torre.GetComponent<Hexentrum>().vida.ToString();
+        vida.text = torre.GetComponent<Hexentrum>().vidaActual.ToString();
+        vidaTorre.fillAmount = torre.GetComponent<Hexentrum>().vidaActual / torre.GetComponent<Hexentrum>().vidaMaxima;
+        tempsDia.fillAmount = gameManager.GetComponent<WaveManager>().countdown / gameManager.GetComponent<WaveManager>().tempsDia;
     }
 
 

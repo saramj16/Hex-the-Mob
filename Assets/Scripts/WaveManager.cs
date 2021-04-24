@@ -21,7 +21,7 @@ public class WaveManager : MonoBehaviour
     public EnemyWaves enemyWaves;
 
     public bool HiHaEnemics;
-    private float countdown;
+    public float countdown;
 
     private int waveNumber = 0;
 

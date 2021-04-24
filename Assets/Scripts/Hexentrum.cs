@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Hexentrum : MonoBehaviour
 {
-    public float vida = 10000f;
+    public float vidaActual = 10000f;
+    public float vidaMaxima = 10000f;
 
     public void restaVida(float dany)
     {
-        vida -= dany;
+        vidaActual -= dany;
         //Debug.Log("Vida  " +vida);
-        if (vida <= 0)
+        if (vidaActual <= 0)
         {
             //Debug.LogError("Game OVER");
             SceneManager.LoadScene("GameOver");
