@@ -35,6 +35,19 @@ public class Inventory
         
     }
 
+    public int AmountRecurs(Item.Element e) {
+
+        for (int i = 0; i < items.Count; i++)
+        {
+            if (e == items[i].elem)
+            {
+                return items[i].amount;
+            }
+        }
+        return 0;
+    }
+
+
     public int elemPos(Item.Element e) {
         for (int i = 0; i < items.Count; i++)
         {

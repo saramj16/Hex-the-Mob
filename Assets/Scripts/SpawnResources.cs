@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnResources : MonoBehaviour
 {
-    Transform ground;
+    public Transform ground;
     public Transform fire;
     public Transform water;
     public Transform earth;
@@ -83,7 +83,7 @@ public class SpawnResources : MonoBehaviour
 
                     if (zonaBlock)
                     {
-                        Debug.Log("Posa recurs: " + resource[element].prefab.name);
+                        //Debug.Log("Posa recurs: " + resource[element].prefab.name);
                         Instantiate(resource[element].prefab, resourcePosition, Quaternion.identity);
                         countdown = timeToSpawn;
                     }
@@ -97,7 +97,7 @@ public class SpawnResources : MonoBehaviour
         }       
     }
 
-    Vector3 calculateResourcePosition()
+    public Vector3 calculateResourcePosition()
     {
         int num = Random.Range(1, ground.childCount);
         float x_coord = ground.GetChild(num).position.x;

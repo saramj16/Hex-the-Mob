@@ -45,10 +45,7 @@ public class UI_InGame : MonoBehaviour
     }
 
 
-    void ActualitzaBarraVida()
-    {
-       
-    }
+
 
     public void RefreshInventoryItems()
     {   //Funcio per actualitzar els nombres del inventari a la UI
