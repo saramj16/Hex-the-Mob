@@ -9,6 +9,9 @@ public class Tutorial : MonoBehaviour
     
     public Inventory inventory;
 
+    public GameObject waypointEnemicTutorial;
+    public GameObject enemic;
+
     public bool tutorial = false;
 
     bool eliminaText = false;
@@ -39,6 +42,9 @@ public class Tutorial : MonoBehaviour
     int llargadaText;
     int count;
     int ultimMissatge;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -141,15 +147,35 @@ public class Tutorial : MonoBehaviour
                         Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
                         Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
                         Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
+                        Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
+                        Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
+                        Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
+                        Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
+                        Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
+                        Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
+                        Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
+                        Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
+                        Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
+                        Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
 
                         Invoke("HaAgafatRecursos", 1f);
                         break;
 
                     case 6:
-                        accioInici = true;
-                        accioAcabada = false;
+                       // accioInici = true;
+                        accioAcabada = true;
                         //Es quan ha d'apretar F i posar la torre, no pot passar d'opcio fins que no hagi consturit una torre
                         Invoke("HaPosatTorre", 1f);
+                        break;
+
+                    case 7:
+                        accioInici = true;
+                        accioAcabada = false;
+
+                        Debug.Log("Entra al CASE 7");
+                        //S'ha de fer de nit i sortir una oleada
+                        //Instantiate(enemic, waypointEnemicTutorial.transform.position, waypointEnemicTutorial.transform.rotation);
+                        //Invoke("HaAcabatLaOleada", 1f);
                         break;
                     default:
                         accioAcabada = true;
@@ -180,6 +206,21 @@ public class Tutorial : MonoBehaviour
         }
     }
 
+
+    void HaAcabatLaOleada()
+    {
+        int enemics = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (enemics == 0)
+        {
+            accioAcabada = true;
+
+            NextPas();
+        }
+        else
+        {
+            Invoke("HaAcabatLaOleada", 1f);
+        }
+    }
     void NextPas()
     {
         accioInici = false;
@@ -195,7 +236,7 @@ public class Tutorial : MonoBehaviour
         int recursos = 0;
 
         recursos = inventory.AmountRecurs(Item.Element.Water);
-        if(recursos >= 3)
+        if(recursos >= 7)
         {
             accioAcabada = true;
 
@@ -207,7 +248,7 @@ public class Tutorial : MonoBehaviour
             NextPas();
         } else
         {
-            Invoke("HaAgafatRecursos", 2f);
+            Invoke("HaAgafatRecursos", 1f);
         }
     }
 
@@ -223,7 +264,7 @@ public class Tutorial : MonoBehaviour
         }
         else
         {
-            Invoke("HaPosatTorre", 2f);
+            Invoke("HaPosatTorre", 1f);
         }
     }
 
