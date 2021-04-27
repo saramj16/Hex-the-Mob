@@ -9,7 +9,7 @@ public class Tutorial : MonoBehaviour
     
     public Inventory inventory;
 
-    public GameObject waypointEnemicTutorial;
+    public GameObject waypointsEnemic;
     public GameObject enemic;
 
     public bool tutorial = false;
@@ -83,7 +83,7 @@ public class Tutorial : MonoBehaviour
                         tutorial = false;
                         accioInici = true;
                         textUI.gameObject.GetComponent<Text>().text = "";
-                        Debug.Log("Ha acabat el tutorial");
+                        //Debug.Log("Ha acabat el tutorial");
                     } else
                     {
                         NextPas();
@@ -162,8 +162,8 @@ public class Tutorial : MonoBehaviour
                         break;
 
                     case 6:
-                       // accioInici = true;
-                        accioAcabada = true;
+                        accioInici = true;
+                        accioAcabada = false;
                         //Es quan ha d'apretar F i posar la torre, no pot passar d'opcio fins que no hagi consturit una torre
                         Invoke("HaPosatTorre", 1f);
                         break;
@@ -172,10 +172,12 @@ public class Tutorial : MonoBehaviour
                         accioInici = true;
                         accioAcabada = false;
 
-                        Debug.Log("Entra al CASE 7");
+                        //Debug.Log("Entra al CASE 7");
                         //S'ha de fer de nit i sortir una oleada
-                        //Instantiate(enemic, waypointEnemicTutorial.transform.position, waypointEnemicTutorial.transform.rotation);
-                        //Invoke("HaAcabatLaOleada", 1f);
+                        GameObject e = (GameObject)Instantiate(enemic, waypointsEnemic.transform.GetChild(61).position, waypointsEnemic.transform.GetChild(61).rotation);
+                        e.GetComponent<ControlEnemic>().SetWaypointIndex(61);
+                        e.GetComponent<ControlEnemic>().vida = 50;
+                        Invoke("HaAcabatLaOleada", 1f);
                         break;
                     default:
                         accioAcabada = true;

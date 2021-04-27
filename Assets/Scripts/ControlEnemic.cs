@@ -6,8 +6,8 @@ public class ControlEnemic : MonoBehaviour
 {
     public float velocitat = 6f;
 
-    private Transform target;
-    private int waypointIndex = 0;
+    public Transform target;
+    public int waypointIndex = 0;
 
     public float vida = 100f;
     public float atac = 10f;
@@ -29,11 +29,15 @@ public class ControlEnemic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         death = false;
         final = false;
         ataquem = false;
         freeze = false;
-        target = Waypoints.points[0];
+
+        target = Waypoints.points[waypointIndex];
+      
+
         nomAux = this.gameObject.name;
         for (int i = 0; i < enemic.Count; i++)
         {
@@ -53,14 +57,21 @@ public class ControlEnemic : MonoBehaviour
 
     }
 
+    public void SetWaypointIndex(int waypoint)
+    {
+        
+        waypointIndex = waypoint;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Update Enemic");
         if(freeze == false)
         {
             if(ataquem == true)
             {
-                Debug.Log("Walking FALSE:  " + gameObject.name);
+                //Debug.Log("Walking FALSE:  " + gameObject.name);
                 anim.SetBool("Walking", false);
 
                 if (comptadorAtacTorre <= 0)
@@ -75,6 +86,7 @@ public class ControlEnemic : MonoBehaviour
             {
                 if (!death)
                 {
+                    Debug.Log("Hauria d'entrar aqui i anar cap a: " + target.name);
                     anim.SetBool("Walking", true);
                     Vector3 dir = target.position - transform.position;
                     transform.Translate(dir.normalized * velocitat * Time.deltaTime, Space.World);
