@@ -27,16 +27,20 @@ public class WaveManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Fa l'Start");
         musicController = musicController.GetComponent<musicController>();
         sol = GameObject.Find("Sol").GetComponent<Light>();
         HiHaEnemics = false;
-        sol.color = ColorSol;
+        
+
         //Hexa: FFF4D6
         dia = new Color32(255, 244, 214, 255);
         ColorSol = dia;
         //Hexa: A4A3FF
         nit = new Color32(163, 162, 255, 255);
         countdown = tempsDia;
+
+        sol.color = ColorSol;
         //Comprovar si hi ha enemics començant al segon 1, cada 1 segons
         InvokeRepeating("CheckForEnemies", 1f, 1f);
 
@@ -45,6 +49,7 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("Tutorial: " + this.gameObject.GetComponent<Tutorial>().tutorial);
         if(this.gameObject.GetComponent<Tutorial>().tutorial == false)
         {
             if (countdown <= 0 && esDia)
@@ -58,12 +63,12 @@ public class WaveManager : MonoBehaviour
                 SetDia();
             }
 
-            
+            sol.color = ColorSol;
             countdown -= Time.deltaTime;
             LightTransitionDiaTime -= Time.deltaTime;
         } else
         {
-            
+            esDia = true;
             sol.color = ColorSol;
         }
     }
@@ -131,7 +136,6 @@ public class WaveManager : MonoBehaviour
         //Debug.Log("Dia num: " + (nDia));
         countdown = tempsDia;
         esDia = true;
-        //sol.color = dia;
         ColorSol = Color.Lerp(nit, dia, LightTransitionDiaTime);
     }
 

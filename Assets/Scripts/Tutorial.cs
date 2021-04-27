@@ -6,17 +6,17 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     public GameObject bruixa;
-
+    
     public Inventory inventory;
 
-    public bool tutorial;
+    public bool tutorial = false;
 
     bool eliminaText = false;
 
     // Variables per marcar que només es facin les coses un cop
     bool accioAcabada = false;
     bool accioInici = false;
-    bool seguirText = false;
+    
 
     //Cercles per marcar
     public Image cercleVidaTorre;
@@ -60,13 +60,14 @@ public class Tutorial : MonoBehaviour
     {
         if(tutorial == true)
         {
-            Debug.Log("Elimina text: " + eliminaText);
-            Debug.Log("Accio acabada: " + eliminaText);
+            bruixa.GetComponent<PlayerShoot>().potDisparar = false;
+            //Debug.Log("Elimina text: " + eliminaText);
+            //Debug.Log("Accio acabada: " + eliminaText);
 
             //Text de benvinguda a la bruixa
             if (eliminaText && accioAcabada)
             {
-                Debug.Log("Pot entrar a lo del click ");
+                //Debug.Log("Pot entrar a lo del click ");
 
                 //Si puc posem una fletxita i l'animem amb l'escala
                 if (Input.GetKeyUp(KeyCode.Mouse0))
@@ -75,15 +76,11 @@ public class Tutorial : MonoBehaviour
                     {
                         tutorial = false;
                         accioInici = true;
+                        textUI.gameObject.GetComponent<Text>().text = "";
+                        Debug.Log("Ha acabat el tutorial");
                     } else
                     {
-                        accioInici = false;
-                        Debug.Log("Entra a dir el missatge");
-                        textUI.gameObject.GetComponent<Text>().text = "";
-                        count++;
-                        text = textos[count];
-                        eliminaText = false;
-                        StartCoroutine(mostraText());
+                        NextPas();
                     }
                     
                 }
@@ -147,8 +144,13 @@ public class Tutorial : MonoBehaviour
 
                         Invoke("HaAgafatRecursos", 1f);
                         break;
-                    
 
+                    case 6:
+                        accioInici = true;
+                        accioAcabada = false;
+                        //Es quan ha d'apretar F i posar la torre, no pot passar d'opcio fins que no hagi consturit una torre
+                        Invoke("HaPosatTorre", 1f);
+                        break;
                     default:
                         accioAcabada = true;
                         cercleVidaTorre.gameObject.SetActive(false);
@@ -162,7 +164,30 @@ public class Tutorial : MonoBehaviour
                         break;
                 }
             }
+        } else
+        {
+            bruixa.GetComponent<PlayerShoot>().potDisparar = true;
+
+            textUI.gameObject.GetComponent<Text>().text = "";
+            cercleVidaTorre.gameObject.SetActive(false);
+            cercleTempsDia.gameObject.SetActive(false);
+            cercleRecursosAconseguits.gameObject.SetActive(false);
+
+            waterZone.gameObject.SetActive(false);
+            fireZone.gameObject.SetActive(false);
+            airZone.gameObject.SetActive(false);
+            earthZone.gameObject.SetActive(false);
         }
+    }
+
+    void NextPas()
+    {
+        accioInici = false;
+        textUI.gameObject.GetComponent<Text>().text = "";
+        count++;
+        text = textos[count];
+        eliminaText = false;
+        StartCoroutine(mostraText());
     }
 
     void HaAgafatRecursos()
@@ -173,9 +198,32 @@ public class Tutorial : MonoBehaviour
         if(recursos >= 3)
         {
             accioAcabada = true;
+
+            GameObject[] r = GameObject.FindGameObjectsWithTag("Resource");
+            for (int i = 0; i < r.Length; i++)
+            {
+                Destroy(r[i]);
+            }
+            NextPas();
         } else
         {
             Invoke("HaAgafatRecursos", 2f);
+        }
+    }
+
+    void HaPosatTorre()
+    {
+        int torre = 0;
+
+        torre = GameObject.FindGameObjectsWithTag("Torre").Length;
+        if (torre >= 1)
+        {
+            accioAcabada = true;
+            NextPas();
+        }
+        else
+        {
+            Invoke("HaPosatTorre", 2f);
         }
     }
 
@@ -192,7 +240,7 @@ public class Tutorial : MonoBehaviour
         yield return new WaitForSeconds(2f);
         accioAcabada = true;
         
-        Debug.Log("Acaben animacions");
+        //Debug.Log("Acaben animacions");
    
     }
 
@@ -206,7 +254,7 @@ public class Tutorial : MonoBehaviour
 
             if (i == text.Length - 1)
             {
-                Debug.Log("Entra a destruir el missatge");
+                //Debug.Log("Entra a destruir el missatge");
                 eliminaText = true;
 
                 
