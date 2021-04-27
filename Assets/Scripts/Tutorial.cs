@@ -37,11 +37,12 @@ public class Tutorial : MonoBehaviour
     private string currentText = "";
 
     public GameObject textUI;
+    public GameObject panel;
 
     public List<string> textos;
     int llargadaText;
     int count;
-    int ultimMissatge;
+ 
 
     
 
@@ -83,6 +84,7 @@ public class Tutorial : MonoBehaviour
                         tutorial = false;
                         accioInici = true;
                         textUI.gameObject.GetComponent<Text>().text = "";
+                        panel.SetActive(false);
                         //Debug.Log("Ha acabat el tutorial");
                     } else
                     {
@@ -174,7 +176,9 @@ public class Tutorial : MonoBehaviour
 
                         //Debug.Log("Entra al CASE 7");
                         //S'ha de fer de nit i sortir una oleada
+                        bruixa.GetComponent<PlayerShoot>().potDisparar = true;
                         GameObject e = (GameObject)Instantiate(enemic, waypointsEnemic.transform.GetChild(61).position, waypointsEnemic.transform.GetChild(61).rotation);
+                        this.gameObject.GetComponent<WaveManager>().SetNit();
                         e.GetComponent<ControlEnemic>().SetWaypointIndex(61);
                         e.GetComponent<ControlEnemic>().vida = 50;
                         Invoke("HaAcabatLaOleada", 1f);
@@ -215,6 +219,9 @@ public class Tutorial : MonoBehaviour
         if (enemics == 0)
         {
             accioAcabada = true;
+            bruixa.GetComponent<PlayerShoot>().potDisparar = false;
+            this.gameObject.GetComponent<WaveManager>().SetDia();
+
 
             NextPas();
         }

@@ -109,7 +109,7 @@ public class WaveManager : MonoBehaviour
         }
         yield return null;
     }
-    void SetNit()
+    public void SetNit()
     {
         musicController.changeMusic();
         LightTransitionDiaTime = 1f;
@@ -128,7 +128,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    void SetDia()
+   public  void SetDia()
     {
         musicController.changeMusic();
         LightTransitionDiaTime = 1f;
