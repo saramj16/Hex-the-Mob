@@ -53,6 +53,7 @@ public class Tutorial : MonoBehaviour
         tutorial = true;
         count = 0;
         text = textos[count];
+        bruixa.GetComponent<PlayerShoot>().potDisparar = false;
         StartCoroutine(mostraText());
     }
 
@@ -67,7 +68,7 @@ public class Tutorial : MonoBehaviour
     {
         if(tutorial == true)
         {
-            bruixa.GetComponent<PlayerShoot>().potDisparar = false;
+            
             //Debug.Log("Elimina text: " + eliminaText);
             //Debug.Log("Accio acabada: " + eliminaText);
 
@@ -161,6 +162,7 @@ public class Tutorial : MonoBehaviour
                         Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
 
                         Invoke("HaAgafatRecursos", 1f);
+                        Invoke("DesactivaPanel", 11f);
                         break;
 
                     case 6:
@@ -242,6 +244,7 @@ public class Tutorial : MonoBehaviour
 
     void HaAgafatRecursos()
     {
+        
         int recursos = 0;
 
         recursos = inventory.AmountRecurs(Item.Element.Water);
@@ -254,11 +257,23 @@ public class Tutorial : MonoBehaviour
             {
                 Destroy(r[i]);
             }
+            Invoke("ActivaPanel", 0.1f);
             NextPas();
         } else
         {
             Invoke("HaAgafatRecursos", 1f);
         }
+    }
+
+
+    void DesactivaPanel()
+    {
+        panel.SetActive(false);
+    }
+
+    void ActivaPanel()
+    {
+        panel.SetActive(true);
     }
 
     void HaPosatTorre()
