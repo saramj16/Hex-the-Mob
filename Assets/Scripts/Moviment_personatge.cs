@@ -21,56 +21,61 @@ public class Moviment_personatge : MonoBehaviour
 
     private void Start()
     {
+   
         controller = GetComponent<CharacterController>();
-        anim = GetComponent<Animator>();
+   
     }
 
     // Update is called once per frame
     void Update()
     {
-     
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        anim.SetFloat("VelX", horizontal);
-        anim.SetFloat("VelY", vertical);
-
-        Vector3 direction = new Vector3(horizontal, 0f, vertical);
-        float vel_aux = moveDirection.y;
-
-        if (direction.magnitude >= 0.1f)
+        if(cam.enabled == true)
         {
-            float targetAngle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref vel_rotacio, temps_rotacio);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            float vertical = Input.GetAxisRaw("Vertical");
 
-            moveDirection = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized;
+            anim.SetFloat("VelX", horizontal);
+            anim.SetFloat("VelY", vertical);
 
-            moveDirection *= velocitat;
-            if (!controller.isGrounded)
+            Vector3 direction = new Vector3(horizontal, 0f, vertical);
+            float vel_aux = moveDirection.y;
+
+            if (direction.magnitude >= 0.1f)
             {
-                moveDirection.x *= 0.5f;
-                moveDirection.z *= 0.5f;
+                float targetAngle = Mathf.Atan2(horizontal, vertical) * Mathf.Rad2Deg + cam.transform.eulerAngles.y;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref vel_rotacio, temps_rotacio);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+                moveDirection = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized;
+
+                moveDirection *= velocitat;
+                if (!controller.isGrounded)
+                {
+                    moveDirection.x *= 0.5f;
+                    moveDirection.z *= 0.5f;
+                }
+                moveDirection.y = vel_aux;
             }
-            moveDirection.y = vel_aux;
-        } else
-        {
-            moveDirection.x = Mathf.Lerp(moveDirection.x, 0, 0.2f);
-            moveDirection.z = Mathf.Lerp(moveDirection.z, 0, 0.2f);
+            else
+            {
+                moveDirection.x = Mathf.Lerp(moveDirection.x, 0, 0.2f);
+                moveDirection.z = Mathf.Lerp(moveDirection.z, 0, 0.2f);
+            }
+
+            if (anim.GetBool("isRunning"))
+            {
+                JumpingRunAnimations();
+            }
+            else
+            {
+                JumpingAnimations();
+            }
+
+            RunAnimations();
+
+            controller.Move(moveDirection * Time.deltaTime);
         }
-
-        if (anim.GetBool("isRunning"))
-        {
-            JumpingRunAnimations();
-        } else
-        {
-            JumpingAnimations();
-        }
-
-        RunAnimations();
-        
-        controller.Move(moveDirection*Time.deltaTime);
-
+       
       }
 
     void JumpingRunAnimations()
