@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class UI_RepareBridge : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class UI_RepareBridge : MonoBehaviour
     public UI_InGame inventory;
 
     GameObject personatge;
+
+    public GameObject camera;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +43,9 @@ public class UI_RepareBridge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Aqui hem de fer PAUSE a la CAMERA
         UnityEngine.Cursor.visible = true;
+        camera.gameObject.GetComponent<CinemachineBrain>().enabled = false;
     }
 
     public void OmpleBridge(GameObject b)
@@ -90,6 +95,7 @@ public class UI_RepareBridge : MonoBehaviour
         // Actualitza el q sigui i close
         //  Debug.Log("Repara bridge " + bridge.name);
         UnityEngine.Cursor.visible = false;
+        camera.gameObject.GetComponent<CinemachineBrain>().enabled = true;
         personatge.GetComponent<PlayerShoot>().ActivaCursor();
         this.gameObject.SetActive(false);
     }
@@ -98,6 +104,7 @@ public class UI_RepareBridge : MonoBehaviour
     {
        // Debug.Log("Ha clickat no");
         this.gameObject.SetActive(false);
+        camera.gameObject.GetComponent<CinemachineBrain>().enabled = true;
         personatge.GetComponent<PlayerShoot>().ActivaCursor();
         UnityEngine.Cursor.visible = false;
     }

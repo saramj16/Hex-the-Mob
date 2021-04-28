@@ -50,7 +50,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         llargadaText = textos.Count;
-        tutorial = true;
+        tutorial = false;
         count = 0;
         text = textos[count];
         bruixa.GetComponent<PlayerShoot>().potDisparar = false;
@@ -320,9 +320,7 @@ public class Tutorial : MonoBehaviour
             if (i == text.Length - 1)
             {
                 //Debug.Log("Entra a destruir el missatge");
-                eliminaText = true;
-
-                
+                eliminaText = true;               
             }
             else
             {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class UI_Torres : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class UI_Torres : MonoBehaviour
 
     public GameObject quantitatElements;
     public GameObject personatge;
+
+    public GameObject camera; 
 
 
     public void OmplePersonatge(GameObject g)
@@ -138,6 +141,8 @@ public class UI_Torres : MonoBehaviour
             cursor.SetActive(false);
             UnityEngine.Cursor.visible = true;
 
+            //Aqui hem de fer PAUSE a la CAMERA
+            camera.gameObject.GetComponent<CinemachineBrain>().enabled = false;
             inventory.gameObject.SetActive(false);
 
         }        
@@ -160,6 +165,7 @@ public class UI_Torres : MonoBehaviour
         inventory.gameObject.SetActive(true);
         cursor.SetActive(true);
         UnityEngine.Cursor.visible = false;
+        camera.gameObject.GetComponent<CinemachineBrain>().enabled = true;
         personatge.GetComponent<PlayerShoot>().ActivaCursor();
         this.gameObject.SetActive(false);
     }
@@ -246,6 +252,7 @@ public class UI_Torres : MonoBehaviour
                 //Debug.Log("Arriba aqui");
                 cursor.SetActive(true);
                 UnityEngine.Cursor.visible = false;
+                camera.gameObject.GetComponent<CinemachineBrain>().enabled = true;
                 personatge.GetComponent<PlayerShoot>().ActivaCursor();
                 break;
 
