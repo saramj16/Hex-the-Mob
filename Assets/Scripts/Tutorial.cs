@@ -51,6 +51,7 @@ public class Tutorial : MonoBehaviour
     {
         llargadaText = textos.Count;
         tutorial = false;
+
         count = 0;
         text = textos[count];
         bruixa.GetComponent<PlayerShoot>().potDisparar = false;
@@ -200,6 +201,10 @@ public class Tutorial : MonoBehaviour
             }
         } else
         {
+
+
+                panel.SetActive(false);
+  
             bruixa.GetComponent<PlayerShoot>().potDisparar = true;
 
             textUI.gameObject.GetComponent<Text>().text = "";

@@ -87,7 +87,7 @@ public class Bala : MonoBehaviour
                    Bala b = balaGO.GetComponent<Bala>();
                     if (b != null)
                     {
-                        Debug.Log("Shotgun " + i);
+                        //Debug.Log("Shotgun " + i);
                         b.BalaInit(velocitatBala, damage, targetsArea[i].transform, pushForce, poisonDamage, 0, freezeDuration, efecteImpacte, 0, false, minArea, flameThrower, isGolem, isSniper, prefab, torre);
                     }
                     
@@ -176,6 +176,7 @@ public class Bala : MonoBehaviour
             //Evitar traspassar enemic
             if (dir.magnitude <= 0.1f)
             {
+                
                 //Tenint la referencia de la bala apliquem els efectes definits
                 // SI es 0 no fa res
 
@@ -210,14 +211,14 @@ public class Bala : MonoBehaviour
 
                 if (isGolem)
                 {
-                    Debug.Log("El golem ataca crack");
+                    //Debug.Log("El golem ataca crack");
                     torre.transform.GetChild(0).GetComponent<GolemTrigger>().ActivaAnimacio();
                     //torre.GetCh.GetComponent<BearTrapTrigger>().ActivaTorre();
                 }
 
                 if (isSniper)
                 {
-                    Debug.Log("Sniper");
+                    //Debug.Log("Sniper");
                     bullet = (GameObject)Instantiate(Resources.Load("BalaBruixa"), transform.position, transform.rotation);
                     bullet.GetComponent<BalaBruixa>().setTargetDirection(dir);
                 }

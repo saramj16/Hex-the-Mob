@@ -209,13 +209,14 @@ public class PosarTorretes : MonoBehaviour
             {
                 if (hihaTorre(terreny[i]))
                 {
+                    Debug.Log("No hi ha torre");
                     terrenyFinal = terreny[i];
                     minDist = dist;
                 } else
                 {
-                    terrenyTorre = terreny[i];
-                    improveGround = true;
-                    return terrenyTorre;
+                    //terrenyTorre = terreny[i];
+                    //improveGround = true;
+                    //return terrenyTorre;
                 }
             }
 
@@ -238,7 +239,7 @@ public class PosarTorretes : MonoBehaviour
         if (Physics.Raycast(aux, g.transform.forward * 10f, out hit,  Mathf.Infinity, mask))
         {
             Debug.DrawRay(aux, g.transform.forward * 10f, Color.blue, 10f);
-            //Debug.Log("Ha Xocat contra una torre");
+            Debug.Log("Ha Xocat contra una torre");
             torreCollisionada = hit.collider.gameObject;
             return false;
         }

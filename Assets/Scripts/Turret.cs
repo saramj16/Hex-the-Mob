@@ -93,7 +93,6 @@ public class Turret : MonoBehaviour
 
         if(fireCountdown <= 0)
         {
-            Debug.Log("Dispara");
             Dispara();
             fireCountdown = 1f / fireRate;
         }
@@ -103,12 +102,16 @@ public class Turret : MonoBehaviour
 
     void Dispara()
     {
-        GameObject balaGO = (GameObject)Instantiate(bala.balaPrefab, puntBales.position, puntBales.rotation);
-        Bala b = balaGO.GetComponent<Bala>();
-
-        if (b != null)
+        Debug.Log("Dispara");
+        if (target.gameObject.GetComponent<ControlEnemic>().vida > 0)
         {
-            b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea, bala.flameThrower, bala.isGolem, bala.isSniper, bala.balaPrefab, gameObject);
+            GameObject balaGO = (GameObject)Instantiate(bala.balaPrefab, puntBales.position, puntBales.rotation);
+            Bala b = balaGO.GetComponent<Bala>();
+
+            if (b != null)
+            {
+                b.BalaInit(bala.velocitatBala, bala.damage, target, bala.pushForce, bala.poisonDamage, bala.posionDuration, bala.freezeDuration, bala.efecteImpacte, areaDamage, bala.multiBala, bala.minArea, bala.flameThrower, bala.isGolem, bala.isSniper, bala.balaPrefab, gameObject);
+            }
         }
     }
 

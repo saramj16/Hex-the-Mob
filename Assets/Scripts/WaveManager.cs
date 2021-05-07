@@ -49,7 +49,7 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Tutorial: " + this.gameObject.GetComponent<Tutorial>().tutorial);
+        //Debug.Log("Tutorial: " + this.gameObject.GetComponent<Tutorial>().tutorial);
         if(this.gameObject.GetComponent<Tutorial>().tutorial == false)
         {
             if (countdown <= 0 && esDia)
