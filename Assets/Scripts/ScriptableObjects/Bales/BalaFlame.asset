@@ -22,7 +22,7 @@ MonoBehaviour:
   isGolem: 0
   isSniper: 0
   damage: 5
-  velocitatBala: 70
+  velocitatBala: 10
   efecteImpacte: {fileID: 1780787582701383156, guid: 3ae4f17bfcd62824cb5edf5942155412,
     type: 3}
   balaPrefab: {fileID: 1109276263877937622, guid: 63e676f161e8d0c4e9546b33b7079afe,

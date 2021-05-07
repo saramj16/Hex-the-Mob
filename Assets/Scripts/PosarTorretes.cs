@@ -209,7 +209,7 @@ public class PosarTorretes : MonoBehaviour
             {
                 if (hihaTorre(terreny[i]))
                 {
-                    Debug.Log("No hi ha torre");
+                    //Debug.Log("No hi ha torre");
                     terrenyFinal = terreny[i];
                     minDist = dist;
                 } else

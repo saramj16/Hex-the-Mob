@@ -76,7 +76,7 @@ public class PlayerShoot : MonoBehaviour
         cursor.SetActive(false);
     }
 
-    public void ActivaPotDispara()
+    private void ActivaPotDispara()
     {
         Debug.Log("Pot disparar la putilla");
         potDisparar = true;

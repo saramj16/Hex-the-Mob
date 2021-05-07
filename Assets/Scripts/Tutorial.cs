@@ -42,19 +42,20 @@ public class Tutorial : MonoBehaviour
     public List<string> textos;
     int llargadaText;
     int count;
- 
 
+    private bool iniciPartida;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        iniciPartida = false;
         llargadaText = textos.Count;
         tutorial = false;
 
         count = 0;
         text = textos[count];
-        bruixa.GetComponent<PlayerShoot>().potDisparar = false;
+        bruixa.GetComponent<PlayerShoot>().DesactivaCursor();
         StartCoroutine(mostraText());
     }
 
@@ -202,20 +203,24 @@ public class Tutorial : MonoBehaviour
         } else
         {
 
-
+            if (iniciPartida == false)
+            {
                 panel.SetActive(false);
-  
-            bruixa.GetComponent<PlayerShoot>().potDisparar = true;
 
-            textUI.gameObject.GetComponent<Text>().text = "";
-            cercleVidaTorre.gameObject.SetActive(false);
-            cercleTempsDia.gameObject.SetActive(false);
-            cercleRecursosAconseguits.gameObject.SetActive(false);
+                textUI.gameObject.GetComponent<Text>().text = "";
+                cercleVidaTorre.gameObject.SetActive(false);
+                cercleTempsDia.gameObject.SetActive(false);
+                cercleRecursosAconseguits.gameObject.SetActive(false);
 
-            waterZone.gameObject.SetActive(false);
-            fireZone.gameObject.SetActive(false);
-            airZone.gameObject.SetActive(false);
-            earthZone.gameObject.SetActive(false);
+                waterZone.gameObject.SetActive(false);
+                fireZone.gameObject.SetActive(false);
+                airZone.gameObject.SetActive(false);
+                earthZone.gameObject.SetActive(false);
+
+                //bruixa.GetComponent<PlayerShoot>().potDisparar = true;
+                bruixa.GetComponent<PlayerShoot>().ActivaCursor();
+                iniciPartida = true;
+            }
         }
     }
 
