@@ -124,35 +124,23 @@ public class EditorMaterials : EditorWindow
             }
         }
 
-        EditorGUILayout.Space();
-        GUILayout.Label("Afegeix elements de decoració del MAPA");
-        if (GUILayout.Button("Posa NOM_DEL_RECURS"))
+        // Si volen convertir-los en Muntanya
+        if (GUILayout.Button("Posa Material Muntanya"))
         {
             GameObject[] obj = Selection.gameObjects;
             for (int i = 0; i < obj.Length; i++)
             {
-
-                float altura = 0;
-
-                LayerMask mask = LayerMask.GetMask("Terra");
-
-                RaycastHit hit;
-                Vector3 aux = obj[i].transform.position;
-                aux.y = 300f;
-                if (Physics.Raycast(aux, -obj[i].transform.forward * 1000f, out hit, Mathf.Infinity, mask))
-                {
-                    altura = hit.point.y;
-                }
-
                 Vector3 position = obj[i].transform.position;
-                position.y = altura;
-   
-                Instantiate(Resources.Load("NOM_DEL_RECURS"), position, Quaternion.Euler(0, 0, 0));
+                Vector3 scale = obj[i].transform.localScale;
 
+                DestroyImmediate(obj[i]);
+                GameObject o = (GameObject)Instantiate(Resources.Load("Hexagon_V2"), position, Quaternion.Euler(-90, 0, 0));
+                o.transform.localScale = scale;
 
             }
         }
 
+     
 
     }
 
