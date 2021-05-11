@@ -36,7 +36,9 @@ public class EditorMaterials : EditorWindow
             {
                 Vector3 position = obj[i].transform.position;
                 Vector3 scale = obj[i].transform.localScale;
-
+                scale.x = 1;
+                scale.z *= 2.51f;
+                scale.y = 1;
                 DestroyImmediate(obj[i]);
                 GameObject o = (GameObject)Instantiate(Resources.Load("HexagonEARTH"), position, Quaternion.Euler(-90, 0, 0));
                 o.transform.localScale = scale;
@@ -52,7 +54,9 @@ public class EditorMaterials : EditorWindow
             {
                 Vector3 position = obj[i].transform.position;
                 Vector3 scale = obj[i].transform.localScale;
-
+                scale.x = 1;
+                scale.z *= 2.51f;
+                scale.y = 1;
                 DestroyImmediate(obj[i]);
                 GameObject o = (GameObject)Instantiate(Resources.Load("HexagonAIR"), position, Quaternion.Euler(-90, 0, 0));
                 o.transform.localScale = scale;
@@ -68,7 +72,9 @@ public class EditorMaterials : EditorWindow
             {
                 Vector3 position = obj[i].transform.position;
                 Vector3 scale = obj[i].transform.localScale;
-
+                scale.x = 1;
+                scale.z *= 2.51f;
+                scale.y = 1;
                 DestroyImmediate(obj[i]);
                 GameObject o = (GameObject)Instantiate(Resources.Load("HexagonWATER"), position, Quaternion.Euler(-90, 0, 0));
                 o.transform.localScale = scale;
@@ -84,7 +90,9 @@ public class EditorMaterials : EditorWindow
             {
                 Vector3 position = obj[i].transform.position;
                 Vector3 scale = obj[i].transform.localScale;
-
+                scale.x = 1;
+                scale.z *= 2.51f;
+                scale.y = 1;
                 DestroyImmediate(obj[i]);
                 GameObject o = (GameObject)Instantiate(Resources.Load("HexagonFIRE"), position, Quaternion.Euler(-90, 0, 0));
                 o.transform.localScale = scale;
@@ -100,7 +108,9 @@ public class EditorMaterials : EditorWindow
             {
                 Vector3 position = obj[i].transform.position;
                 Vector3 scale = obj[i].transform.localScale;
-
+               // scale.x = 1;
+               // scale.z *= 2.51f;
+               // scale.y = 1;
                 DestroyImmediate(obj[i]);
                 GameObject o = (GameObject)Instantiate(Resources.Load("HexagonPEDRA"), position, Quaternion.Euler(-90, 0, 0));
                 o.transform.localScale = scale;

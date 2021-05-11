@@ -158,6 +158,135 @@ public class EditorMapa : EditorWindow
         }
 
 
+
+
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        // Si volen convertir-los en ground
+        if (GUILayout.Button("Canviar HEXAGONS"))
+        {
+            GameObject[] obj = Selection.gameObjects;
+            for (int i = 0; i < obj.Length; i++)
+            {
+                // Per cada HEXAGON 
+                float x = obj[i].gameObject.transform.position.x;
+                float y = 0;
+                float z = obj[i].gameObject.transform.position.z;
+                //Hem de canviar l'HEXAGON posant una Tapa de dalt i posant els costats
+                int numVertices = obj[i].GetComponent<MeshCollider>().sharedMesh.vertices.Length;
+     
+                float altura = buscaAltura(obj[i]);
+                float alturaMinima = buscaAlturaMinima(obj[i]);
+                //Vull la mida més alta i la més baixa.
+
+
+                Instantiate(Resources.Load("TopHex"), new Vector3(x, altura, z), Quaternion.Euler(-90, 0, 0));
+                Instantiate(Resources.Load("Hex_V3"), new Vector3(x, altura - 0.4f, z), Quaternion.Euler(-90, 0, 0));
+                float alturaActual = altura - 0.4f;
+                while(alturaActual > alturaMinima)
+                {
+                    Instantiate(Resources.Load("Hex_V3"), new Vector3(x, alturaActual -0.395f, z), Quaternion.Euler(-90, 0, 0));
+                    alturaActual = alturaActual - 0.395f;
+                }
+
+                //Un cop posat el primer costat, hem de mirar si ja hem arribat a baix de tot, sino pos seguir posant objecte
+                DestroyImmediate(obj[i]);
+            }
+        }
+
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        // Si volen convertir-los en ground
+        if (GUILayout.Button("Canviar HEXAGONS darrere MUNTANYA AIGUA"))
+        {
+            GameObject[] obj = Selection.gameObjects;
+            for (int i = 0; i < obj.Length; i++)
+            {
+                // Per cada HEXAGON 
+                Vector3 position = obj[i].gameObject.transform.position;
+                Vector3 scale = obj[i].gameObject.transform.localScale;
+                scale.x = 1;
+                scale.y = 1;
+                scale.z *= 2.5f;
+
+                float altura = buscaAltura(obj[i]);
+
+                //Vull la mida més alta i la més baixa.
+                
+                
+                GameObject o = (GameObject)Instantiate(Resources.Load("HexSup2"), position, Quaternion.Euler(-90, 0, 0));
+                o.gameObject.transform.localScale = scale;
+
+                //Un cop posat el primer costat, hem de mirar si ja hem arribat a baix de tot, sino pos seguir posant objecte
+                DestroyImmediate(obj[i]);
+            }
+        }
+
+
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        // Si volen convertir-los en ground
+        if (GUILayout.Button("Canviar HEXAGONS darrere MUNTANYA FOC"))
+        {
+            GameObject[] obj = Selection.gameObjects;
+            for (int i = 0; i < obj.Length; i++)
+            {
+                // Per cada HEXAGON 
+                Vector3 position = obj[i].gameObject.transform.position;
+                Vector3 scale = obj[i].gameObject.transform.localScale;
+         
+                //Vull la mida més alta i la més baixa.
+
+                GameObject o = (GameObject)Instantiate(Resources.Load("HexSup"), position, Quaternion.Euler(-90, 0, 0));
+                o.gameObject.transform.localScale = scale;
+
+                //Un cop posat el primer costat, hem de mirar si ja hem arribat a baix de tot, sino pos seguir posant objecte
+                DestroyImmediate(obj[i]);
+            }
+        }
+    }
+
+    private float buscaAlturaMinima(GameObject obj)
+    {
+        float altura = 0;
+
+        LayerMask mask = LayerMask.GetMask("Terra");
+
+        RaycastHit hit;
+        Vector3 aux = obj.transform.position;
+        aux.y = -1000f;
+        if (Physics.Raycast(aux, obj.transform.forward * 1000f, out hit, Mathf.Infinity, mask))
+        {
+            Debug.DrawRay(aux, obj.transform.forward * 1000f, Color.black);
+            altura = hit.point.y;
+        }
+
+        Vector3 position = obj.transform.position;
+        position.y = altura;
+        Debug.Log("Altura minima: " + altura);
+        return altura;
+    }
+    private float buscaAltura(GameObject obj)
+    {
+        float altura = 0;
+
+        LayerMask mask = LayerMask.GetMask("Terra");
+
+        RaycastHit hit;
+        Vector3 aux = obj.transform.position;
+        aux.y = 300f;
+        if (Physics.Raycast(aux, -obj.transform.forward * 1000f, out hit, Mathf.Infinity, mask))
+        {
+            altura = hit.point.y;
+        }
+
+        Vector3 position = obj.transform.position;
+        position.y = altura;
+
+        return altura;
     }
 
     static void PlaceHexs(int h, int v)
