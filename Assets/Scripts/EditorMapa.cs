@@ -209,14 +209,14 @@ public class EditorMapa : EditorWindow
                 Vector3 scale = obj[i].gameObject.transform.localScale;
                 scale.x = 1;
                 scale.y = 1;
-                scale.z *= 2.5f;
+                
 
                 float altura = buscaAltura(obj[i]);
 
                 //Vull la mida més alta i la més baixa.
                 
                 
-                GameObject o = (GameObject)Instantiate(Resources.Load("HexSup2"), position, Quaternion.Euler(-90, 0, 0));
+                GameObject o = (GameObject)Instantiate(Resources.Load("HexSup3"), position, Quaternion.Euler(-90, 0, 0));
                 o.gameObject.transform.localScale = scale;
 
                 //Un cop posat el primer costat, hem de mirar si ja hem arribat a baix de tot, sino pos seguir posant objecte
@@ -237,10 +237,59 @@ public class EditorMapa : EditorWindow
                 // Per cada HEXAGON 
                 Vector3 position = obj[i].gameObject.transform.position;
                 Vector3 scale = obj[i].gameObject.transform.localScale;
-         
+                scale.x = 1;
+                scale.y = 1;
                 //Vull la mida més alta i la més baixa.
 
-                GameObject o = (GameObject)Instantiate(Resources.Load("HexSup"), position, Quaternion.Euler(-90, 0, 0));
+                GameObject o = (GameObject)Instantiate(Resources.Load("HexSup1"), position, Quaternion.Euler(-90, 0, 0));
+                o.gameObject.transform.localScale = scale;
+
+                //Un cop posat el primer costat, hem de mirar si ja hem arribat a baix de tot, sino pos seguir posant objecte
+                DestroyImmediate(obj[i]);
+            }
+        }
+
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        // Si volen convertir-los en ground
+        if (GUILayout.Button("Canviar HEXAGONS darrere MUNTANYA EARTH"))
+        {
+            GameObject[] obj = Selection.gameObjects;
+            for (int i = 0; i < obj.Length; i++)
+            {
+                // Per cada HEXAGON 
+                Vector3 position = obj[i].gameObject.transform.position;
+                Vector3 scale = obj[i].gameObject.transform.localScale;
+                scale.x = 1;
+                scale.y = 1;
+                //Vull la mida més alta i la més baixa.
+
+                GameObject o = (GameObject)Instantiate(Resources.Load("HexSup4"), position, Quaternion.Euler(-90, 0, 0));
+                o.gameObject.transform.localScale = scale;
+
+                //Un cop posat el primer costat, hem de mirar si ja hem arribat a baix de tot, sino pos seguir posant objecte
+                DestroyImmediate(obj[i]);
+            }
+        }
+
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        EditorGUILayout.Space();
+        // Si volen convertir-los en ground
+        if (GUILayout.Button("Canviar HEXAGONS darrere MUNTANYA AIR"))
+        {
+            GameObject[] obj = Selection.gameObjects;
+            for (int i = 0; i < obj.Length; i++)
+            {
+                // Per cada HEXAGON 
+                Vector3 position = obj[i].gameObject.transform.position;
+                Vector3 scale = obj[i].gameObject.transform.localScale;
+                scale.x = 1;
+                scale.y = 1;
+                //Vull la mida més alta i la més baixa.
+
+                GameObject o = (GameObject)Instantiate(Resources.Load("HexSup5"), position, Quaternion.Euler(-90, 0, 0));
                 o.gameObject.transform.localScale = scale;
 
                 //Un cop posat el primer costat, hem de mirar si ja hem arribat a baix de tot, sino pos seguir posant objecte

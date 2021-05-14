@@ -31,6 +31,7 @@ public class PlayerShoot : MonoBehaviour
         potDisparar = true;
         bulletSpeed = 10f;
         cam = GameObject.Find("Camera").GetComponent<Camera>();
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         //int layerMask = 1 << 30;
         //layerMask = ~layerMask;
         inventari = inventory.GetInventory();
@@ -72,31 +73,42 @@ public class PlayerShoot : MonoBehaviour
     {
         Debug.Log("Desactivem Cursor");
         potDisparar = false;
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
         UnityEngine.Cursor.visible = true;
         cursor.SetActive(false);
     }
 
     private void ActivaPotDispara()
     {
-        Debug.Log("Pot disparar la putilla");
+        //Debug.Log("Pot disparar");
         potDisparar = true;
     }
     public void ActivaCursor()
     {
         Debug.Log("Activem Cursor");
         Invoke("ActivaPotDispara", 1.5f);
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = false;
         cursor.SetActive(true);
     }
     private void bruixaDispara()
     {
+        Vector3 miradaAuxiliar = cam.transform.forward;
+        miradaAuxiliar.y = 0;
+
+        this.gameObject.transform.forward = miradaAuxiliar.normalized;
+
         Ray ray = cam.ViewportPointToRay(Vector3.one*0.5f);
         RaycastHit hitInfo;
-        if (Physics.Raycast(ray, out hitInfo, 100))
+        LayerMask layer = LayerMask.GetMask("ColliderCami");
+        layer |= LayerMask.GetMask("Personatge");
+        
+        if (Physics.Raycast(ray, out hitInfo, 100, ~layer))
         {
-            Debug.Log("Pot disparar la bruixa: " + potDisparar);
+            Debug.Log("La bruixaa xoca contra: " + hitInfo.collider.gameObject.name);
             if (potDisparar)
             {
+                // Aqui haurem de fer que resti les bales al inventari de bales
                 if (inventari.spendResourcesDisparo())
                 {
                     GameObject bulletClone = Instantiate(bullet, firePoint.position, firePoint.rotation);

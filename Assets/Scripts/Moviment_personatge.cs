@@ -8,8 +8,8 @@ public class Moviment_personatge : MonoBehaviour
     public CharacterController controller;
     public Camera cam;
 
-    public float velocitat_base = 0.8f;
-    public float velocitat_running = 1.5f;
+    public float velocitat_base = 0.4f;
+    public float velocitat_running = 1f;
     public float velocitat = 0.8f;
     public float gravetat = 20f;
 
@@ -148,8 +148,10 @@ public class Moviment_personatge : MonoBehaviour
         {
             //Debug.Log("ja no està running");
             velocitat = velocitat_base;
+            
             anim.SetBool("isRunning", false);
         }
+        anim.SetFloat("velocitat", velocitat);
     }
 
 }
