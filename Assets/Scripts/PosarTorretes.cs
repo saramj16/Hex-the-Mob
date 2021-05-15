@@ -10,7 +10,7 @@ public class PosarTorretes : MonoBehaviour
     public GameObject UI_Missatge;
     public GameObject UI_torres;
     public GameObject inventari;
-    public GameObject UI_Upgrade;
+    public GameObject UI_CompraBales;
     public GameObject UI_RepareBridge;
 
     private bool improveWay;
@@ -119,6 +119,12 @@ public class PosarTorretes : MonoBehaviour
                     this.gameObject.GetComponent<PlayerShoot>().DesactivaCursor();
                 }
             }
+        }
+
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            UI_CompraBales.SetActive(true);
+            this.gameObject.GetComponent<PlayerShoot>().DesactivaCursor();
         }
 
 

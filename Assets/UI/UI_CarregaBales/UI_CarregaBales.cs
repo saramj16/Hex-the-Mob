@@ -22,6 +22,14 @@ public class UI_CarregaBales : MonoBehaviour
     {
         CalculaBales();
         numBales.GetComponent<Text>().text = bales.ToString();
+
+
+       /* cursor.SetActive(false);
+        UnityEngine.Cursor.visible = true;
+
+        //Aqui hem de fer PAUSE a la CAMERA
+        camera.gameObject.GetComponent<CinemachineBrain>().enabled = false;
+        inventory.gameObject.SetActive(false);*/
     }
 
     private void CalculaBales()
@@ -63,6 +71,11 @@ public class UI_CarregaBales : MonoBehaviour
         }
 
         quantitat.GetComponent<Text>().text = q.ToString();
+    }
+
+    public void OnClickClose()
+    {
+        this.gameObject.SetActive(false);
     }
 
     public void SetInventory(Inventory i)
