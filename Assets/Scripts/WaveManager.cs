@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     public Light sol;
-    public Color32 dia, nit, ColorSol;
+    public Color32 dia, nit, ColorSol, skyDia,skyNit;
     public musicController musicController;
     public bool esDia = true;
 
@@ -22,8 +22,12 @@ public class WaveManager : MonoBehaviour
 
     public bool HiHaEnemics;
     public float countdown;
+    //public Animator solAnim;
+    public Material skybox; 
+    
 
     private int waveNumber = 0;
+
 
     private void Start()
     {
@@ -31,7 +35,7 @@ public class WaveManager : MonoBehaviour
         musicController = musicController.GetComponent<musicController>();
         sol = GameObject.Find("Sol").GetComponent<Light>();
         HiHaEnemics = false;
-        
+
 
         //Hexa: FFF4D6
         dia = new Color32(255, 244, 214, 255);
@@ -119,6 +123,7 @@ public class WaveManager : MonoBehaviour
         HiHaEnemics = true;
         //Debug.Log("Nit num: " + nNit);
         ColorSol = Color.Lerp(dia, nit, LightTransitionDiaTime);
+        //skybox.SetColor("Top", Color.Lerp(skyDia, skyNit, LightTransitionDiaTime));
 
         // Busquem recursos i els eliminem
         GameObject[] recursos = GameObject.FindGameObjectsWithTag("Resource");
@@ -137,6 +142,8 @@ public class WaveManager : MonoBehaviour
         countdown = tempsDia;
         esDia = true;
         ColorSol = Color.Lerp(nit, dia, LightTransitionDiaTime);
+        //skybox.SetColor("Top", Color.Lerp(skyNit, skyDia, LightTransitionDiaTime));
+
     }
 
     void CheckForEnemies()
