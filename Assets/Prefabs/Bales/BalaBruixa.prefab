@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8186591524660789050}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -280,6 +280,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.050000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889528405155247112, guid: bcfbfbf0b0fe2bc419e3cee680f3aacc,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.025
       objectReference: {fileID: 0}
     - target: {fileID: 8089061666835083398, guid: bcfbfbf0b0fe2bc419e3cee680f3aacc,
         type: 3}
