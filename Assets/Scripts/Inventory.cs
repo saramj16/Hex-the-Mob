@@ -60,6 +60,41 @@ public class Inventory
 
     }
 
+
+    public bool GastaRecursosCompraBales(Item.Element item1, int q1, Item.Element item2, int q2, Item.Element item3, int q3, Item.Element item4, int q4)
+    {
+        int i = elemPos(item1);
+        int j = elemPos(item2);
+        int k = elemPos(item3);
+        int l = elemPos(item4);
+        Debug.Log("Element: " + items[i].elem + "   Amount: " + items[i].amount);
+        Debug.Log("Element: " + items[j].elem + "   Amount: " + items[j].amount);
+        Debug.Log("Element: " + items[k].elem + "   Amount: " + items[k].amount);
+        Debug.Log("Element: " + items[l].elem + "   Amount: " + items[l].amount);
+        if (items[i].amount == 0 || items[j].amount == 0 || items[k].amount == 0 || items[l].amount == 0 || items[i].amount - q1 < 0 || items[j].amount - q2 < 0 || items[k].amount - q3 < 0 || items[l].amount - q4 < 0)
+        {
+            return false;
+        }
+        else
+        {
+            Debug.Log("Restem elements, return true");
+
+            items[i].amount -= q1;
+            //  Debug.Log("Element: " + items[i].elem + "   Amount: " + items[i].amount);
+
+
+            items[j].amount -= q2;
+            // Debug.Log("Element: " + items[j].elem + "   Amount: " + items[j].amount);
+
+            items[k].amount -= q3;
+            //  Debug.Log("Element: " + items[k].elem + "   Amount: " + items[k].amount);
+
+
+            items[l].amount -= q4;
+            // Debug.Log("Element: " + items[l].elem + "   Amount: " + items[l].amount);
+            return true;
+        }
+    }
     public bool spendResourcesDisparo()
     {
         int mesgran = 0;
