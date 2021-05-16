@@ -19,6 +19,10 @@ public class Moviment_personatge : MonoBehaviour
     public Vector3 moveDirection = Vector3.zero;
     public Animator anim;
 
+    public bool inWater;
+    public AudioSource waterStep;
+    public AudioSource grassStep;
+
     private void Start()
     {
    
@@ -29,6 +33,7 @@ public class Moviment_personatge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if(cam.enabled == true)
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
@@ -154,4 +159,32 @@ public class Moviment_personatge : MonoBehaviour
         anim.SetFloat("velocitat", velocitat);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Water") {
+            inWater = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Water")
+        {
+            inWater = false;
+        }
+    }
+
+    public void stepSound() {
+        AudioSource step;
+        if (inWater)
+        {
+            step = waterStep;
+        }
+        else {
+            step = grassStep;
+        }
+
+        step.pitch = Random.Range(0.8f,1.3f);
+        step.Play();
+    }
 }
