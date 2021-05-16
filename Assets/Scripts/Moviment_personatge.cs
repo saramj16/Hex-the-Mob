@@ -127,6 +127,7 @@ public class Moviment_personatge : MonoBehaviour
         {
             //Debug.Log("Terra");
             anim.SetBool("onAir", false);
+            stepSound();
         }
 
         if (!controller.isGrounded)
