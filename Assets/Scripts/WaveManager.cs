@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     public Light sol;
-    public Color32 dia, nit, ColorSol, skyDia,skyNit;
+    public Color32 dia, nit, ColorSol;
     public musicController musicController;
     public bool esDia = true;
 
@@ -22,9 +22,11 @@ public class WaveManager : MonoBehaviour
 
     public bool HiHaEnemics;
     public float countdown;
-    //public Animator solAnim;
-    public Material skybox; 
-    
+
+    public Material skyboxDia, skyboxNit;
+    private bool changing2Day, changing2Night;
+    private float changeDuration = 5;
+    private float timeElapsed;
 
     private int waveNumber = 0;
 
@@ -48,7 +50,10 @@ public class WaveManager : MonoBehaviour
         //Comprovar si hi ha enemics començant al segon 1, cada 1 segons
         InvokeRepeating("CheckForEnemies", 1f, 1f);
 
-        
+        changing2Day = false;
+        changing2Night = false;
+        RenderSettings.skybox.Lerp(skyboxNit, skyboxDia, 1);
+
     }
 
     private void Update()
@@ -74,6 +79,28 @@ public class WaveManager : MonoBehaviour
         {
             esDia = true;
             sol.color = ColorSol;
+        }
+
+        //Codi canvi iluminacio + skybox dia/nit
+        if (changing2Night) {
+            float lerp = timeElapsed / changeDuration;
+            RenderSettings.skybox.Lerp(skyboxDia, skyboxNit, lerp);
+            ColorSol = Color.Lerp(dia, nit, lerp);
+            timeElapsed += Time.deltaTime; 
+            if (lerp >= 1) {
+                changing2Night = false;
+            }
+        }
+
+        if (changing2Day) {
+            float lerp = timeElapsed / changeDuration;
+            RenderSettings.skybox.Lerp(skyboxNit, skyboxDia, lerp);
+            ColorSol = Color.Lerp(nit, dia, lerp);
+            timeElapsed += Time.deltaTime;
+            if (lerp >= 1)
+            {
+                changing2Day = false;
+            }
         }
     }
 
@@ -113,6 +140,7 @@ public class WaveManager : MonoBehaviour
         }
         yield return null;
     }
+
     public void SetNit()
     {
         musicController.changeMusic();
@@ -122,8 +150,11 @@ public class WaveManager : MonoBehaviour
         //sol.color = nit;
         HiHaEnemics = true;
         //Debug.Log("Nit num: " + nNit);
-        ColorSol = Color.Lerp(dia, nit, LightTransitionDiaTime);
-        //skybox.SetColor("Top", Color.Lerp(skyDia, skyNit, LightTransitionDiaTime));
+
+        //Activem canvi de dia a nit
+        changing2Night = true;
+        timeElapsed = 0;
+
 
         // Busquem recursos i els eliminem
         GameObject[] recursos = GameObject.FindGameObjectsWithTag("Resource");
@@ -141,9 +172,10 @@ public class WaveManager : MonoBehaviour
         //Debug.Log("Dia num: " + (nDia));
         countdown = tempsDia;
         esDia = true;
-        ColorSol = Color.Lerp(nit, dia, LightTransitionDiaTime);
-        //skybox.SetColor("Top", Color.Lerp(skyNit, skyDia, LightTransitionDiaTime));
 
+        //Activem canvi de nit a dia
+        changing2Day = true;
+        timeElapsed = 0;
     }
 
     void CheckForEnemies()

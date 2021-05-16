@@ -6,6 +6,7 @@ public class ItemPickup : MonoBehaviour
 {
     public Item.Element element;
     public int quant;
+    public AudioSource pickSound;
 
     private Item item;
 
@@ -24,6 +25,7 @@ public class ItemPickup : MonoBehaviour
 
         Inventory.instance.pickUp(item);
         UI_InGame.instance.RefreshInventoryItems();
+        AudioSource.PlayClipAtPoint(pickSound.clip, this.gameObject.transform.position, 0.3f);
         Destroy(this.gameObject);
     }
 
