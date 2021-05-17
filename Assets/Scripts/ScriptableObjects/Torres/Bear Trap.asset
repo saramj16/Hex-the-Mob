@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bear Trap
   m_EditorClassIdentifier: 
   bala: {fileID: 11400000, guid: 225d0d644daa1c74b91f2f0d2599225b, type: 2}
-  range: 0.5
+  range: 0.6
   minRange: 0
   areaDamage: 0.7
   fireRate: 0.2

@@ -187,9 +187,9 @@ public class PosarTorretes : MonoBehaviour
                 }
                 else
                 {
-                    terrenyTorre = terreny[i];
-                    improveWay = true;
-                    return terrenyTorre;
+                    //terrenyTorre = terreny[i];
+                    //improveWay = true;
+                    //return terrenyTorre;
                 }
             }
 

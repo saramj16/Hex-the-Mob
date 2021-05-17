@@ -59,6 +59,8 @@ public class Tutorial : MonoBehaviour
         count = 0;
         text = textos[count];
         bruixa.GetComponent<PlayerShoot>().DesactivaCursor();
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = false;
         StartCoroutine(mostraText());
     }
 
@@ -73,7 +75,7 @@ public class Tutorial : MonoBehaviour
     {
         if(tutorial == true)
         {
-            
+            //bruixa.GetComponent<PlayerShoot>().DesactivaCursor();
             //Debug.Log("Elimina text: " + eliminaText);
             //Debug.Log("Accio acabada: " + eliminaText);
 
@@ -197,6 +199,7 @@ public class Tutorial : MonoBehaviour
                         Invoke("HaAcabatLaOleada", 1f);
                         Invoke("DesactivaPanel", 11f);
                         break;
+
                     default:
                         accioAcabada = true;
                         cercleVidaTorre.gameObject.SetActive(false);
@@ -304,6 +307,7 @@ public class Tutorial : MonoBehaviour
         if (torre >= 1)
         {
             accioAcabada = true;
+            
             NextPas();
         }
         else
@@ -320,6 +324,9 @@ public class Tutorial : MonoBehaviour
         if (bales >= 1)
         {
             accioAcabada = true;
+            UI_inGame.gameObject.GetComponent<UI_InGame>().carregaBales.GetComponent<UI_CarregaBales>().OnClickClose();
+            
+
             NextPas();
         }
         else

@@ -105,9 +105,10 @@ public class PlayerShoot : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitInfo, 100, ~layer))
         {
-            Debug.Log("La bruixaa xoca contra: " + hitInfo.collider.gameObject.name);
+            
             if (potDisparar)
             {
+                Debug.Log("La bruixaa xoca contra: " + hitInfo.collider.gameObject.name);
                 // Aqui haurem de fer que resti les bales al inventari de bales
                 int numBales = int.Parse(inventory.nBales.text);
                 if(numBales > 0)
