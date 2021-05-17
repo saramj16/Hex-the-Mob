@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class UI_CarregaBales : MonoBehaviour
 {
@@ -11,6 +12,16 @@ public class UI_CarregaBales : MonoBehaviour
     public Inventory inventari;
 
     public GameObject numBales;
+    public GameObject quantitatsWater;
+    public GameObject quantitatsEarth;
+    public GameObject quantitatsAir;
+    public GameObject quantitatsFire;
+
+    public UI_InGame inventory;
+    public GameObject cursor;
+    public GameObject personatge;
+    public GameObject camera;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,66 +31,104 @@ public class UI_CarregaBales : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CalculaBales();
+        //CalculaBales();
         numBales.GetComponent<Text>().text = bales.ToString();
 
+        quantitatElements.transform.GetChild(0).GetComponent<Text>().text = inventari.items[0].amount.ToString();
+        quantitatElements.transform.GetChild(1).GetComponent<Text>().text = inventari.items[1].amount.ToString();
+        quantitatElements.transform.GetChild(2).GetComponent<Text>().text = inventari.items[2].amount.ToString();
+        quantitatElements.transform.GetChild(3).GetComponent<Text>().text = inventari.items[3].amount.ToString();
 
-       /* cursor.SetActive(false);
+        cursor.SetActive(false);
         UnityEngine.Cursor.visible = true;
 
         //Aqui hem de fer PAUSE a la CAMERA
         camera.gameObject.GetComponent<CinemachineBrain>().enabled = false;
-        inventory.gameObject.SetActive(false);*/
+        inventory.gameObject.SetActive(false);
     }
 
-    private void CalculaBales()
+
+    public void OnClikcCompraBalesAigua()
     {
-        int q1 = int.Parse(quantitatElements.transform.GetChild(0).GetComponent<Text>().text);
-        int q2 = int.Parse(quantitatElements.transform.GetChild(1).GetComponent<Text>().text);
-        int q3 = int.Parse(quantitatElements.transform.GetChild(2).GetComponent<Text>().text);
-        int q4 = int.Parse(quantitatElements.transform.GetChild(3).GetComponent<Text>().text);
+        int q1 = int.Parse(quantitatsWater.transform.GetChild(1).gameObject.GetComponent<Text>().text);
+        
+        bool error = inventari.GastaRecursosCompraBales(Item.Element.Water, q1);
 
-        bales = q1 * 5 + q2 * 3 + q3 * 2 + q4;
-    }
-    public void CompraBales()
-    {
-        int q1 = int.Parse(quantitatElements.transform.GetChild(0).GetComponent<Text>().text);
-        int q2 = int.Parse(quantitatElements.transform.GetChild(1).GetComponent<Text>().text);
-        int q3 = int.Parse(quantitatElements.transform.GetChild(2).GetComponent<Text>().text);
-        int q4 = int.Parse(quantitatElements.transform.GetChild(3).GetComponent<Text>().text);
-        inventari.GastaRecursosCompraBales(Item.Element.Water, q1, Item.Element.Earth, q2, Item.Element.Air, q3, Item.Element.Fire, q4);
-
-    }
-
-    public void OnClickMes(GameObject quantitat)
-    {
-        int q = int.Parse(quantitat.GetComponent<Text>().text);
-
-        q++;
-
-        quantitat.GetComponent<Text>().text = q.ToString();
-
-    }
-
-    public void OnClickMenys(GameObject quantitat)
-    {
-        int q = int.Parse(quantitat.GetComponent<Text>().text);
-
-        if(q > 0)
+        if (error == true)
         {
-            q--;
+            //Debug.Log("Hi ha hagut un error");
+            Debug.Log("Gastem recursos");
+            bales += int.Parse(quantitatsWater.transform.GetChild(0).gameObject.GetComponent<Text>().text);
+            inventory.RefreshInventoryItems();
         }
 
-        quantitat.GetComponent<Text>().text = q.ToString();
     }
+
+    public void OnClikcCompraBalesTerra()
+    {
+        int q1 = int.Parse(quantitatsEarth.transform.GetChild(1).gameObject.GetComponent<Text>().text);
+
+        bool error = inventari.GastaRecursosCompraBales(Item.Element.Earth, q1);
+
+        if (error == true)
+        {
+            //Debug.Log("Hi ha hagut un error");
+            Debug.Log("Gastem recursos");
+            bales += int.Parse(quantitatsEarth.transform.GetChild(0).gameObject.GetComponent<Text>().text);
+            inventory.RefreshInventoryItems();
+        }
+
+    }
+
+    public void OnClikcCompraBalesAire()
+    {
+        int q1 = int.Parse(quantitatsAir.transform.GetChild(1).gameObject.GetComponent<Text>().text);
+
+        bool error = inventari.GastaRecursosCompraBales(Item.Element.Air, q1);
+
+        if (error == true)
+        {
+            //Debug.Log("Hi ha hagut un error");
+            Debug.Log("Gastem recursos");
+            bales += int.Parse(quantitatsAir.transform.GetChild(0).gameObject.GetComponent<Text>().text);
+            inventory.RefreshInventoryItems();
+        }
+
+    }
+
+    public void OnClikcCompraBalesFoc()
+    {
+        int q1 = int.Parse(quantitatsFire.transform.GetChild(1).gameObject.GetComponent<Text>().text);
+
+        bool error = inventari.GastaRecursosCompraBales(Item.Element.Fire, q1);
+
+        if (error == true)
+        {
+            //Debug.Log("Hi ha hagut un error");
+            Debug.Log("Gastem recursos");
+            bales += int.Parse(quantitatsFire.transform.GetChild(0).gameObject.GetComponent<Text>().text);
+            inventory.RefreshInventoryItems();
+        }
+
+    }
+
+
+
+
 
     public void OnClickClose()
     {
+        inventory.gameObject.SetActive(true);
+        cursor.SetActive(true);
+        UnityEngine.Cursor.visible = false;
+        camera.gameObject.GetComponent<CinemachineBrain>().enabled = true;
+        personatge.GetComponent<PlayerShoot>().ActivaCursor();
         this.gameObject.SetActive(false);
     }
 
     public void SetInventory(Inventory i)
     {
+        //Debug.Log("Fet");
         inventari = i;
     }
 }

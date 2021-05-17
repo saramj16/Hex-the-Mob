@@ -109,13 +109,16 @@ public class PlayerShoot : MonoBehaviour
             if (potDisparar)
             {
                 // Aqui haurem de fer que resti les bales al inventari de bales
-                if (inventari.spendResourcesDisparo())
+                int numBales = int.Parse(inventory.nBales.text);
+                if(numBales > 0)
                 {
                     GameObject bulletClone = Instantiate(bullet, firePoint.position, firePoint.rotation);
                     Debug.DrawRay(firePoint.position, hitInfo.point - firePoint.position, Color.blue, 3f);
                     bulletClone.GetComponent<BalaBruixa>().setTargetDirection(hitInfo.point - firePoint.position);
                     inventory.RefreshInventoryItems();
+                    inventory.carregaBales.GetComponent<UI_CarregaBales>().bales--;
                 }
+              
             }
 
         }
