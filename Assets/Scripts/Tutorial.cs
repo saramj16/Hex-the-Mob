@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Tutorial : MonoBehaviour
 {
+    public GameObject UI_inGame;
+
     public GameObject bruixa;
     
     public Inventory inventory;
@@ -44,6 +46,7 @@ public class Tutorial : MonoBehaviour
     int count;
 
     private bool iniciPartida;
+
     
 
     // Start is called before the first frame update
@@ -173,8 +176,14 @@ public class Tutorial : MonoBehaviour
                         //Es quan ha d'apretar F i posar la torre, no pot passar d'opcio fins que no hagi consturit una torre
                         Invoke("HaPosatTorre", 1f);
                         break;
-
                     case 7:
+                        accioInici = true;
+                        accioAcabada = false;
+                        //Es quan ha d'apretar F i posar la torre, no pot passar d'opcio fins que no hagi consturit una torre
+                        Invoke("HaCarregatRecursos", 1f);
+                        break;
+                    
+                    case 9:
                         accioInici = true;
                         accioAcabada = false;
 
@@ -186,6 +195,7 @@ public class Tutorial : MonoBehaviour
                         e.GetComponent<ControlEnemic>().SetWaypointIndex(61);
                         e.GetComponent<ControlEnemic>().vida = 50;
                         Invoke("HaAcabatLaOleada", 1f);
+                        Invoke("DesactivaPanel", 11f);
                         break;
                     default:
                         accioAcabada = true;
@@ -234,7 +244,7 @@ public class Tutorial : MonoBehaviour
             bruixa.GetComponent<PlayerShoot>().potDisparar = false;
             this.gameObject.GetComponent<WaveManager>().SetDia();
 
-
+            Invoke("ActivaPanel", 0.1f);
             NextPas();
         }
         else
@@ -299,6 +309,22 @@ public class Tutorial : MonoBehaviour
         else
         {
             Invoke("HaPosatTorre", 1f);
+        }
+    }
+
+    void HaCarregatRecursos()
+    {
+        int bales = 0;
+
+        bales = UI_inGame.gameObject.GetComponent<UI_InGame>().carregaBales.GetComponent<UI_CarregaBales>().bales;
+        if (bales >= 1)
+        {
+            accioAcabada = true;
+            NextPas();
+        }
+        else
+        {
+            Invoke("HaCarregatRecursos", 1f);
         }
     }
 
