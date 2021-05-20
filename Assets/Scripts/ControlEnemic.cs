@@ -66,7 +66,7 @@ public class ControlEnemic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Update Enemic");
+        //Debug.Log("Update Enemic");
         if(freeze == false)
         {
             if(ataquem == true)
@@ -86,7 +86,7 @@ public class ControlEnemic : MonoBehaviour
             {
                 if (!death)
                 {
-                    Debug.Log("Hauria d'entrar aqui i anar cap a: " + target.name);
+                    //Debug.Log("Hauria d'entrar aqui i anar cap a: " + target.name);
                     anim.SetBool("Walking", true);
                     Vector3 dir = target.position - transform.position;
                     transform.Translate(dir.normalized * velocitat * Time.deltaTime, Space.World);

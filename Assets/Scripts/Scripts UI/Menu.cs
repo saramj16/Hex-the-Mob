@@ -20,8 +20,21 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     public void OnClickPlay()
     {
+        PlayerPrefs.SetInt("tuto", 0);
+        Mapa1();
+        
         menu.gameObject.SetActive(false);
-        selectMap.gameObject.SetActive(true);
+        //selectMap.gameObject.SetActive(true);
+
+    }
+
+    public void OnClickTutorial()
+    {
+        PlayerPrefs.SetInt("tuto", 1);
+        Mapa1();
+        
+        menu.gameObject.SetActive(false);
+        //selectMap.gameObject.SetActive(true);
 
     }
 

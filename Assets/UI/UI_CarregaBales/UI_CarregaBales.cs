@@ -57,7 +57,7 @@ public class UI_CarregaBales : MonoBehaviour
         if (error == true)
         {
             //Debug.Log("Hi ha hagut un error");
-            Debug.Log("Gastem recursos");
+            //Debug.Log("Gastem recursos");
             bales += int.Parse(quantitatsWater.transform.GetChild(0).gameObject.GetComponent<Text>().text);
             inventory.RefreshInventoryItems();
         }

@@ -14,7 +14,7 @@ public class Tutorial : MonoBehaviour
     public GameObject waypointsEnemic;
     public GameObject enemic;
 
-    public bool tutorial = false;
+    public bool tutorial;
 
     bool eliminaText = false;
 
@@ -54,14 +54,25 @@ public class Tutorial : MonoBehaviour
     {
         iniciPartida = false;
         llargadaText = textos.Count;
-        tutorial = false;
+        //tutorial = false;
+        if(PlayerPrefs.GetInt("tuto", 1) == 0)
+        {
+            tutorial = false;
+            panel.gameObject.SetActive(false);
+        } else
+        {
+            tutorial = true;
+            StartCoroutine(mostraText());
 
-        count = 0;
-        text = textos[count];
-        bruixa.GetComponent<PlayerShoot>().DesactivaCursor();
-        UnityEngine.Cursor.lockState = CursorLockMode.None;
-        UnityEngine.Cursor.visible = false;
-        StartCoroutine(mostraText());
+            count = 0;
+            text = textos[count];
+            bruixa.GetComponent<PlayerShoot>().DesactivaCursor();
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
+            UnityEngine.Cursor.visible = false;
+        }
+
+        
+        
     }
 
 

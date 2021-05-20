@@ -85,7 +85,7 @@ public class PlayerShoot : MonoBehaviour
     }
     public void ActivaCursor()
     {
-        Debug.Log("Activem Cursor");
+        //Debug.Log("Activem Cursor");
         Invoke("ActivaPotDispara", 1.5f);
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = false;
