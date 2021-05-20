@@ -17,17 +17,17 @@ public class AfegirRecursos : EditorWindow
         GUILayout.Label("Afegir recursos del Mapa");
 
         EditorGUILayout.Space();
-        GUILayout.Label("Afegir recursos del bioma d'Aigua");
+        GUILayout.Label("Afegir recursos del bioma de Terra");
  
         if (GUILayout.Button("Posa Roca 1"))
         {
             GameObject[] obj = Selection.gameObjects;
             for (int i = 0; i < obj.Length; i++)
             {
-
+                
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Deco1"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Deco1"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -39,7 +39,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Deco2"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Deco2"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -51,7 +51,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Deco3"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Deco3"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -63,7 +63,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Tree1"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Tree1"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -75,7 +75,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Tree2"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Tree2"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -87,7 +87,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Tree3"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Earth_Biome/Earth_Tree3"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -102,7 +102,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Deco1"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Deco1"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -114,7 +114,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Deco2"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Deco2"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -126,7 +126,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Deco3"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Deco3"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -138,7 +138,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Tree1"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Tree1"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -150,7 +150,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Tree2"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Tree2"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -162,7 +162,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Tree3"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Fire_Biome/Fire_Tree3"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -177,7 +177,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Deco1"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Deco1"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -189,7 +189,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Deco2"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Deco2"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -201,7 +201,10 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Deco3"), pos, Quaternion.Euler(0, 0, 0));
+                GameObject o = (GameObject)Instantiate(Resources.Load("Decoration/Water_Biome/Water_Deco3"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
+                Vector3 scale = o.transform.localScale;
+                scale.y = Random.Range(0.8f, 2f);
+                o.transform.localScale = scale;
             }
         }
 
@@ -213,7 +216,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Tree1"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Tree1"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -225,7 +228,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Tree2"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Tree2"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -237,7 +240,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Tree3"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Water_Biome/Water_Tree3"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -252,7 +255,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Deco1"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Deco1"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -264,7 +267,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Deco2"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Deco2"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -276,7 +279,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Deco3"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Deco3"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -288,7 +291,7 @@ public class AfegirRecursos : EditorWindow
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
 
-                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Tree1"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Tree1"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -299,8 +302,8 @@ public class AfegirRecursos : EditorWindow
             {
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
-
-                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Tree2"), pos, Quaternion.Euler(0, 0, 0));
+                pos.y = 0;
+                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Tree2"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
@@ -311,8 +314,9 @@ public class AfegirRecursos : EditorWindow
             {
 
                 Vector3 pos = buscaAltura(obj[i].gameObject);
+                pos.y = 0;
 
-                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Tree3"), pos, Quaternion.Euler(0, 0, 0));
+                Instantiate(Resources.Load("Decoration/Wind_Biome/Wind_Tree3"), pos, Quaternion.Euler(0, Random.Range(0, 360), 0));
             }
         }
 
