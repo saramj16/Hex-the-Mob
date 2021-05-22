@@ -84,7 +84,7 @@ public class SpawnResources : MonoBehaviour
                     if (zonaBlock)
                     {
                         //Debug.Log("Posa recurs: " + resource[element].prefab.name);
-                        Instantiate(resource[element].prefab, resourcePosition, Quaternion.identity);
+                        Instantiate(resource[element].prefab, resourcePosition, Quaternion.Euler(0, Random.Range(0, 360), 0)); ;
                         countdown = timeToSpawn;
                     }
                     else

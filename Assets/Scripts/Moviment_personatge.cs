@@ -54,11 +54,11 @@ public class Moviment_personatge : MonoBehaviour
                 moveDirection = (Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward).normalized;
 
                 moveDirection *= velocitat;
-                if (!controller.isGrounded)
+             /*   if (!controller.isGrounded)
                 {
                     moveDirection.x *= 0.5f;
                     moveDirection.z *= 0.5f;
-                }
+                }*/
                 moveDirection.y = vel_aux;
             }
             else
