@@ -412,7 +412,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2322616867415357404}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 513.9834, y: -57.538696, z: -98.5}
+  m_LocalPosition: {x: 513.9834, y: -851, z: -98.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3386827480487289249}
@@ -454,7 +454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: 428}
+  m_AnchoredPosition: {x: -355, y: 428}
   m_SizeDelta: {x: 600, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5359420541797812780
@@ -497,7 +497,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'To repair the bridge click G. '
+  m_Text: Press G to repair bridge
 --- !u!1 &2950199696411474102
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,7 +532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -380, y: 428}
+  m_AnchoredPosition: {x: -352, y: 428}
   m_SizeDelta: {x: 600, y: 65.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6352860522250412231
@@ -575,7 +575,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: To construct tower click F.
+  m_Text: Press F to craft a turret
 --- !u!1 &3022904572445485014
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5551583942306346216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 513.9834, y: -57.538696, z: -98.5}
+  m_LocalPosition: {x: 513.9834, y: -851, z: -98.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8294687724809832907}
