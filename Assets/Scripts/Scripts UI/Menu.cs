@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour
     public GameObject options;
     public GameObject credits;
     public GameObject selectMap;
+    public GameObject loading;
 
     public Slider sliderMusic;
     public Slider sliderEffects;
@@ -24,6 +25,7 @@ public class Menu : MonoBehaviour
         Mapa1();
         
         menu.gameObject.SetActive(false);
+        loading.SetActive(true);
         //selectMap.gameObject.SetActive(true);
 
     }
@@ -34,6 +36,7 @@ public class Menu : MonoBehaviour
         Mapa1();
         
         menu.gameObject.SetActive(false);
+        loading.SetActive(true);
         //selectMap.gameObject.SetActive(true);
 
     }
