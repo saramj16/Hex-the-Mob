@@ -20,8 +20,13 @@ public class Moviment_personatge : MonoBehaviour
     public Animator anim;
 
     public bool inWater;
+    public bool inPedra;
+    public bool inPont;
     public AudioSource waterStep;
     public AudioSource grassStep;
+
+    public GameObject infoPont;
+    public GameObject infoTorre;
 
     private void Start()
     {
@@ -33,9 +38,12 @@ public class Moviment_personatge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        
         if(cam.enabled == true)
         {
+            //Activar a veure si esta tocant pont o pedra
+            touchingCollider();
+
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
@@ -165,6 +173,16 @@ public class Moviment_personatge : MonoBehaviour
         if (other.tag == "Water") {
             inWater = true;
         }
+
+        if (other.tag == "Pedra")
+        {
+            inPedra = true;
+        }
+
+        if (other.tag == "Pont")
+        {
+            inPont = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -172,6 +190,35 @@ public class Moviment_personatge : MonoBehaviour
         if (other.tag == "Water")
         {
             inWater = false;
+        }
+
+        if (other.tag == "Pedra")
+        {
+            inPedra = false;
+        }
+
+        if (other.tag == "Pont")
+        {
+            inPont = false;
+        }
+    }
+
+    public void touchingCollider()
+    {
+        if(inPont == true)
+        {
+            infoPont.SetActive(true);
+            
+        } else
+        {
+            infoPont.SetActive(false);
+        }
+        if(inPedra == true)
+        {
+            infoTorre.SetActive(true);
+        } else
+        {
+            infoTorre.SetActive(false);
         }
     }
 
