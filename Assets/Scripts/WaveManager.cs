@@ -136,7 +136,7 @@ public class WaveManager : MonoBehaviour
         //    Debug.Log("Nom enemic: " + enemic[i].prefab.name);
             //Fer-ho cada X temps
             Instantiate(enemic[i].prefab, spawnPoint.position, spawnPoint.rotation);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.5f);
         }
         yield return null;
     }

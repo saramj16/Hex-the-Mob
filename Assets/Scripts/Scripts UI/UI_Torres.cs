@@ -181,10 +181,11 @@ public class UI_Torres : MonoBehaviour
         aux.y = 300f;
         if (Physics.Raycast(aux, -g.transform.forward * 1000f, out hit, Mathf.Infinity, mask))
         {
+            
             //Debug.DrawRay(aux, -g.transform.forward * 1000f, Color.blue, 10f);
             
             altura = hit.point.y;
-           // Debug.Log("Altura: " + altura);
+            Debug.Log("Altura: " + altura);
         }
 
             return altura;

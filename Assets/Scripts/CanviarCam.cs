@@ -5,6 +5,8 @@ using UnityEngine;
 public class CanviarCam : MonoBehaviour
 {
     public Camera cam1, cam2;
+
+    public Camera camAuxGravacio;
     public Cursor cursor;
     GameObject[] torres;
     List <GameObject> ranges;
@@ -16,6 +18,7 @@ public class CanviarCam : MonoBehaviour
         cam1 = GameObject.Find("Camera Top").GetComponent<Camera>();
         cam1.enabled = false;
         cam2.enabled = true;
+        camAuxGravacio.enabled = false;
     }
 
     void Update()
@@ -26,6 +29,14 @@ public class CanviarCam : MonoBehaviour
             cam1.enabled = !cam1.enabled;
             cam2.enabled = !cam2.enabled;
             ManageTopView();
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            cursor.top = true;
+            cam1.enabled = !cam1.enabled;
+            camAuxGravacio.enabled = !camAuxGravacio.enabled;
+           
         }
     }
 
