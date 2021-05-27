@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   bala: {fileID: 11400000, guid: 3f39e31ffdcb9b64c93503e7446d4843, type: 2}
-  range: 1
+  range: 1.5
   minRange: 0
   areaDamage: 1
   fireRate: 0.15
@@ -26,6 +26,6 @@ MonoBehaviour:
   element2: 2
   quantitatElement2: 0
   nom: Shotgun
-  description: "Diversos projectils a poca dist\xE0ncia"
+  description: Many bullets on a short range
   imatge: {fileID: 21300000, guid: 760fec3bbcb36d5438909a5eaa7380a8, type: 3}
   level: 1

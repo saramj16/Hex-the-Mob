@@ -16,7 +16,7 @@ MonoBehaviour:
   range: 2
   minRange: 0
   areaDamage: 1
-  fireRate: 1
+  fireRate: 0.1
   velRotacio: 6
   inWay: 0
   inGround: 1
@@ -26,6 +26,6 @@ MonoBehaviour:
   element2: 2
   quantitatElement2: 0
   nom: Flamethrower
-  description: "Fa mal constant als enemics que te a l'abast de les flamesa dist\xE0ncia"
+  description: Damages close enemies around its area
   imatge: {fileID: 21300000, guid: e39f00e2ef1b85f40ab3b2abb4b8627a, type: 3}
   level: 1

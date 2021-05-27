@@ -26,7 +26,6 @@ MonoBehaviour:
   element2: 1
   quantitatElement2: 4
   nom: Freeze
-  description: Congela temporalment a un enemic.ba, l'absorbeix i el mata. Recarga
-    extremadament lenta en
+  description: Temporary freezes the enemies
   imatge: {fileID: 21300000, guid: 5d0277a0ef72044498e686c6e7bb46fd, type: 3}
   level: 1

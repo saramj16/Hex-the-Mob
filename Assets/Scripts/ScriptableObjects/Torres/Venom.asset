@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Venom
   m_EditorClassIdentifier: 
   bala: {fileID: 11400000, guid: 8e37d36c068fc5941ad01d6c0601f50a, type: 2}
-  range: 1
+  range: 1.5
   minRange: 0
   areaDamage: 1
   fireRate: 0.4
@@ -26,7 +26,6 @@ MonoBehaviour:
   element2: 0
   quantitatElement2: 4
   nom: Venom
-  description: "Va treient vida despr\xE9s d'impactar.a, l'absorbeix i el mata. Recarga
-    extremadament lenta en"
+  description: Poisoned bullets that deal damage over time
   imatge: {fileID: 21300000, guid: 895170be188a55d479827f75be09d83e, type: 3}
   level: 1

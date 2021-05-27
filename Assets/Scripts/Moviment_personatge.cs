@@ -10,7 +10,7 @@ public class Moviment_personatge : MonoBehaviour
 
     public float velocitat_base = 0.4f;
     public float velocitat_running = 1f;
-    public float velocitat = 0.8f;
+    public float velocitat = 0.4f;
     public float gravetat = 20f;
 
     public float temps_rotacio = 0.1f;
