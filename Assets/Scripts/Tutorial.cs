@@ -180,7 +180,7 @@ public class Tutorial : MonoBehaviour
                         Instantiate(this.gameObject.GetComponent<SpawnResources>().resource[3].prefab, this.gameObject.GetComponent<SpawnResources>().calculateResourcePosition(), Quaternion.identity);
 
                         Invoke("HaAgafatRecursos", 1f);
-                        Invoke("DesactivaPanel", 11f);
+                        Invoke("DesactivaPanel", 10f);
                         break;
 
                     case 6:
@@ -208,7 +208,7 @@ public class Tutorial : MonoBehaviour
                         e.GetComponent<ControlEnemic>().SetWaypointIndex(61);
                         e.GetComponent<ControlEnemic>().vida = 50;
                         Invoke("HaAcabatLaOleada", 1f);
-                        Invoke("DesactivaPanel", 11f);
+                        Invoke("DesactivaPanel", 14f);
                         break;
 
                     default:
