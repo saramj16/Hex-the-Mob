@@ -6,6 +6,8 @@ public class CanviarCam : MonoBehaviour
 {
     public Camera cam1, cam2;
 
+    public Camera camAux;
+
     public Cursor cursor;
     GameObject[] torres;
     List <GameObject> ranges;
@@ -29,6 +31,15 @@ public class CanviarCam : MonoBehaviour
             cam2.enabled = !cam2.enabled;
             ManageTopView();
         }
+
+      /*  if (Input.GetKeyDown(KeyCode.H))
+        {
+            cursor.top = !cursor.top;
+            cam1.enabled = false;
+            cam2.enabled = false;
+
+            camAux.enabled = true;
+        }*/
     }
 
     void ManageTopView()
